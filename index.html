@@ -64,7 +64,7 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">我的文章</a>
     			
             
     			
@@ -156,6 +156,203 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue常用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/01/vue常用/">vue常用</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/01/vue常用/" class="archive-article-date">
+  	<time datetime="2018-06-01T08:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue2-elementUI"><a href="#vue2-elementUI" class="headerlink" title="vue2 + elementUI"></a>vue2 + elementUI</h1><h2 id="vue子父类传值"><a href="#vue子父类传值" class="headerlink" title="vue子父类传值"></a>vue子父类传值</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><h2 id="vue路由跳转"><a href="#vue路由跳转" class="headerlink" title="vue路由跳转"></a>vue路由跳转</h2><h3 id="vue-elementUI"><a href="#vue-elementUI" class="headerlink" title="vue+elementUI"></a>vue+elementUI</h3><p>当导航栏有折叠面板时使用更佳</p>
+<h5 id="点击跳转代码示例："><a href="#点击跳转代码示例：" class="headerlink" title="点击跳转代码示例："></a>点击跳转代码示例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;el-menu  background-color=&quot;#293646&quot; text-color=&quot;#fff&quot; router :default-active=&quot;$route.path&quot;&gt;</span><br><span class="line">	&lt;el-menu-item index=&quot;/work&quot; class=&quot;nav_menu_item&quot;&gt;</span><br><span class="line">	  &lt;i class=&quot;el-icon-refresh&quot;&gt;&lt;/i&gt;</span><br><span class="line">	  &lt;span class=&quot;title&quot;&gt;工作台&lt;/span&gt;</span><br><span class="line">	&lt;/el-menu-item&gt;</span><br><span class="line">	&lt;el-menu-item index=&quot;/financial-analysis&quot; class=&quot;nav_menu_item&quot;&gt;</span><br><span class="line">	  &lt;i class=&quot;el-icon-edit&quot;&gt;&lt;/i&gt;</span><br><span class="line">	  &lt;span class=&quot;title&quot;&gt;统计分析&lt;/span&gt;</span><br><span class="line">	&lt;/el-menu-item&gt;</span><br><span class="line">	&lt;el-submenu index=&quot;/bid-management&quot;&gt;</span><br><span class="line">    &lt;template slot=&quot;title&quot;&gt;</span><br><span class="line">      &lt;i class=&quot;el-icon-document&quot;&gt;&lt;/i&gt;</span><br><span class="line">      &lt;span class=&quot;group_title&quot;&gt;招投标管理&lt;/span&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">  	&lt;el-menu-item-group&gt;</span><br><span class="line">      &lt;el-menu-item index=&quot;/bid-management&quot; class=&quot;group_item&quot;&gt;</span><br><span class="line">      	&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;</span><br><span class="line">      	&lt;div class=&quot;circle&quot;&gt;&lt;/div&gt;</span><br><span class="line">     	&lt;span class=&quot;item_title&quot;&gt;招投标进程&lt;/span&gt;</span><br><span class="line">      &lt;/el-menu-item&gt;</span><br><span class="line">      &lt;el-menu-item index=&quot;/license-management&quot; class=&quot;group_item&quot;&gt;</span><br><span class="line">     	 &lt;div class=&quot;line&quot;&gt;&lt;/div&gt;</span><br><span class="line">     	 &lt;div class=&quot;circle&quot;&gt;&lt;/div&gt;</span><br><span class="line">    	 &lt;span class=&quot;item_title&quot;&gt;证照管理&lt;/span&gt;</span><br><span class="line">   	  &lt;/el-menu-item&gt;</span><br><span class="line">    &lt;/el-menu-item-group&gt;</span><br><span class="line">   &lt;el-menu&gt;</span><br></pre></td></tr></table></figure>
+<p>1.要实现路由跳转，先要在el-menu标签上添加router属性，然后只要在每个el-menu-item标签内的index属性设置一下url即可实现点击el-menu-item实现路由跳转。</p>
+<p>2.导航当前项，在el-menu标签中绑定  :default-active=”$route.path”,注意是绑定属性，不要忘了加“:”,当$route.path等于el-menu-item标签中的index属性值时则该item为当前项。</p>
+<p>注意： </p>
+<ul>
+<li>router模式：激活导航时以 index 字段作为 path 进行路由跳转。 </li>
+<li>default-active：当前激活的导航，以index字段为值。如果组件渲染前有默认值，则渲染后会按照该值来展开的导航。 </li>
+<li>unique-opened：保证只有一个子菜单展开。同样以index字段作为索引，如果某些菜单的index重复或者没有则会使该功能失效</li>
+</ul>
+<h5 id="路由规则代码示例："><a href="#路由规则代码示例：" class="headerlink" title="路由规则代码示例："></a>路由规则代码示例：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//引入vue及vue-router</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br><span class="line"></span><br><span class="line">//引入跳转的项目地址</span><br><span class="line">import BidManagement from &apos;../components/bidManagement/bidManagement.vue&apos;</span><br><span class="line">import newProject from &apos;../components/bidManagement/marketingDepartment/newProject/newProject.vue&apos;</span><br><span class="line">import tempProject from &apos;../components/bidManagement/marketingDepartment/newProject/tempProject.vue&apos;</span><br><span class="line">import stayPickBid from &apos;../components/bidManagement/businessDepartment/pickBid/stayPickBid.vue&apos;</span><br><span class="line">import pickedBidOthers from &apos;../components/bidManagement/businessDepartment/pickBid/pickedBidOthers.vue&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line">//设置路由跳转</span><br><span class="line">routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/&apos;,</span><br><span class="line">      redirect: &apos;/bid-management&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/bid-management&apos;,</span><br><span class="line">      name: &apos;BidManagement&apos;,</span><br><span class="line">      component: BidManagement</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/new-project&apos;,</span><br><span class="line">      name: &apos;newProject&apos;,</span><br><span class="line">      component: newProject</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="vue路由跳转传值"><a href="#vue路由跳转传值" class="headerlink" title="vue路由跳转传值"></a>vue路由跳转传值</h2><h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><h2 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h2><p>## </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/01/vue常用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-移动web开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26/移动web开发/">移动web开发</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/26/移动web开发/" class="archive-article-date">
+  	<time datetime="2018-05-26T07:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
+<li>移动设备与PC设备最大的差异在于屏幕，这主要体现在屏幕尺寸和屏幕分辨率两个方面。<ul>
+<li>通常我们所指的屏幕尺寸，实际上指的是屏幕对角线的长度（一般用英寸来度量）</li>
+<li>分辨率则一般用像素来度量，表示屏幕水平和垂直方向的像素数，</li>
+</ul>
+</li>
+</ul>
+<h3 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h3><ul>
+<li>web开发中可以使用px(像素),em，rem,pt(点),in(英寸),cm(厘米)作为长度单位，但是我们最常用的还会px作为长度单位<ul>
+<li>em: 相对长度单位，其参照当前元素字体大小，如果当前元素未设置字体则会继承其祖先元素字体大小例如使用em单位时，像素值是em值乘以使用em单位的元素的字体的大小(例如：有一个div的字体大小是18px，那么10em就等同于10*18=180px)</li>
+<li>rem: 相对长度单位，其参照根元素(html)字号大小，使用rem单位，他们转化的像素大小取决于根元素(heml元素)的字体大小，根元素字体大小乘以rem的值(根元素的字体大小16px，10rem就等同于10*16=160px)，</li>
+</ul>
+</li>
+<li>我们可以将长度单位划分为相对长度单位和绝对长度单位</li>
+</ul>
+<h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><ul>
+<li><p>物理像素：物理像素指的是屏幕渲染图像的最小单位，属于屏幕的物理属性，不可人为进行改变，其值大小决定了屏幕渲染图像的品质，</p>
+<ul>
+<li>获取屏幕的物理像素尺寸<ul>
+<li>window.screen.width;</li>
+<li>window.screen.height;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CSS像素指的是通过CSS进行网页布局时用到的单位，其默认值(PC端)是和物理像素保持一致的（1个单位的CSS像素等于1个单位的物理像素），但是我们可通缩放来改变其大小</p>
+</li>
+<li>我们需要理解的是物理像素和CSS像素的一个关系，1个物理像素并不总是等于一个CSS像素，通过调整浏览器缩放比例，</li>
+</ul>
+<h3 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h3><p>视口（viewport）是用来约束你网站中最顶级块元素<html>的，即它决定了<html>的大小。</html></html></p>
+<pre><code>通过以往CSS的知识，我们都能理解&lt;html&gt;的大小是会影响到我们的网页布局的，
+而viewport又决定&lt;html&gt;的大小，所以viewport间接的决定并影响了我们网页的布局。
+</code></pre><ul>
+<li>获取viewport的大小<ul>
+<li>document.documentElement.clientWidth;</li>
+<li>document.documentElement.clientHeight;</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">移动web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/26/移动web开发/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-cdn学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -163,13 +360,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/03/cdn学习/">cdn学习</a>
+      <a class="article-title" href="/2018/05/14/cdn学习/">cdn学习</a>
     </h1>
   
 
         
-        <a href="/2018/06/03/cdn学习/" class="archive-article-date">
-  	<time datetime="2018-06-03T03:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
+        <a href="/2018/05/14/cdn学习/" class="archive-article-date">
+  	<time datetime="2018-05-14T03:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
 </a>
         
       </header>
@@ -254,7 +451,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/03/cdn学习/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/14/cdn学习/">展开全文 >></a>
         </p>
       
 
@@ -291,13 +488,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26/vue记录/">vue记录</a>
+      <a class="article-title" href="/2017/11/26/vue记录/">vue记录</a>
     </h1>
   
 
         
-        <a href="/2018/05/26/vue记录/" class="archive-article-date">
-  	<time datetime="2018-05-26T08:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+        <a href="/2017/11/26/vue记录/" class="archive-article-date">
+  	<time datetime="2017-11-26T08:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-26</time>
 </a>
         
       </header>
@@ -554,7 +751,7 @@ POST
 
 JSONP
     见代码
-</code></pre><h2 id="axios-Vue2-0"><a href="#axios-Vue2-0" class="headerlink" title="axios Vue2.0"></a>axios Vue2.0</h2><hr>
+</code></pre><hr>
 <h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><pre><code>Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过 loader 的转换，任何形式的资源都可以视作模块，比如CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、JSON、Coffeescript、 LESS 等。
 Webpakc是一个构建和打包工具
 </code></pre><h3 id="官网"><a href="#官网" class="headerlink" title="官网:"></a>官网:</h3><pre><code>1.x https://webpack.github.io/docs/
@@ -828,119 +1025,7 @@ https://github.com/webpack-contrib/extract-text-webpack-plugin
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26/vue记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动web开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26/移动web开发/">移动web开发</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/26/移动web开发/" class="archive-article-date">
-  	<time datetime="2018-05-26T07:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
-<li>移动设备与PC设备最大的差异在于屏幕，这主要体现在屏幕尺寸和屏幕分辨率两个方面。<ul>
-<li>通常我们所指的屏幕尺寸，实际上指的是屏幕对角线的长度（一般用英寸来度量）</li>
-<li>分辨率则一般用像素来度量，表示屏幕水平和垂直方向的像素数，</li>
-</ul>
-</li>
-</ul>
-<h3 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h3><ul>
-<li>web开发中可以使用px(像素),em，rem,pt(点),in(英寸),cm(厘米)作为长度单位，但是我们最常用的还会px作为长度单位<ul>
-<li>em: 相对长度单位，其参照当前元素字体大小，如果当前元素未设置字体则会继承其祖先元素字体大小例如使用em单位时，像素值是em值乘以使用em单位的元素的字体的大小(例如：有一个div的字体大小是18px，那么10em就等同于10*18=180px)</li>
-<li>rem: 相对长度单位，其参照根元素(html)字号大小，使用rem单位，他们转化的像素大小取决于根元素(heml元素)的字体大小，根元素字体大小乘以rem的值(根元素的字体大小16px，10rem就等同于10*16=160px)，</li>
-</ul>
-</li>
-<li>我们可以将长度单位划分为相对长度单位和绝对长度单位</li>
-</ul>
-<h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><ul>
-<li><p>物理像素：物理像素指的是屏幕渲染图像的最小单位，属于屏幕的物理属性，不可人为进行改变，其值大小决定了屏幕渲染图像的品质，</p>
-<ul>
-<li>获取屏幕的物理像素尺寸<ul>
-<li>window.screen.width;</li>
-<li>window.screen.height;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>CSS像素指的是通过CSS进行网页布局时用到的单位，其默认值(PC端)是和物理像素保持一致的（1个单位的CSS像素等于1个单位的物理像素），但是我们可通缩放来改变其大小</p>
-</li>
-<li>我们需要理解的是物理像素和CSS像素的一个关系，1个物理像素并不总是等于一个CSS像素，通过调整浏览器缩放比例，</li>
-</ul>
-<h3 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h3><p>视口（viewport）是用来约束你网站中最顶级块元素<html>的，即它决定了<html>的大小。</html></html></p>
-<pre><code>通过以往CSS的知识，我们都能理解&lt;html&gt;的大小是会影响到我们的网页布局的，
-而viewport又决定&lt;html&gt;的大小，所以viewport间接的决定并影响了我们网页的布局。
-</code></pre><ul>
-<li>获取viewport的大小<ul>
-<li>document.documentElement.clientWidth;</li>
-<li>document.documentElement.clientHeight;</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">移动web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26/移动web开发/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/26/vue记录/">展开全文 >></a>
         </p>
       
 
@@ -1564,7 +1649,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">我的文章</a></li>
       
         
       
@@ -1593,11 +1678,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">属性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1606,10 +1695,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
