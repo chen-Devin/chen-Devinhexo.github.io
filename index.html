@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="学习生活，你我同在">
+<meta name="description" content="码农的精彩，是你我同在">
 <meta property="og:type" content="website">
 <meta property="og:title" content="展慧的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="展慧的博客">
-<meta property="og:description" content="学习生活，你我同在">
+<meta property="og:description" content="码农的精彩，是你我同在">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="展慧的博客">
-<meta name="twitter:description" content="学习生活，你我同在">
+<meta name="twitter:description" content="码农的精彩，是你我同在">
 
 
 
@@ -98,7 +98,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -588,7 +588,19 @@
 
       
         
-          <h1 id="vue2-elementUI"><a href="#vue2-elementUI" class="headerlink" title="vue2 + elementUI"></a>vue2 + elementUI</h1><h2 id="vue子父类传值"><a href="#vue子父类传值" class="headerlink" title="vue子父类传值"></a>vue子父类传值</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3>
+          <h1 id="vue2-elementUI"><a href="#vue2-elementUI" class="headerlink" title="vue2 + elementUI"></a>vue2 + elementUI</h1><h2 id="vue子父类传值"><a href="#vue子父类传值" class="headerlink" title="vue子父类传值"></a>vue子父类传值</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><ul>
+<li><p>子组件(接收方)在vue对象中，通过props属性声明，声明他期待获得的数据</p>
+<ul>
+<li>props:[“commentId”],</li>
+</ul>
+</li>
+<li><p>父组件(发送方)注册子组件，在使用子组件的时候，以键值对的方式传递给子组件，</p>
+<ul>
+<li>:commentId=”commentId”</li>
+<li>然后再data里面定义commentId的值，</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/01/vue常用/#more" rel="contents">
@@ -869,6 +881,145 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/14/cdn学习/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="展慧的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/git/" itemprop="url">git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-15T21:16:16+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/15/git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/15/git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="版本管理工具"><a href="#版本管理工具" class="headerlink" title="版本管理工具"></a>版本管理工具</h2><p>版本管理工具分为集中式和分布式：</p>
+<ul>
+<li>集中式版本控制系统：版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。 集中式版本控制系统最大的毛病就是必须联网才能工作，如果在局域网内还好，带宽够大，速度够快，可如果在互联网上，遇到网速慢的话，可能提交一个10M的文件就需要5分钟，这还不得把人给憋死啊</li>
+<li></li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/15/git/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1416,150 +1567,10 @@
 
       
         
-          <h4 id="我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。"><a href="#我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。" class="headerlink" title="我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。"></a>我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。</h4><h4 id="有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。"><a href="#有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。" class="headerlink" title="有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。"></a>有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。</h4><h2 id="相遇的春夏秋冬"><a href="#相遇的春夏秋冬" class="headerlink" title="相遇的春夏秋冬"></a>相遇的春夏秋冬</h2><p>我想过我们相遇的很多场景，可能是在人潮拥挤的地铁，也可能是在下雨天的公交站，也或许是在惬意的午后，你在路的拐角处路过而我正好也从拐角处走过来，我不经意的看了看你，而你也刚好转过来与我相视。</p>
+          <h2 id="我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。"><a href="#我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。" class="headerlink" title="我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。"></a>我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。</h2><h2 id="有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。"><a href="#有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。" class="headerlink" title="有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。"></a>有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。</h2><h2 id="相遇的春夏秋冬"><a href="#相遇的春夏秋冬" class="headerlink" title="相遇的春夏秋冬"></a>相遇的春夏秋冬</h2><p>我想过我们相遇的很多场景，可能是在人潮拥挤的地铁，也可能是在下雨天的公交站，也或许是在惬意的午后，你在路的拐角处路过而我正好也从拐角处走过来，我不经意的看了看你，而你也刚好转过来与我相视。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/20/致未来的女朋友/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/15/常用属性记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/15/常用属性记录/" itemprop="url">常用属性记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-15T17:44:15+08:00">
-                2017-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/15/常用属性记录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/15/常用属性记录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="属性学习记录"><a href="#属性学习记录" class="headerlink" title="属性学习记录"></a>属性学习记录</h2><h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><pre><code>clear:规定属性元素哪一侧不允许有其他浮动元素。
-vertical-align:属性设置元素垂直对齐方式
-calc:动态计算长度值，
-    如：width:calc(100%-200px)
-word-wrap:brack-word:允许长单词时换到下一行
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/15/常用属性记录/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1641,7 +1652,7 @@ word-wrap:brack-word:允许长单词时换到下一行
                 alt="Devin_Chen" />
             
               <p class="site-author-name" itemprop="name">Devin_Chen</p>
-              <p class="site-description motion-element" itemprop="description">学习生活，你我同在</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1651,7 +1662,7 @@ word-wrap:brack-word:允许长单词时换到下一行
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1664,7 +1675,7 @@ word-wrap:brack-word:允许长单词时换到下一行
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1842,6 +1853,8 @@ show_date_time();
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
