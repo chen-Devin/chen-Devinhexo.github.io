@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="jQuery," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="码农的精彩，是你我同在">
-<meta property="og:type" content="website">
-<meta property="og:title" content="展慧的博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="description" content="jQuery选择器 所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现  基本选择器 id选择器$(#id)                 选中对应id的标签 类名选择器$(.className)        选中对应类名的标签，获得为多个 标签选择器$(tagName)            选中对应标签名的标">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery总结">
+<meta property="og:url" content="http://yoursite.com/2017/07/07/jQuery总结/index.html">
 <meta property="og:site_name" content="展慧的博客">
-<meta property="og:description" content="码农的精彩，是你我同在">
+<meta property="og:description" content="jQuery选择器 所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现  基本选择器 id选择器$(#id)                 选中对应id的标签 类名选择器$(.className)        选中对应类名的标签，获得为多个 标签选择器$(tagName)            选中对应标签名的标">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-07T14:48:58.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="展慧的博客">
-<meta name="twitter:description" content="码农的精彩，是你我同在">
+<meta name="twitter:title" content="jQuery总结">
+<meta name="twitter:description" content="jQuery选择器 所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现  基本选择器 id选择器$(#id)                 选中对应id的标签 类名选择器$(.className)        选中对应类名的标签，获得为多个 标签选择器$(tagName)            选中对应标签名的标">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/07/jQuery总结/"/>
 
 
 
 
 
-  <title>展慧的博客</title>
+  <title>jQuery总结 | 展慧的博客</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,145 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/我喜欢你，是余生都想有你的那种喜欢/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/10/我喜欢你，是余生都想有你的那种喜欢/" itemprop="url">我喜欢你，是余生都想有你的那种喜欢</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T21:08:42+08:00">
-                2017-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/10/我喜欢你，是余生都想有你的那种喜欢/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/10/我喜欢你，是余生都想有你的那种喜欢/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="我喜欢你，是余生都想有你的那种喜欢"><a href="#我喜欢你，是余生都想有你的那种喜欢" class="headerlink" title="我喜欢你，是余生都想有你的那种喜欢"></a>我喜欢你，是余生都想有你的那种喜欢</h2><p>“我喜欢你，是余生都想有你的那种喜欢”</p>
-<p>“我喜欢你，是余生都想有你的那种喜欢”</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/10/我喜欢你，是余生都想有你的那种喜欢/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -395,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/07/jQuery总结/" itemprop="url">jQuery总结</a></h1>
+          <h1 class="post-title" itemprop="name headline">jQuery总结</h1>
         
 
         <div class="post-meta">
@@ -458,9 +321,7 @@
       
 
       
-        
-          
-            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><blockquote>
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><blockquote>
 <p>所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现</p>
 </blockquote>
 <h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h3><blockquote>
@@ -700,8 +561,6 @@ $.each(obj,callback(key,value));
 用法三遍历jQuery对象
 $(selector).each(function(index,ele){}),注意其中ele为Dom对象
 </code></pre>
-          
-        
       
     </div>
     
@@ -716,293 +575,40 @@ $(selector).each(function(index,ele){}),注意其中ele为Dom对象
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/20/致未来的女朋友/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/20/致未来的女朋友/" itemprop="url">致未来的女朋友</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-20T13:14:00+08:00">
-                2017-05-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/20/致未来的女朋友/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/20/致未来的女朋友/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。"><a href="#我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。" class="headerlink" title="我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。"></a>我不知道现在的你在做什么，也不知道在哪一座城市，也不知道我们会在哪一天相遇，更不知道你是否还是一个人生活工作。</h2><h2 id="有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。"><a href="#有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。" class="headerlink" title="有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。"></a>有时候就会去想：未来的你是短发还是长发，你有多高，你漂不漂亮。</h2><h2 id="相遇的春夏秋冬"><a href="#相遇的春夏秋冬" class="headerlink" title="相遇的春夏秋冬"></a>相遇的春夏秋冬</h2><p>我想过我们相遇的很多场景，可能是在人潮拥挤的地铁，也可能是在下雨天的公交站，也或许是在惬意的午后，你在路的拐角处路过而我正好也从拐角处走过来，我不经意的看了看你，而你也刚好转过来与我相视。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/20/致未来的女朋友/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/20/致未来的女朋友/" rel="next" title="致未来的女朋友">
+                <i class="fa fa-chevron-left"></i> 致未来的女朋友
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/15/常用属性记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/15/常用属性记录/" itemprop="url">常用属性记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-15T17:44:15+08:00">
-                2017-04-15
-              </time>
+              <a href="/2017/07/10/我喜欢你，是余生都想有你的那种喜欢/" rel="prev" title="我喜欢你，是余生都想有你的那种喜欢">
+                我喜欢你，是余生都想有你的那种喜欢 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/15/常用属性记录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/15/常用属性记录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="属性学习记录"><a href="#属性学习记录" class="headerlink" title="属性学习记录"></a>属性学习记录</h2><h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>clear:规定属性元素哪一侧不允许有其他浮动元素。</p>
-<ul>
-<li>left    在左侧不允许浮动元素。</li>
-<li>right    在右侧不允许浮动元素。</li>
-<li>both    在左右两侧均不允许浮动元素。</li>
-<li>none    默认值。允许浮动元素出现在两侧。<br>*inherit    规定应该从父元素继承 clear 属性的值。</li>
-</ul>
-<p>vertical-align:属性设置元素垂直对齐方式</p>
-<p>calc:动态计算长度值，如：width:calc(100%-200px)</p>
-<p>word-wrap:brack-word:允许长单词时换到下一行</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/15/常用属性记录/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1012,155 +618,11 @@ $(selector).each(function(index,ele){}),注意其中ele为Dom对象
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/我的hexo搭建学习过程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/19/我的hexo搭建学习过程/" itemprop="url">我的hexo搭建学习过程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-19T18:23:37+08:00">
-                2017-03-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/19/我的hexo搭建学习过程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/19/我的hexo搭建学习过程/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#hexo使用介绍</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo是1个工具,可以快速的将markdown文件转换为一个博客网站.</span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo官网</a></li>
-<li>台湾人开发. 有比较详尽的中文文档.</li>
-<li>hexo是基于nodejs开发的一个工具.</li>
-<li>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/19/我的hexo搭建学习过程/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
 
 
           </div>
@@ -1168,6 +630,20 @@ $(selector).each(function(index,ele){}),注意其中ele为Dom对象
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1188,8 +664,17 @@ $(selector).each(function(index,ele){}),注意其中ele为Dom对象
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1313,6 +798,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery"><span class="nav-number">1.</span> <span class="nav-text">jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">1.1.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层级选择器"><span class="nav-number">1.1.2.</span> <span class="nav-text">层级选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父级选择器"><span class="nav-number">1.1.3.</span> <span class="nav-text">父级选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪类选择器"><span class="nav-number">1.1.4.</span> <span class="nav-text">伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter和not选择器"><span class="nav-number">1.1.5.</span> <span class="nav-text">filter和not选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">1.1.6.</span> <span class="nav-text">索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件对象"><span class="nav-number">1.2.</span> <span class="nav-text">事件对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册事件"><span class="nav-number">1.2.1.</span> <span class="nav-text">注册事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件解绑"><span class="nav-number">1.2.2.</span> <span class="nav-text">事件解绑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#unbind-undelegate"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">unbind undelegate</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻止冒泡"><span class="nav-number">1.2.3.</span> <span class="nav-text">阻止冒泡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻止默认行为-如a标签跳转，等"><span class="nav-number">1.2.4.</span> <span class="nav-text">阻止默认行为(如a标签跳转，等)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件触发-trigger"><span class="nav-number">1.2.5.</span> <span class="nav-text">事件触发 trigger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个属性"><span class="nav-number">1.2.6.</span> <span class="nav-text">几个属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个坐标"><span class="nav-number">1.2.7.</span> <span class="nav-text">几个坐标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">1.3.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本和属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">文本和属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作类样式"><span class="nav-number">1.3.2.</span> <span class="nav-text">操作类样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end-方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">end()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">1.4.</span> <span class="nav-text">动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏和显示、切换"><span class="nav-number">1.4.1.</span> <span class="nav-text">隐藏和显示、切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slide-滑入滑出改变的是高度"><span class="nav-number">1.4.2.</span> <span class="nav-text">slide 滑入滑出改变的是高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fade-淡入淡出改变的是不透明度"><span class="nav-number">1.4.3.</span> <span class="nav-text">fade 淡入淡出改变的是不透明度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">动画</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态创建元素"><span class="nav-number">1.5.</span> <span class="nav-text">动态创建元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建方式"><span class="nav-number">1.6.</span> <span class="nav-text">创建方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加元素方法"><span class="nav-number">1.7.</span> <span class="nav-text">添加元素方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清空节点"><span class="nav-number">1.8.</span> <span class="nav-text">清空节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.9.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置及获取"><span class="nav-number">1.9.1.</span> <span class="nav-text">设置及获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位置"><span class="nav-number">1.9.2.</span> <span class="nav-text">位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.10.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#each"><span class="nav-number">1.10.1.</span> <span class="nav-text">each</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1489,6 +990,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1506,6 +1011,18 @@ show_date_time();
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/07/07/jQuery总结/';
+          this.page.identifier = '2017/07/07/jQuery总结/';
+          this.page.title = 'jQuery总结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
