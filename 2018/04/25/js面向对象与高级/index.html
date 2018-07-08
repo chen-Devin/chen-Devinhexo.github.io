@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript重点数据类型 简单数据类型（基本数据类型）  number string boolean undefined null   复杂数据类型（引用数据类型）  object">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js面向对象与高级">
+<meta property="og:url" content="http://yoursite.com/2018/04/25/js面向对象与高级/index.html">
+<meta property="og:site_name" content="展慧的博客">
+<meta property="og:description" content="JavaScript重点数据类型 简单数据类型（基本数据类型）  number string boolean undefined null   复杂数据类型（引用数据类型）  object">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-08T10:59:46.003Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js面向对象与高级">
+<meta name="twitter:description" content="JavaScript重点数据类型 简单数据类型（基本数据类型）  number string boolean undefined null   复杂数据类型（引用数据类型）  object">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/25/js面向对象与高级/"/>
+
+
+
+
+
+  <title>js面向对象与高级 | 展慧的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">展慧的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/js面向对象与高级/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="展慧的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js面向对象与高级</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-25T18:25:25+08:00">
+                2018-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/25/js面向对象与高级/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/25/js面向对象与高级/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaScript重点"><a href="#JavaScript重点" class="headerlink" title="JavaScript重点"></a>JavaScript重点</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li><p>简单数据类型（基本数据类型）</p>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>undefined</li>
+<li>null</li>
+</ul>
+</li>
+<li><p>复杂数据类型（引用数据类型）</p>
+<ul>
+<li>object</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="js有几种数据类型？"><a href="#js有几种数据类型？" class="headerlink" title="js有几种数据类型？"></a>js有几种数据类型？</h4><ul>
+<li>6种</li>
+</ul>
+<h4 id="js提供了哪些内置对象？"><a href="#js提供了哪些内置对象？" class="headerlink" title="js提供了哪些内置对象？"></a>js提供了哪些内置对象？</h4><ul>
+<li>Array、Math、Date、Error、RegExp、<br>Function、String、Number、Boolean、Object、JSON</li>
+</ul>
+<h2 id="基本数据类型与引用数据类型的存储与赋值"><a href="#基本数据类型与引用数据类型的存储与赋值" class="headerlink" title="基本数据类型与引用数据类型的存储与赋值"></a>基本数据类型与引用数据类型的存储与赋值</h2><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><ul>
+<li>赋值时赋的是值的copy版本</li>
+</ul>
+<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><ul>
+<li>赋值赋的是对象的引用地址</li>
+</ul>
+<h4 id="关于引用数据类型的考题补充"><a href="#关于引用数据类型的考题补充" class="headerlink" title="关于引用数据类型的考题补充"></a>关于引用数据类型的考题补充</h4><ul>
+<li><p>如果修改变量的引用，那么不会产生连带影响</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>:<span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = o;</span><br><span class="line">o2 = &#123; <span class="attr">a</span>: <span class="number">100</span> &#125; <span class="comment">// 这是修改变量</span></span><br><span class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果修改变量引用对象的属性值，那么会产生连带影响</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>:<span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = o;</span><br><span class="line">o2.a =<span class="number">100</span> <span class="comment">// 这是修改变量引用对象的属性值</span></span><br><span class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h4 id="逻辑运算符-amp-amp"><a href="#逻辑运算符-amp-amp" class="headerlink" title="逻辑运算符 &amp;&amp; || !"></a>逻辑运算符 &amp;&amp; || !</h4><ul>
+<li><p>&amp;&amp; </p>
+<ul>
+<li>从左向右寻找转布尔为false的值，找到返回这个值，找不到返回最后一个值。</li>
+<li>注意：返回的结果不一定是true或false</li>
+</ul>
+</li>
+<li><p>||</p>
+<ul>
+<li>从左向右寻找转布尔为true的值，找到返回这个值，找不到返回最后一个值。</li>
+<li>注意：返回的结果不一定是true或false</li>
+</ul>
+</li>
+<li><p>!</p>
+<ul>
+<li>一个!可对数据取反</li>
+<li>两个!求数据布尔值</li>
+<li>注意：返回值不是true就是false</li>
+</ul>
+</li>
+<li><p>转换布尔为false的数据有哪些？</p>
+<ul>
+<li>0、undefined、null、false、’’、NaN</li>
+<li>除此之外的数据转换布尔都为true</li>
+</ul>
+</li>
+</ul>
+<h4 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符 == ==="></a>相等运算符 == ===</h4><ul>
+<li><p>==</p>
+<ul>
+<li>先对数据类型进行转换，数据类型一致后再比较值</li>
+<li>NaN不等于任何值，包括自己</li>
+<li>null与undefined互等，但不等于其他任何值(尤其是0和false)</li>
+<li>数字与布尔数据，和其他任何值比较，全部转换成数字再比较</li>
+<li>对象与对象比较内存地址</li>
+<li>对象与字符串，转字符串再比较</li>
+</ul>
+</li>
+<li><p>===</p>
+<ul>
+<li>双重比较，先比较数据类型，再比较值</li>
+</ul>
+</li>
+<li><p>三元运算符 ? :</p>
+<ul>
+<li>先计算?号前面表达式的结果</li>
+<li>结果布尔为true返回:号前面表达式的运行结果</li>
+<li>结果布尔为false返回:号后面表达式的运行结果</li>
+</ul>
+</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><p>typeof</p>
+<ul>
+<li>作用：用于检测数据类型</li>
+<li>无法检测null，因为检测结果为’object’</li>
+<li>检测对象不准(因为null结果也为object)，检测对象不具体，因为全部都是object</li>
+<li>唯独检测函数类型对象比较准确</li>
+</ul>
+</li>
+<li><p>in</p>
+<ul>
+<li>作用：用来检测对象中是否含有某属性</li>
+<li>语法：属性名 in 对象<br>(‘inObj’ in obj)</li>
+</ul>
+</li>
+<li><p>delete</p>
+<ul>
+<li>作用：删除对象属性</li>
+<li>语法：delete 对象.属性名 || delete 对象[属性名]<br>(delete o.a;)</li>
+</ul>
+</li>
+<li><p>对象的属性访问方式</p>
+<ul>
+<li>.语法<ul>
+<li>不能访问数字开头的属性</li>
+<li>不能使用变量</li>
+</ul>
+</li>
+<li>[]语法<ul>
+<li>可以使用数字</li>
+<li>可以使用变量</li>
+<li>注意：属性名记得加引号，数字可加可不加，变量千万不要加</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h4 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h4><ul>
+<li>if，if else , switch case</li>
+</ul>
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><ul>
+<li>for，while，do while，for in</li>
+</ul>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul>
+<li><p>break</p>
+<ul>
+<li>终止循环</li>
+</ul>
+</li>
+<li><p>continue</p>
+<ul>
+<li>跳出当次循环，继续下一次</li>
+</ul>
+</li>
+<li><p>return</p>
+<ul>
+<li>函数返回值</li>
+<li>注意：如果不在函数内，千万不要使用return</li>
+</ul>
+</li>
+<li><p>arguments</p>
+<ul>
+<li>一个伪数组对象</li>
+<li>该对象中以下标的方式存储了函数调用时传递进行的实参</li>
+<li>该对象还有一个length属性用来获知实参个数</li>
+<li>使用场景：对于参数不定的情况可以使用arguments</li>
+</ul>
+</li>
+<li><p>throw</p>
+<ul>
+<li>作用：抛出自定义错误，可以在必要的时候中断程序执行</li>
+</ul>
+</li>
+<li><p>try,catch</p>
+<ul>
+<li>作用：捕获错误，然后解决，可以防止程序的报错中断</li>
+</ul>
+</li>
+</ul>
+<h1 id="类型相等比较"><a href="#类型相等比较" class="headerlink" title="类型相等比较"></a>类型相等比较</h1><blockquote>
+<p>约定：空数据类型表示null和undefined两种数据类型。</p>
+</blockquote>
+<ul>
+<li>任何数据和NaN相比结果都为false</li>
+<li>null等于undefined</li>
+<li>null和非空类型相比结果为false</li>
+<li>undefined和非空类型相比结果为false</li>
+<li>数字和非空类型比较，先转换为数字再比较</li>
+<li>布尔和非空类型比较，先转换为数字再比较</li>
+<li>对象与对象比较内存地址</li>
+<li>对象与字符串，对象先转换为字符串再比较</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>类型</th>
+<th>规律</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NaN</td>
+<td>任意类型</td>
+<td>false</td>
+</tr>
+<tr>
+<td>null</td>
+<td>undefined</td>
+<td>true</td>
+</tr>
+<tr>
+<td>null</td>
+<td>非空类型</td>
+<td>false</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>非空类型</td>
+<td>false</td>
+</tr>
+<tr>
+<td>数字</td>
+<td>非空类型</td>
+<td>转换为数字再比较</td>
+</tr>
+<tr>
+<td>布尔</td>
+<td>非空类型</td>
+<td>转换为数字再比较</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>对象</td>
+<td>内存地址比较</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>字符串</td>
+<td>转换为字符串再比较</td>
+</tr>
+</tbody>
+</table>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><ul>
+<li>任何事物都可以看作是对象。</li>
+</ul>
+<h4 id="面向对象与面向过程的概念"><a href="#面向对象与面向过程的概念" class="headerlink" title="面向对象与面向过程的概念"></a>面向对象与面向过程的概念</h4><ul>
+<li>面向过程<ul>
+<li>凡是自己亲力亲为，自己按部就班的解决现有问题。</li>
+</ul>
+</li>
+<li>面向对象<ul>
+<li>自己充当一个指挥者的角色，指挥更加专业的对象帮我解决问题。</li>
+</ul>
+</li>
+<li>联系<ul>
+<li>面向对象仍然离不开面向过程，可以认为它是对面向过程更高一层的封装。</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h2><h4 id="字面量形式"><a href="#字面量形式" class="headerlink" title="字面量形式"></a>字面量形式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = &#123;&#125;;</span><br><span class="line">p.name = <span class="string">'中国人'</span>;</span><br><span class="line">p.age = <span class="string">'500'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="构造函数形式-gt-复用性更强"><a href="#构造函数形式-gt-复用性更强" class="headerlink" title="构造函数形式 ==&gt; 复用性更强"></a>构造函数形式 ==&gt; 复用性更强</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">'中国人'</span>, <span class="number">500</span>);</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'中国人2'</span>, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>如果一个函数配合new关键字创建对象，那么这个函数也叫构造函数<ul>
+<li>构造函数与普通函数本质上是一样的</li>
+<li>编写构造函数时，首字母通常会大写，但不是必须的(类似变量驼峰命名法)</li>
+</ul>
+</li>
+</ul>
+<h4 id="返回值特点"><a href="#返回值特点" class="headerlink" title="返回值特点"></a>返回值特点</h4><ul>
+<li>如果构造函数没有return语句，那么new它，得到一个新实例</li>
+<li>如果构造函数return了一些基本类型数据，那么new它，得到一个新实例</li>
+<li>如果构造函数return了一个对象，那么new它，得到return的对象</li>
+</ul>
+<h2 id="类与实例的概念"><a href="#类与实例的概念" class="headerlink" title="类与实例的概念"></a>类与实例的概念</h2><h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><ul>
+<li>类是对一些具有相同特征与特性事物的抽象描述<ul>
+<li>比如动物类的定义是比较抽象的，它抽取了动物与动物之间的相同特征。</li>
+<li>同样植物类、哺乳动物类、人类的定义也都是比较抽象的，也是提取他们的共同特征而形成的定义，这就是类。</li>
+<li>在js中，可以把构造函数看作是类</li>
+</ul>
+</li>
+</ul>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><ul>
+<li>实实在在的具体事物就是某个类的实例。<ul>
+<li>比如我家的旺财，是狗类的实例</li>
+<li>我的弟弟妹妹，是人类的实例</li>
+<li>在js中，通过构造函数创建的对象就是实例</li>
+</ul>
+</li>
+</ul>
+<h4 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h4><ul>
+<li>如果把类看作是模子，实例则是模子印出来的东西。</li>
+</ul>
+<h4 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h4><ul>
+<li>对象的类型就是其构造函数的名字<ul>
+<li>比如数组是Array类型的对象，日期是Date类型的对象</li>
+<li>Array和Date就是其构造函数的名字</li>
+<li>那么通过Person创建一个实例，那么这个实例就是Person类型的对象。</li>
+</ul>
+</li>
+</ul>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><ul>
+<li>原型是一个对象，它的属性可以供其他对象共享<ul>
+<li>js中有很多原型对象，基本每个对象都有属于自己的原型</li>
+<li>原型对象的存在可以大大的节省内存开销</li>
+</ul>
+</li>
+</ul>
+<h4 id="原型的使用"><a href="#原型的使用" class="headerlink" title="原型的使用"></a>原型的使用</h4><ul>
+<li>每个构造函数都有一个prototype属性，可以给其赋值</li>
+<li>然后通过构造函数创建的实例就可以共享其属性与方法</li>
+</ul>
+<h2 id="面向对象与面向过程优缺点"><a href="#面向对象与面向过程优缺点" class="headerlink" title="面向对象与面向过程优缺点"></a>面向对象与面向过程优缺点</h2><h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><ul>
+<li>缺点<ul>
+<li>通常比面向过程消耗内存，因为有很多实例要存储</li>
+<li>前期开发比较缓慢，但是复用性强，后期开发与维护进度会逐渐加快</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>变量的管理比较清晰，可读性较高</li>
+<li>因为代码与对象间的职责比较清晰，所以后期可维护性和可扩展性也比较高</li>
+<li>复用性更强</li>
+</ul>
+</li>
+</ul>
+<h4 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h4><ul>
+<li>缺点<ul>
+<li>变量混乱，可读性较差</li>
+<li>通常有新需求出现，代码改动比较大，所以可维护性和可扩展性比较差</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>开发迅速，只要能解决当前问题即可</li>
+</ul>
+</li>
+</ul>
+<h2 id="面向对象3大特征"><a href="#面向对象3大特征" class="headerlink" title="面向对象3大特征"></a>面向对象3大特征</h2><ul>
+<li>封装性<ul>
+<li>对象可以把很多属性与方法集中在一起管理，就是js的封装性。</li>
+</ul>
+</li>
+<li>继承性<ul>
+<li>对象可以使用其原型对象的属性与方法，就是js的继承性。</li>
+</ul>
+</li>
+<li>多态性<ul>
+<li>js没有多态。如果非要说，那么对象形态、继承关系可以随时被改变，可以认为是js的多态性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="面向对象的书写过程"><a href="#面向对象的书写过程" class="headerlink" title="面向对象的书写过程"></a>面向对象的书写过程</h2><ul>
+<li>根据需求提取解决该问题所需的对象<ul>
+<li>比如我要逛街，需要一个导购，需要一个保镖，需要一个女朋友</li>
+</ul>
+</li>
+<li>编写每一个对象所对应的构造函数<ul>
+<li>构造函数可以重复性创建实例，因为我可能需要多个保镖</li>
+<li>function Person() {}</li>
+</ul>
+</li>
+<li>抽取对象所需的属性<ul>
+<li>就是该对象应该拥有的特征，比如人有名称、年龄、性别、四肢、双眼。</li>
+<li>function Person(name) { this.name = name; }</li>
+</ul>
+</li>
+<li>抽取对象所需的方法<ul>
+<li>就是该对象应该拥有的特性，比如人会学习创造，狗会看门逗你笑</li>
+<li>Person.prototype.study = function(){};</li>
+</ul>
+</li>
+<li>根据写好的构造函数创建实例，调用属性方法解决实际需求<ul>
+<li>就是调度实例干事</li>
+<li>var p = new Person(); p.study();</li>
+</ul>
+</li>
+</ul>
+<h2 id="原型其他"><a href="#原型其他" class="headerlink" title="原型其他"></a>原型其他</h2><h4 id="谁有prototype与proto"><a href="#谁有prototype与proto" class="headerlink" title="谁有prototype与proto"></a>谁有prototype与<strong>proto</strong></h4><ul>
+<li>每个函数都有prototype属性</li>
+<li>每个对象都有<strong>proto</strong>属性</li>
+<li>函数比较特殊，即是函数又是对象，所以prototype与<strong>proto</strong>都有</li>
+</ul>
+<h4 id="prototype与proto联系"><a href="#prototype与proto联系" class="headerlink" title="prototype与proto联系"></a>prototype与<strong>proto</strong>联系</h4><ul>
+<li>通过构造函数创建的实例</li>
+<li>当前构造函数的prototype属性指向谁，实例的<strong>proto</strong>属性就指向谁</li>
+</ul>
+<h4 id="如何得到一个对象继承的原型"><a href="#如何得到一个对象继承的原型" class="headerlink" title="如何得到一个对象继承的原型"></a>如何得到一个对象继承的原型</h4><ul>
+<li>通过<strong>proto</strong>属性（但是它是非标准属性，不建议开发中使用）</li>
+<li>通过constructor属性得到对象的构造函数，再访问其prototype得到原型</li>
+</ul>
+<h4 id="创建对象时内在的4个步骤"><a href="#创建对象时内在的4个步骤" class="headerlink" title="创建对象时内在的4个步骤"></a>创建对象时内在的4个步骤</h4><ul>
+<li>创建一个新实例(本质上就是开辟了一块内存空间)</li>
+<li>设置新对象的原型<ul>
+<li>给新实例设置<strong>proto</strong>属性值</li>
+<li>这个值与构造函数的prototype属性有关</li>
+<li>赋值过程相当于这样：新实例.<strong>proto</strong> = 构造函数.prototype</li>
+</ul>
+</li>
+<li>执行构造函数，执行时设置其this指向新实例</li>
+<li>返回新实例的地址</li>
+</ul>
+<h4 id="对象的属性访问规则"><a href="#对象的属性访问规则" class="headerlink" title="对象的属性访问规则"></a>对象的属性访问规则</h4><ul>
+<li>优先从自身查找</li>
+<li>找不到就去原型找</li>
+<li>还找不到继续去原型的原型找</li>
+<li>直到终点，终点也没有返回undefined</li>
+</ul>
+<h4 id="对象的属性赋值"><a href="#对象的属性赋值" class="headerlink" title="对象的属性赋值"></a>对象的属性赋值</h4><ul>
+<li>给一个对象的属性赋值</li>
+<li>如果之前没有该属性那么就是新增，有就是修改</li>
+<li>对象的属性赋值只影响自己，不会对其他对象和原型对象造成影响</li>
+</ul>
+<h2 id="原型常见书写方式"><a href="#原型常见书写方式" class="headerlink" title="原型常见书写方式"></a>原型常见书写方式</h2><h4 id="1、默认原型"><a href="#1、默认原型" class="headerlink" title="1、默认原型"></a>1、默认原型</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">P</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">P.prototype.fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> P();</span><br></pre></td></tr></table></figure>
+<h4 id="2、置换原型"><a href="#2、置换原型" class="headerlink" title="2、置换原型"></a>2、置换原型</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">P</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">P.prototype = &#123;</span><br><span class="line">	<span class="keyword">constructor</span>: P,</span><br><span class="line">	fun: function()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> P();</span><br></pre></td></tr></table></figure>
+<h4 id="3、extend复制扩展"><a href="#3、extend复制扩展" class="headerlink" title="3、extend复制扩展"></a>3、extend复制扩展</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">P</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">extend(P.prototype, &#123;&#125;, &#123;</span><br><span class="line">	fun: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;, &#123;</span><br><span class="line">	fun2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> P();</span><br></pre></td></tr></table></figure>
+<h4 id="4、Object-create"><a href="#4、Object-create" class="headerlink" title="4、Object.create"></a>4、Object.create</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> proObj = &#123;</span><br><span class="line">	fun: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="built_in">Object</span>.create(proObj);</span><br></pre></td></tr></table></figure>
+<h4 id="实现属性复制函数封装"><a href="#实现属性复制函数封装" class="headerlink" title="实现属性复制函数封装"></a>实现属性复制函数封装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function extend() &#123;</span><br><span class="line">	var target = arguments[0];</span><br><span class="line">	for(var i = 1, len = arguments.length; i &lt; len; i++) &#123;</span><br><span class="line">		for(var key in arguments[i]) &#123;</span><br><span class="line">			target[key] = arguments[i][key];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类成员与实例成员"><a href="#类成员与实例成员" class="headerlink" title="类成员与实例成员"></a>类成员与实例成员</h4><ul>
+<li>类成员(静态成员)<ul>
+<li>添加给类自己的属性与方法</li>
+</ul>
+</li>
+<li>实例成员<ul>
+<li>添加给实例自己的属性与方法</li>
+<li>原型上供实例使用的属性与方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>一个对象继承的所有由<strong>proto</strong>属性串联在一起的对象，称为该对象的原型链。</li>
+</ul>
+<h4 id="对象原型链的研究方案"><a href="#对象原型链的研究方案" class="headerlink" title="对象原型链的研究方案"></a>对象原型链的研究方案</h4><ul>
+<li>先通过<strong>proto</strong>得到对象的原型</li>
+<li>然后访问这个原型的constructor属性，确定该原型的身份</li>
+<li>然后继续按照上诉两个步骤，往上研究原型，最终就得到了对象的原型链。</li>
+</ul>
+<h4 id="规律与常见对象原型链结构"><a href="#规律与常见对象原型链结构" class="headerlink" title="规律与常见对象原型链结构"></a>规律与常见对象原型链结构</h4><ul>
+<li>原型链的终点统一是Object.prototype</li>
+<li>对象的原型和该对象的类型有关<ul>
+<li>比如Person的实例，原型是Person.prototype</li>
+<li>比如Animal的实例，原型是Animal.prototype</li>
+</ul>
+<ul>
+<li>[]的原型链结构<ul>
+<li>[] ==&gt; Array.prototype ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+<li>{}的原型链结构<ul>
+<li>{} ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+<li>/abc/的原型链结构<ul>
+<li>/abc/ ==&gt; RegExp.prototype ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+<li>Person的原型链结构<ul>
+<li>Person ==&gt; Function.prototype ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+<li>Function的原型链结构<ul>
+<li>Function ==&gt; Function.prototype ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+<li>Object的原型链结构<ul>
+<li>Object ==&gt; Function.prototype ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>构造函数默认的prototype，它统一都继承Object.prototype<ul>
+<li>比如Person.prototype，原型是Object.prototype</li>
+<li>比如Animal.prototype，原型是Object.prototype</li>
+</ul>
+</li>
+<li>通过这个规则，可以自由猜想出任意一个实例所有的原型<ul>
+<li>比如Book的实例，其原型结构为： Book实例 ==&gt; Book.protoype ==&gt; Object.prototype ==&gt; null</li>
+</ul>
+</li>
+</ul>
+<h2 id="运算符与方法"><a href="#运算符与方法" class="headerlink" title="运算符与方法"></a>运算符与方法</h2><h4 id="in-–-运算符"><a href="#in-–-运算符" class="headerlink" title="in – 运算符"></a>in – 运算符</h4><ul>
+<li>作用：判断能否使用某个属性（包含继承的属性）</li>
+<li>语法：属性名 in 对象</li>
+<li>返回值：boolean</li>
+</ul>
+<h4 id="hasOwnProperty-–-方法"><a href="#hasOwnProperty-–-方法" class="headerlink" title="hasOwnProperty – 方法"></a>hasOwnProperty – 方法</h4><ul>
+<li>作用：判断一个属性是不是自己的（不包含继承的属性）</li>
+<li>语法：对象.hasOwnProperty(属性名)</li>
+<li>返回值：boolean</li>
+</ul>
+<h4 id="关于for-in遍历的补充"><a href="#关于for-in遍历的补充" class="headerlink" title="关于for in遍历的补充"></a>关于for in遍历的补充</h4><ul>
+<li>for in可以遍历对象继承的属性，不过一些内置的属性是不可遍历的。</li>
+</ul>
+<h4 id="delete-–-运算符"><a href="#delete-–-运算符" class="headerlink" title="delete – 运算符"></a>delete – 运算符</h4><ul>
+<li>作用：删除对象的属性</li>
+<li>语法：delete 对象.属性名 || delete 对象[属性名]</li>
+<li>返回值：boolean</li>
+</ul>
+<h4 id="instanceof-–-运算符"><a href="#instanceof-–-运算符" class="headerlink" title="instanceof – 运算符"></a>instanceof – 运算符</h4><ul>
+<li>作用：判断一个对象的原型链中是否含有某个构造函数的prototype</li>
+<li>语法：对象 instanceof 构造函数</li>
+<li>返回值：boolean</li>
+</ul>
+<h4 id="Function-–-内置构造函数"><a href="#Function-–-内置构造函数" class="headerlink" title="Function – 内置构造函数"></a>Function – 内置构造函数</h4><ul>
+<li>作用：创建函数实例</li>
+<li>语法：new Function(形参1，形参2，…，代码体)</li>
+<li>返回值：新创建的函数实例</li>
+<li>特点：能够把字符串当做js脚本执行</li>
+</ul>
+<h4 id="eval-–-内置的全局函数"><a href="#eval-–-内置的全局函数" class="headerlink" title="eval – 内置的全局函数"></a>eval – 内置的全局函数</h4><ul>
+<li>作用：执行字符串代码</li>
+<li>语法：eval(字符串代码)</li>
+</ul>
+<h2 id="函数四种调用模式"><a href="#函数四种调用模式" class="headerlink" title="函数四种调用模式"></a>函数四种调用模式</h2><blockquote>
+<p>谨记：函数调用时，内部的this的值和这个函数定义无关，和运行(调用)有关。</p>
+</blockquote>
+<h3 id="1、函数调用模式-gt-函数名"><a href="#1、函数调用模式-gt-函数名" class="headerlink" title="1、函数调用模式 ==&gt; 函数名()"></a>1、函数调用模式 ==&gt; 函数名()</h3><p>这种方式调用，函数运行时内部的this指向全局对象window。</p>
+<h3 id="2、方法调用模式-gt-对象-函数名"><a href="#2、方法调用模式-gt-对象-函数名" class="headerlink" title="2、方法调用模式 ==&gt; 对象.函数名()"></a>2、方法调用模式 ==&gt; 对象.函数名()</h3><p>这种方式调用，函数运行时内部的this指向调用该函数的对象。<br>(dom中事件绑定的函数，就是这种调用方式，所以this指向对应的dom对象)</p>
+<h3 id="3、构造函数调用模式-gt-new-构造函数"><a href="#3、构造函数调用模式-gt-new-构造函数" class="headerlink" title="3、构造函数调用模式 ==&gt; new 构造函数()"></a>3、构造函数调用模式 ==&gt; new 构造函数()</h3><p>这种方式调用，函数运行时内部的this指向新创建的实例对象。</p>
+<h3 id="4、上下文调用模式-间接调用模式"><a href="#4、上下文调用模式-间接调用模式" class="headerlink" title="4、上下文调用模式(间接调用模式)"></a>4、上下文调用模式(间接调用模式)</h3><ol>
+<li>函数名.call(this, arg1, arg2);</li>
+<li>函数名.apply(this, [arg1, arg2]);<br>这种方式调用，函数运行时内部的this指向call或apply传入的第一个参数；<br>如果没有传第一个参数，或者第一个参数为null、undefined，那么this统一指向window。</li>
+</ol>
+<h3 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h3><blockquote>
+<p>函数调用call和apply，实际上是间接调用自己;<br>例如fn.call()，表面上看是调用call方法，<br>实际上连fn自己也被调用了，和fn()直接调用的区别是，this变了。</p>
+<ul>
+<li>都来自Function.prototype，所以所有的函数都可以使用。</li>
+<li>相同之处是都可以改变函数this的指向</li>
+<li>不同之处是传参的方式</li>
+</ul>
+</blockquote>
+<h3 id="call和apply方法借用的原理"><a href="#call和apply方法借用的原理" class="headerlink" title="call和apply方法借用的原理"></a>call和apply方法借用的原理</h3><ul>
+<li>如果一个方法内部操作的是this，那么我们就可以通过call或apply指定该方法this，<br>this改变成谁，那么该方法最终操作的就是谁。</li>
+<li>如果一个方法内部没有操作this，那么是无法借用的。</li>
+</ul>
+<h3 id="apply的技巧"><a href="#apply的技巧" class="headerlink" title="apply的技巧"></a>apply的技巧</h3><ul>
+<li>apply可以把真数组或者伪数组平铺，然后传递给函数。</li>
+<li>利用这个特征，可以很方便的对数组或伪数组进行传递操作。</li>
+</ul>
+<h3 id="call和apply使用技巧"><a href="#call和apply使用技巧" class="headerlink" title="call和apply使用技巧"></a>call和apply使用技巧</h3><ol>
+<li><p>toString使用<br>var dateType = Object.prototype.toString.call(date).slice(8, -1);<br>var dateType = ({}).toString.call(date).slice(8, -1);  // 等价于上面</p>
+</li>
+<li><p>借用数组的push方法，来操作arguments(arguments不能直接使用数组的方法)<br>Array.prototype.push.call(arguments, 1);<br>[].pop.call(arguments);</p>
+</li>
+<li><p>通过伪数组获取一个真数据(获取后，伪数组不会被改变。本质上，是把伪数组中的数据存到一个真数组里面了)<br>var argArr = [].slice.call(arguments);</p>
+</li>
+<li><p>属性继承(借用父类构造函数，来给子类的实例添加属性，相当于复用了父类中的代码)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 人类</span><br><span class="line">function Person(name, age) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">// 学生类</span><br><span class="line">function Student(name, age) &#123;</span><br><span class="line">    // 因为所有的学生，都是人类，所以人类的属性学生一定有，</span><br><span class="line">    // 为了代码复用，所以有如下代码</span><br><span class="line">    //Person.call(this, name, age);  </span><br><span class="line">    Person.apply(this, arguments);  // 上下两种方式等价</span><br><span class="line">&#125;</span><br><span class="line">var stud = new Student();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>变量的有效范围。</li>
+</ul>
+<h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><ul>
+<li>在全局都有效的变量。</li>
+<li>定义方式：函数外定义。</li>
+<li>生命周期：从定义开始，到页面被卸载结束。</li>
+</ul>
+<h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><ul>
+<li>只在局部有效的变量。</li>
+<li>定义方式：函数内定义。</li>
+<li>生命周期：一般情况下，是从定义开始，到函数执行完毕结束。</li>
+</ul>
+<h4 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h4><ul>
+<li>只有函数才可以产生新的作用域</li>
+<li>只有函数可以限定变量的有效范围</li>
+</ul>
+<h4 id="块级作用域-gt-js没有"><a href="#块级作用域-gt-js没有" class="headerlink" title="块级作用域 ==&gt; js没有"></a>块级作用域 ==&gt; js没有</h4><ul>
+<li>凡是代码块就可以产生新的作用域</li>
+<li>凡是代码块就可以限定变量的有效范围</li>
+</ul>
+<h4 id="词法作用域-静态作用域"><a href="#词法作用域-静态作用域" class="headerlink" title="词法作用域(静态作用域)"></a>词法作用域(静态作用域)</h4><ul>
+<li>说的是变量的查找规则，特点是变量查找与函数定义有关，与调用无关<ul>
+<li>先在当前作用域查找</li>
+<li>找不到就去定义该函数的作用域找</li>
+<li>一直找到全局作用域为止，全局也没有则报错</li>
+</ul>
+</li>
+</ul>
+<h4 id="作用域的产生"><a href="#作用域的产生" class="headerlink" title="作用域的产生"></a>作用域的产生</h4><ul>
+<li>函数可以被多次重复调用，调用一次就会产生一个新的作用域。</li>
+</ul>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><ul>
+<li>函数在定义的时候，将来它执行时的上级作用域就被确定好了，上级作用域可能还有上级，函数所有的上级作用域称之为作用域链。</li>
+<li>一个函数作用域可以访问的所有上级作用域，称为它的作用域链。</li>
+</ul>
+<h4 id="垃圾回收机制原则"><a href="#垃圾回收机制原则" class="headerlink" title="垃圾回收机制原则"></a>垃圾回收机制原则</h4><ul>
+<li>一个对象没有被其他变量或者属性引用，那么就会被释放。<ul>
+<li>同时还要保证该对象能够被使用，对于那些无法使用，又存在循环引用的对象，也会被释放。</li>
+</ul>
+</li>
+<li>一个局部变量没有被其他函数引用，那么就会被释放。</li>
+</ul>
+<h4 id="注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下"><a href="#注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下" class="headerlink" title="注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下"></a>注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下</h4><ul>
+<li><p>函数内的this，与函数的定义无关，与调用有关。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	fn: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="keyword">this</span>) &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn = obj.fn;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同一个fn，三种调用方式，this分别不同</span></span><br><span class="line">obj.fn(); <span class="comment">// obj</span></span><br><span class="line">fn();     <span class="comment">// window</span></span><br><span class="line"><span class="keyword">new</span> fn(); <span class="comment">// fn实例</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量的查找，与函数的定义有关，与调用无关。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a); <span class="comment">// 报错，自己找不到，去定义fn的全局找，所以这里和fn的定义有关，与fn的调用无关。</span></span><br><span class="line">&#125;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">	fn();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>在js中访问了自由变量的函数就是闭包</li>
+</ul>
+<h4 id="自由变量"><a href="#自由变量" class="headerlink" title="自由变量"></a>自由变量</h4><ul>
+<li>函数可访问的外部局部变量，称之为该函数的自由变量</li>
+</ul>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>闭包的自由变量生命周期会被拉长，与闭包的生命周期进行了捆绑</li>
+</ul>
+<h4 id="计数器案例"><a href="#计数器案例" class="headerlink" title="计数器案例"></a>计数器案例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCounter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        add: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            total++;</span><br><span class="line">        &#125;,</span><br><span class="line">        get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> total;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> counter = getCounter();</span><br><span class="line">counter.add();</span><br><span class="line">counter.get();</span><br><span class="line"><span class="keyword">var</span> counter2 = getCounter();</span><br><span class="line">counter2.add();</span><br><span class="line">counter2.get();</span><br></pre></td></tr></table></figure>
+<h4 id="缓存操作"><a href="#缓存操作" class="headerlink" title="缓存操作"></a>缓存操作</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cache = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cache = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        set: <span class="function"><span class="keyword">function</span>(<span class="params">key, val</span>) </span>&#123;</span><br><span class="line">            cache[key] = val;</span><br><span class="line">        &#125;,</span><br><span class="line">        get: <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> cache[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;());</span><br><span class="line">cache.set(<span class="string">'张锐'</span>, <span class="string">'中国人'</span>);</span><br><span class="line">cache.get(<span class="string">'张锐'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="for循环i面试题"><a href="#for循环i面试题" class="headerlink" title="for循环i面试题"></a>for循环i面试题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'第一句话'</span>, <span class="string">'第二句话'</span>, <span class="string">'第三句话'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(i), <span class="number">1000</span> * i + <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><ul>
+<li>可以理解为js解析引擎在逐行执行代码前，对一些特殊代码的预先执行。</li>
+<li>预解析过后代码才会从上到下逐行执行，但是预解析时已经定义的变量与函数，是不会重复定义的。</li>
+<li>预解析的本质就是变量对象初始化。</li>
+</ul>
+<h4 id="预解析做了两件事情"><a href="#预解析做了两件事情" class="headerlink" title="预解析做了两件事情"></a>预解析做了两件事情</h4><ul>
+<li>1、变量声明提升：检测到变量声明那就率先进行声明</li>
+<li>2、函数声明提升：检测到函数声明也率先进行声明</li>
+</ul>
+<h4 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h4><ul>
+<li>使用通过var定义的变量，才属于变量声明<ul>
+<li>例如：var a; 属于变量声明。</li>
+<li>例如：b = 10; 不属于变量声明。</li>
+</ul>
+</li>
+<li>var关键字可以通过逗号连续声明多个变量<ul>
+<li>例如：var a, b, c = 20, d = 30; </li>
+<li>a,b,c,d全部属于声明。</li>
+</ul>
+</li>
+<li>var关键字在声明变量的时候，可以给其赋值，如果赋值表达式中含有一些变量，这些变量不属于变量声明。<ul>
+<li>例如：var a = b = 10; </li>
+<li>其中a属于变量声明，b不属于。</li>
+</ul>
+</li>
+</ul>
+<h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><ul>
+<li>在js中，函数声明式写法比较单一，好区分。<ul>
+<li>要么定义在全局</li>
+<li>要么定义在另一个函数主体内</li>
+</ul>
+</li>
+</ul>
+<h4 id="预解析的特点"><a href="#预解析的特点" class="headerlink" title="预解析的特点"></a>预解析的特点</h4><ul>
+<li>在变量声明之前访问它不会报错</li>
+<li>在函数声明之前调用它不会报错</li>
+</ul>
+<h4 id="预解析相关细节"><a href="#预解析相关细节" class="headerlink" title="预解析相关细节"></a>预解析相关细节</h4><ul>
+<li>js预解析分全局预解析与局部预解析，区别在于局部预解析在函数调用时发生。</li>
+<li><p>变量声明重名 – 最终只留一个</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 预解析后值保留一个变量a，值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数声明重名 – 保留后面的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(test); <span class="comment">// 预解析后test为打印2的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">1</span>) &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">2</span>) &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量与函数重名 – 保留函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(test); <span class="comment">// 预解析后test值为函数</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> test = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="函数执行时形参会优先执行"><a href="#函数执行时形参会优先执行" class="headerlink" title="函数执行时形参会优先执行"></a>函数执行时形参会优先执行</h4><ul>
+<li>形参定义与赋值优先于变量与函数声明。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a);  <span class="comment">// a函数</span></span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">200</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(a);  <span class="comment">// 200</span></span><br><span class="line">&#125;(<span class="number">100</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="函数表达式的名称"><a href="#函数表达式的名称" class="headerlink" title="函数表达式的名称"></a>函数表达式的名称</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数fnName的名字在外面无法访问，但是可以在函数内访问，</span></span><br><span class="line"><span class="comment">// 相当于自己的一个局部变量，值为自己的引用。</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> <span class="title">fnName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(fnName);  <span class="comment">// 里面可以访问</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(fnName);   <span class="comment">// 外面访问报错</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数的四种调用模式"><a href="#函数的四种调用模式" class="headerlink" title="函数的四种调用模式"></a>函数的四种调用模式</h2><h4 id="this的特点"><a href="#this的特点" class="headerlink" title="this的特点"></a>this的特点</h4><ul>
+<li>函数中的this，调用方式不同，指向不同</li>
+<li>this与调用有关，与定义无关</li>
+</ul>
+<h4 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h4><ul>
+<li>函数名() || (function(){}()) ==&gt; window</li>
+</ul>
+<h4 id="方法调用模式"><a href="#方法调用模式" class="headerlink" title="方法调用模式"></a>方法调用模式</h4><ul>
+<li>对象.方法名() || 对象<a href="">方法名</a> || 祖对象.父对象.子对象.方法名() ==&gt; 宿主对象</li>
+</ul>
+<h4 id="构造器调用模式"><a href="#构造器调用模式" class="headerlink" title="构造器调用模式"></a>构造器调用模式</h4><ul>
+<li>new 构造函数() || new 对象.构造函数() ==&gt; new出来的新实例</li>
+</ul>
+<h4 id="间接调用模式-上下文调用模式"><a href="#间接调用模式-上下文调用模式" class="headerlink" title="间接调用模式(上下文调用模式)"></a>间接调用模式(上下文调用模式)</h4><ul>
+<li>call<ul>
+<li>函数.call(指定的this，实参1，实参2，…)</li>
+<li>对象.方法.call(指定的this，实参1，实参2，…)</li>
+</ul>
+</li>
+<li>apply<ul>
+<li>函数.apply(指定的this，[实参1，实参2，…])</li>
+<li>函数.apply(指定的this，{0: 实参1， 1：实参2， length: 2})</li>
+<li>对象.方法.apply(指定的this，[实参1，实参2，…])</li>
+</ul>
+</li>
+</ul>
+<h4 id="call和apply的使用范例"><a href="#call和apply的使用范例" class="headerlink" title="call和apply的使用范例"></a>call和apply的使用范例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法借用 -- 给伪数组对象添加属性值</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Array</span>.protype.push.call(obj, <span class="string">'要添加的第一个值'</span>, <span class="string">'要添加的第二个值'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法借用 -- 获取对象类型</span></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>).slice(<span class="number">8</span>, <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法借用 -- 借用父类构造函数给子类实例添加属性</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	Parent.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Son(<span class="string">'火星人'</span>, <span class="number">999</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// apply拆分数组或伪数组值依次传递给函数</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">40</span>];</span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, arr)</span><br></pre></td></tr></table></figure>
+<h2 id="ES5数组新增的3个方法"><a href="#ES5数组新增的3个方法" class="headerlink" title="ES5数组新增的3个方法"></a>ES5数组新增的3个方法</h2><h4 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h4><ul>
+<li>作用：帮我们遍历数组，每遍历到一个值，就会调用一次回调，把这个值与它的下标传递过去</li>
+<li>语法：数组.forEach(function(v, i){ console.log(‘使用forEach帮我们遍历好的值与下标’) })</li>
+<li>返回值：undefined</li>
+</ul>
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><ul>
+<li>作用：可以用来代替forEach，但是map可以接收回调的返回值，最终通过一组数据映射为回调返回的另外一组数据</li>
+<li>语法：var mapArr = 数组.map(function(v, i){ return v * v })</li>
+<li>返回值：回调所有的返回值组成的新数组</li>
+</ul>
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><ul>
+<li>作用：可以用来代替forEach，但是还可以过滤数组中的值</li>
+<li>语法：var filterArr = 数组.filter(function(v, i){ if(v % 2 ==0){ return true; } })</li>
+<li>返回值：所有返回回调返回true的对应值组成的新数组</li>
+</ul>
+<h2 id="call-amp-apply的补充"><a href="#call-amp-apply的补充" class="headerlink" title="call&amp;apply的补充"></a>call&amp;apply的补充</h2><ul>
+<li>如果不传参 ==&gt; this指向window</li>
+<li>传null ==&gt; this指向window</li>
+<li>传undefined ==&gt; this指向window</li>
+<li>传123 ==&gt; this指向123的包装类型对象(Number对象)</li>
+<li>传’abc’ ==&gt; this指向’abc’的包装类型对象(String对象)</li>
+<li>传true ==&gt; this指向true的包装类型对象(Boolean对象)</li>
+<li>传对象 ==&gt; this指向传入的对象</li>
+</ul>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><ul>
+<li>ES5新增的一个特性，使用该特性可以让js以一种新的模式运行js脚本。</li>
+<li>该模式下可以强制我们抛弃那些不推荐不友好的写法</li>
+<li>该模式下可以让js之前的一些设计不太合理的api表现的合理一些</li>
+<li>该模式下可以让js拥有一些新的特性，比如ES6/ES7规范中定义的某些语法，必须在严格模式下才有效</li>
+</ul>
+<h4 id="严格模式的分类"><a href="#严格模式的分类" class="headerlink" title="严格模式的分类"></a>严格模式的分类</h4><ul>
+<li>全局模式<ul>
+<li>在全局代码的最上面书写一句话’use strict’;</li>
+<li>使用该模式，所有的代码都按照严格模式执行</li>
+</ul>
+</li>
+<li>局部模式<ul>
+<li>在函数内部的最上面书写一句话’use strict’;</li>
+<li>使用该模式，只有该函数内的代码才会按照严格模式执行</li>
+</ul>
+</li>
+</ul>
+<h4 id="需要记住的几条严格模式规则"><a href="#需要记住的几条严格模式规则" class="headerlink" title="需要记住的几条严格模式规则"></a>需要记住的几条严格模式规则</h4><ul>
+<li>定义变量必须使用var</li>
+<li>函数调用模式this为undefined</li>
+<li>真正实现了call谁this就为谁</li>
+</ul>
+<h4 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>不能使用with语句</li>
+<li>废除函数.caller与arguments.callee</li>
+<li>eval拥有了单独的作用域</li>
+<li>……</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/15/git/" rel="next" title="git">
+                <i class="fa fa-chevron-left"></i> git
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/14/cdn学习/" rel="prev" title="cdn学习">
+                cdn学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png"
+                alt="Devin_Chen" />
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript重点"><span class="nav-number">1.</span> <span class="nav-text">JavaScript重点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js有几种数据类型？"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">js有几种数据类型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js提供了哪些内置对象？"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">js提供了哪些内置对象？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型与引用数据类型的存储与赋值"><span class="nav-number">1.2.</span> <span class="nav-text">基本数据类型与引用数据类型的存储与赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用数据类型"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">引用数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于引用数据类型的考题补充"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">关于引用数据类型的考题补充</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">1.3.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符-amp-amp"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">逻辑运算符 &amp;&amp; || !</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相等运算符"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">相等运算符 == ===</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句"><span class="nav-number">1.4.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分支语句"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">分支语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环语句"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">循环语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">1.5.</span> <span class="nav-text">关键字</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型相等比较"><span class="nav-number">2.</span> <span class="nav-text">类型相等比较</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象与面向过程的概念"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">面向对象与面向过程的概念</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象的方式"><span class="nav-number">2.2.</span> <span class="nav-text">创建对象的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字面量形式"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">字面量形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数形式-gt-复用性更强"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">构造函数形式 ==&gt; 复用性更强</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">2.3.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-1"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回值特点"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">返回值特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类与实例的概念"><span class="nav-number">2.4.</span> <span class="nav-text">类与实例的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类"><span class="nav-number">2.4.0.1.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">2.4.0.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联系"><span class="nav-number">2.4.0.3.</span> <span class="nav-text">联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象类型"><span class="nav-number">2.4.0.4.</span> <span class="nav-text">对象类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">2.5.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型的使用"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">原型的使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象与面向过程优缺点"><span class="nav-number">2.6.</span> <span class="nav-text">面向对象与面向过程优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象"><span class="nav-number">2.6.0.1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向过程"><span class="nav-number">2.6.0.2.</span> <span class="nav-text">面向过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象3大特征"><span class="nav-number">2.7.</span> <span class="nav-text">面向对象3大特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的书写过程"><span class="nav-number">2.8.</span> <span class="nav-text">面向对象的书写过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型其他"><span class="nav-number">2.9.</span> <span class="nav-text">原型其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#谁有prototype与proto"><span class="nav-number">2.9.0.1.</span> <span class="nav-text">谁有prototype与proto</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype与proto联系"><span class="nav-number">2.9.0.2.</span> <span class="nav-text">prototype与proto联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何得到一个对象继承的原型"><span class="nav-number">2.9.0.3.</span> <span class="nav-text">如何得到一个对象继承的原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建对象时内在的4个步骤"><span class="nav-number">2.9.0.4.</span> <span class="nav-text">创建对象时内在的4个步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的属性访问规则"><span class="nav-number">2.9.0.5.</span> <span class="nav-text">对象的属性访问规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的属性赋值"><span class="nav-number">2.9.0.6.</span> <span class="nav-text">对象的属性赋值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型常见书写方式"><span class="nav-number">2.10.</span> <span class="nav-text">原型常见书写方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、默认原型"><span class="nav-number">2.10.0.1.</span> <span class="nav-text">1、默认原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、置换原型"><span class="nav-number">2.10.0.2.</span> <span class="nav-text">2、置换原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、extend复制扩展"><span class="nav-number">2.10.0.3.</span> <span class="nav-text">3、extend复制扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Object-create"><span class="nav-number">2.10.0.4.</span> <span class="nav-text">4、Object.create</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现属性复制函数封装"><span class="nav-number">2.10.0.5.</span> <span class="nav-text">实现属性复制函数封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类成员与实例成员"><span class="nav-number">2.10.0.6.</span> <span class="nav-text">类成员与实例成员</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">2.11.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-2"><span class="nav-number">2.11.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象原型链的研究方案"><span class="nav-number">2.11.0.2.</span> <span class="nav-text">对象原型链的研究方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规律与常见对象原型链结构"><span class="nav-number">2.11.0.3.</span> <span class="nav-text">规律与常见对象原型链结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符与方法"><span class="nav-number">2.12.</span> <span class="nav-text">运算符与方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#in-–-运算符"><span class="nav-number">2.12.0.1.</span> <span class="nav-text">in – 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hasOwnProperty-–-方法"><span class="nav-number">2.12.0.2.</span> <span class="nav-text">hasOwnProperty – 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于for-in遍历的补充"><span class="nav-number">2.12.0.3.</span> <span class="nav-text">关于for in遍历的补充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete-–-运算符"><span class="nav-number">2.12.0.4.</span> <span class="nav-text">delete – 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof-–-运算符"><span class="nav-number">2.12.0.5.</span> <span class="nav-text">instanceof – 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-–-内置构造函数"><span class="nav-number">2.12.0.6.</span> <span class="nav-text">Function – 内置构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-–-内置的全局函数"><span class="nav-number">2.12.0.7.</span> <span class="nav-text">eval – 内置的全局函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数四种调用模式"><span class="nav-number">2.13.</span> <span class="nav-text">函数四种调用模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、函数调用模式-gt-函数名"><span class="nav-number">2.13.1.</span> <span class="nav-text">1、函数调用模式 ==&gt; 函数名()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、方法调用模式-gt-对象-函数名"><span class="nav-number">2.13.2.</span> <span class="nav-text">2、方法调用模式 ==&gt; 对象.函数名()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、构造函数调用模式-gt-new-构造函数"><span class="nav-number">2.13.3.</span> <span class="nav-text">3、构造函数调用模式 ==&gt; new 构造函数()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、上下文调用模式-间接调用模式"><span class="nav-number">2.13.4.</span> <span class="nav-text">4、上下文调用模式(间接调用模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply"><span class="nav-number">2.13.5.</span> <span class="nav-text">call和apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply方法借用的原理"><span class="nav-number">2.13.6.</span> <span class="nav-text">call和apply方法借用的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply的技巧"><span class="nav-number">2.13.7.</span> <span class="nav-text">apply的技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply使用技巧"><span class="nav-number">2.13.8.</span> <span class="nav-text">call和apply使用技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">2.14.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-3"><span class="nav-number">2.14.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量"><span class="nav-number">2.14.0.2.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部变量"><span class="nav-number">2.14.0.3.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数作用域"><span class="nav-number">2.14.0.4.</span> <span class="nav-text">函数作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级作用域-gt-js没有"><span class="nav-number">2.14.0.5.</span> <span class="nav-text">块级作用域 ==&gt; js没有</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词法作用域-静态作用域"><span class="nav-number">2.14.0.6.</span> <span class="nav-text">词法作用域(静态作用域)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域的产生"><span class="nav-number">2.14.0.7.</span> <span class="nav-text">作用域的产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域链"><span class="nav-number">2.14.0.8.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垃圾回收机制原则"><span class="nav-number">2.14.0.9.</span> <span class="nav-text">垃圾回收机制原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下"><span class="nav-number">2.14.0.10.</span> <span class="nav-text">注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">2.15.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-4"><span class="nav-number">2.15.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自由变量"><span class="nav-number">2.15.0.2.</span> <span class="nav-text">自由变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">2.15.0.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器案例"><span class="nav-number">2.15.0.4.</span> <span class="nav-text">计数器案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存操作"><span class="nav-number">2.15.0.5.</span> <span class="nav-text">缓存操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for循环i面试题"><span class="nav-number">2.15.0.6.</span> <span class="nav-text">for循环i面试题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预解析"><span class="nav-number">2.16.</span> <span class="nav-text">预解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预解析做了两件事情"><span class="nav-number">2.16.0.1.</span> <span class="nav-text">预解析做了两件事情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量声明"><span class="nav-number">2.16.0.2.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数声明"><span class="nav-number">2.16.0.3.</span> <span class="nav-text">函数声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预解析的特点"><span class="nav-number">2.16.0.4.</span> <span class="nav-text">预解析的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预解析相关细节"><span class="nav-number">2.16.0.5.</span> <span class="nav-text">预解析相关细节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数执行时形参会优先执行"><span class="nav-number">2.16.0.6.</span> <span class="nav-text">函数执行时形参会优先执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数表达式的名称"><span class="nav-number">2.16.0.7.</span> <span class="nav-text">函数表达式的名称</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的四种调用模式"><span class="nav-number">2.17.</span> <span class="nav-text">函数的四种调用模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#this的特点"><span class="nav-number">2.17.0.1.</span> <span class="nav-text">this的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数调用模式"><span class="nav-number">2.17.0.2.</span> <span class="nav-text">函数调用模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用模式"><span class="nav-number">2.17.0.3.</span> <span class="nav-text">方法调用模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造器调用模式"><span class="nav-number">2.17.0.4.</span> <span class="nav-text">构造器调用模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间接调用模式-上下文调用模式"><span class="nav-number">2.17.0.5.</span> <span class="nav-text">间接调用模式(上下文调用模式)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call和apply的使用范例"><span class="nav-number">2.17.0.6.</span> <span class="nav-text">call和apply的使用范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5数组新增的3个方法"><span class="nav-number">2.18.</span> <span class="nav-text">ES5数组新增的3个方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#forEach"><span class="nav-number">2.18.0.1.</span> <span class="nav-text">forEach</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">2.18.0.2.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">2.18.0.3.</span> <span class="nav-text">filter</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call-amp-apply的补充"><span class="nav-number">2.19.</span> <span class="nav-text">call&amp;apply的补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">2.20.</span> <span class="nav-text">严格模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#严格模式的分类"><span class="nav-number">2.20.0.1.</span> <span class="nav-text">严格模式的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需要记住的几条严格模式规则"><span class="nav-number">2.20.0.2.</span> <span class="nav-text">需要记住的几条严格模式规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他-1"><span class="nav-number">2.20.0.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/04/25/js面向对象与高级/';
+          this.page.identifier = '2018/04/25/js面向对象与高级/';
+          this.page.title = 'js面向对象与高级';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
