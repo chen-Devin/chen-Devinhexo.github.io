@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="码农的精彩，是你我同在">
-<meta property="og:type" content="website">
-<meta property="og:title" content="展慧的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="JavaScript重点数据类型 简单数据类型（基本数据类型）  number string boolean undefined null   复杂数据类型（引用数据类型）  object    js有几种数据类型？ 6种  js提供了哪些内置对象？ Array、Math、Date、Error、RegExp、Function、String、Number、Boolean、Object、JSON  基">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js面向对象与高级">
+<meta property="og:url" content="http://yoursite.com/2018/04/08/js面向对象与高级/index.html">
 <meta property="og:site_name" content="展慧的博客">
-<meta property="og:description" content="码农的精彩，是你我同在">
+<meta property="og:description" content="JavaScript重点数据类型 简单数据类型（基本数据类型）  number string boolean undefined null   复杂数据类型（引用数据类型）  object    js有几种数据类型？ 6种  js提供了哪些内置对象？ Array、Math、Date、Error、RegExp、Function、String、Number、Boolean、Object、JSON  基">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-08T10:55:00.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="展慧的博客">
-<meta name="twitter:description" content="码农的精彩，是你我同在">
+<meta name="twitter:title" content="js面向对象与高级">
+<meta name="twitter:description" content="JavaScript重点数据类型 简单数据类型（基本数据类型）  number string boolean undefined null   复杂数据类型（引用数据类型）  object    js有几种数据类型？ 6种  js提供了哪些内置对象？ Array、Math、Date、Error、RegExp、Function、String、Number、Boolean、Object、JSON  基">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/08/js面向对象与高级/"/>
 
 
 
 
 
-  <title>展慧的博客</title>
+  <title>js面向对象与高级 | 展慧的博客</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,1149 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/08/canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/08/canvas/" itemprop="url">canvas</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-08T18:16:53+08:00">
-                2018-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/08/canvas/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/07/08/canvas/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="echarts：百度一款用于图表的库"><a href="#echarts：百度一款用于图表的库" class="headerlink" title="echarts：百度一款用于图表的库"></a>echarts：百度一款用于图表的库</h3><ul>
-<li>图表：折线图、饼图、柱状图</li>
-</ul>
-<h3 id="认识Canvas"><a href="#认识Canvas" class="headerlink" title="认识Canvas"></a>认识Canvas</h3><ul>
-<li>canvas是H5中新增的一款HTML标签<ul>
-<li>存在低版本浏览器兼容性问题(IE9以下不支持)</li>
-</ul>
-</li>
-<li>canvas标签元素的宽高<ul>
-<li>默认宽高(300*150)：水平方向上300像素，垂直方向上150像素</li>
-<li>设置宽高<ul>
-<li>通过样式来设置</li>
-<li>通过属性来设置<ul>
-<li>更推荐用属性来设置</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="快速入门-绘制一条直线"><a href="#快速入门-绘制一条直线" class="headerlink" title="快速入门-绘制一条直线"></a>快速入门-绘制一条直线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      &lt;html&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;canvas id=&quot;canvas&quot; width=&quot;800&quot; height=&quot;600&quot; style=&quot;border:1px solid red;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var canvas=document.getElementById(&quot;canvas&quot;);</span><br><span class="line"></span><br><span class="line">    var ctx=canvas.getContext(&quot;2d&quot;);</span><br><span class="line"></span><br><span class="line">    ctx.moveTo(50,50);</span><br><span class="line">    ctx.lineTo(300,300);</span><br><span class="line"></span><br><span class="line">    ctx.stroke();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span> <span class="attr">style</span>=<span class="string">"border:1px solid red;"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var canvas=document.getElementById("canvas");</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var ctx=canvas.getContext("2d");</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    ctx.moveTo(50,50);</span></span><br><span class="line"><span class="undefined">    ctx.lineTo(300,300);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    ctx.stroke();</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Canvas坐标轴"><a href="#Canvas坐标轴" class="headerlink" title="Canvas坐标轴"></a>Canvas坐标轴</h3><ul>
-<li>canvas标签左上角顶点是坐标原点(0,0)</li>
-<li>从原点往右是x轴正方向，从原点往左是x轴负方向</li>
-<li>从原点往下是y轴正方向，从原点往上是y轴负方向</li>
-</ul>
-<h3 id="设置线条颜色"><a href="#设置线条颜色" class="headerlink" title="设置线条颜色"></a>设置线条颜色</h3><ul>
-<li>strokeStyle：接受一个字符串的值（比如：”red” or “rgb(255,0,0)” “rgba(255,0,0,0.5)”）</li>
-</ul>
-<h3 id="beginPath-：开辟新路径"><a href="#beginPath-：开辟新路径" class="headerlink" title="beginPath()：开辟新路径"></a>beginPath()：开辟新路径</h3><h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><ul>
-<li><p>每一次调用stroke/fill方法都会对当前路径进行重绘</p>
-</li>
-<li><p>如果代码中没有beginPath过，那么当前代码都位于同一个路径下面</p>
-</li>
-<li><p>可以通过ctx.beginPath()实现开辟新路径，这样就会忘记之前绘制的路径，从而可以绘制不同状态的图形（如果有需要绘制多种不同状态的图形，可以beginPath多次）</p>
-</li>
-</ul>
-<h3 id="closePath-：闭合路径"><a href="#closePath-：闭合路径" class="headerlink" title="closePath()：闭合路径"></a>closePath()：闭合路径</h3><h3 id="线宽-lineWidth"><a href="#线宽-lineWidth" class="headerlink" title="线宽:lineWidth"></a>线宽:lineWidth</h3><h3 id="绘制虚线："><a href="#绘制虚线：" class="headerlink" title="绘制虚线："></a>绘制虚线：</h3><ul>
-<li>setLineDash()</li>
-<li>getLineDash()</li>
-<li>lineDashOffset</li>
-</ul>
-<h3 id="clearRect：清除画布中指定的矩形区域"><a href="#clearRect：清除画布中指定的矩形区域" class="headerlink" title="clearRect：清除画布中指定的矩形区域"></a>clearRect：清除画布中指定的矩形区域</h3><ul>
-<li><p>参数(x,y,w,h)：分别表示矩形的左上角顶点坐标和矩形的宽度和高度</p>
-</li>
-<li><p>清除画布：ctx.clearRect(0,0,canvas.width,canvas.height)</p>
-</li>
-</ul>
-<h3 id="绘制矩形："><a href="#绘制矩形：" class="headerlink" title="绘制矩形："></a>绘制矩形：</h3><ul>
-<li>strokeRect(x,y,w,h):绘制一个描边的矩形<ul>
-<li>rect(x,y,w,h)+stroke()</li>
-</ul>
-</li>
-</ul>
-<h3 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h3><h3 id="折线图面向对象"><a href="#折线图面向对象" class="headerlink" title="折线图面向对象"></a>折线图面向对象</h3><ul>
-<li>1、使用构造函数+原型的方式构建对象</li>
-<li>2、将使用到的数据以及一些全局变量(比如xLength/yLength)作为参数传入</li>
-<li>3、将canvas也作为参数传入，并在构造函数内部处理ctx的值，并处理方法中的ctx的值</li>
-</ul>
-<h3 id="ctx-fill：绘制填充的图形"><a href="#ctx-fill：绘制填充的图形" class="headerlink" title="ctx.fill：绘制填充的图形"></a>ctx.fill：绘制填充的图形</h3><ul>
-<li>fill方法内部会自动的closePath</li>
-</ul>
-<h3 id="绘制文字"><a href="#绘制文字" class="headerlink" title="绘制文字"></a>绘制文字</h3><ul>
-<li><p>绘制文字</p>
-<ul>
-<li>ctx.strokeText(“文本内容”,文字的x轴坐标,文字的y轴坐标)</li>
-<li>ctx.fillText(“文本内容”,文字的x轴坐标,文字的y轴坐标)</li>
-<li>ctx.font=”字体大小 字体类型”;</li>
-</ul>
-</li>
-<li><p>文字的水平对齐方式</p>
-<ul>
-<li>默认值是：”start”–&gt;”left”</li>
-<li>“end”–&gt;”right”</li>
-<li>“center”：居中对齐</li>
-</ul>
-</li>
-<li><p>文字的垂直对齐方式</p>
-<ul>
-<li>“alphabetic”(默认值)–&gt;就相当于英语四线格的第三条线，不适用于中文</li>
-<li>“hanging”–&gt;坐标位于四线格的顶部</li>
-<li>“top”–&gt;坐标跟四线格顶部上面有一段距离</li>
-<li>“bottom”–&gt;跟top对应，是底部对齐的意思</li>
-<li>“middle”–&gt;居中</li>
-</ul>
-</li>
-</ul>
-<h3 id="绘制圆弧"><a href="#绘制圆弧" class="headerlink" title="绘制圆弧"></a>绘制圆弧</h3><ul>
-<li>arc()<ul>
-<li>第一个参数、第二个参数：圆心的坐标</li>
-<li>第三个参数：圆的半径</li>
-<li>第四个参数、第五个参数：绘制圆弧的起始弧度和结束弧度</li>
-<li>第六个参数：是否以逆时针的方式绘制圆弧，默认值为false(顺时针)</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/ajax请求原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/07/ajax请求原理/" itemprop="url">ajax请求原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-07T06:58:51+08:00">
-                2018-07-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/07/ajax请求原理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/07/07/ajax请求原理/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="浏览器输入url发生了什么"><a href="#浏览器输入url发生了什么" class="headerlink" title="浏览器输入url发生了什么"></a>浏览器输入url发生了什么</h3><p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%9B%BE%E7%89%871.png" alt="Image text"></p>
-<h4 id="DNS域名解析"><a href="#DNS域名解析" class="headerlink" title="DNS域名解析"></a>DNS域名解析</h4><ul>
-<li>在浏览器DNS缓存中搜索</li>
-<li>在操作系统DNS缓存中搜索查找系统host文件看是否有对应IP</li>
-<li>路由器缓存搜索</li>
-<li>向本地首选DNS服务器发送域名解析请求</li>
-</ul>
-<h4 id="建立TCP连接"><a href="#建立TCP连接" class="headerlink" title="建立TCP连接"></a>建立TCP连接</h4><p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%9B%BE%E7%89%872.jpg" alt="Image text"></p>
-<h6 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h6><p>发送端首先发送一个带SYN（synchronize）标志的数据包给接收方，接收方收到后，回传一个带有SYN/ACK(acknowledegment)标志的数据包以示传达确认信息。最后发送方再回传一个带ACK标志的数据包，代表握手结束。在这过程中若出现问题中断，TCP会再次发送相同的数据包。</p>
-<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%9B%BE%E7%89%873.png" alt="Image text"></p>
-<h6 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h6><p>四次挥手（Four-Way Wavehand）即终止TCP连接，就是指断开一个TCP连接时，需要客户端和服务端总共发送4个包以确认连接的断开</p>
-<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%9B%BE%E7%89%874.jpg" alt="Image text"></p>
-<h6 id="三次握手与四次挥手"><a href="#三次握手与四次挥手" class="headerlink" title="三次握手与四次挥手"></a>三次握手与四次挥手</h6><ul>
-<li><p>三次握手流程</p>
-<ul>
-<li>客户端发个请求“开门呐，我要进来”给服务器</li>
-<li>服务器发个“进来吧，我去给你开门”给客户端</li>
-<li>客户端有很客气的发个“谢谢，我要进来了”给服务器</li>
-</ul>
-</li>
-<li><p>四次挥手流程</p>
-<ul>
-<li>客户端发个“时间不早了，我要走了”给服务器，等服务器起身送他</li>
-<li>服务器听到了，发个“我知道了，那我送你出门吧”给客户端，等客户端走</li>
-<li>服务器把门关上后，发个“我关门了”给客户端，然后等客户端走</li>
-<li>客户端发个“我知道了，我走了”，之后自己就走了</li>
-</ul>
-</li>
-</ul>
-<h4 id="发起http请求"><a href="#发起http请求" class="headerlink" title="发起http请求"></a>发起http请求</h4><h5 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h5><ul>
-<li>GET:获取资源</li>
-<li>POST:传输实体主体</li>
-<li>HEAD:获取报文首部</li>
-<li>PUT:传输文件</li>
-<li>DELETE:删除文件</li>
-<li>OPTIONS:询问支持的方法</li>
-<li>TRACE:追踪路径</li>
-</ul>
-<h4 id="接收响应结果"><a href="#接收响应结果" class="headerlink" title="接收响应结果"></a>接收响应结果</h4><h5 id="http响应常见代码"><a href="#http响应常见代码" class="headerlink" title="http响应常见代码"></a>http响应常见代码</h5><ul>
-<li>1**：信息性状态码</li>
-<li>2**：成功状态码</li>
-<li>200：OK 请求正常处理</li>
-<li>204：No Content请求处理成功，但没有资源可返回</li>
-<li>206：Partial Content对资源的某一部分的请求</li>
-<li>3**：重定向状态码</li>
-<li>301：Moved Permanently 永久重定向</li>
-<li>302：Found 临时性重定向</li>
-<li>304：Not Modified 缓存中读取</li>
-<li>4**：客户端错误状态码</li>
-<li>400：Bad Request 请求报文中存在语法错误</li>
-<li>401：Unauthorized需要有通过Http认证的认证信息</li>
-<li>403：Forbidden访问被拒绝</li>
-<li>404：Not Found无法找到请求资源</li>
-<li>5**：服务器错误状态码</li>
-<li>500：Internal Server Error 服务器端在执行时发生错误</li>
-<li>503：Service Unavailable 服务器处于超负载或者正在进行停机维护</li>
-</ul>
-<h4 id="浏览器解析html"><a href="#浏览器解析html" class="headerlink" title="浏览器解析html"></a>浏览器解析html</h4><h4 id="浏览器布局渲染"><a href="#浏览器布局渲染" class="headerlink" title="浏览器布局渲染"></a>浏览器布局渲染</h4><h5 id="html解析"><a href="#html解析" class="headerlink" title="html解析"></a>html解析</h5><p>标记化是词法分析过程，将输入内容解析成多个标记。HTML 标记包括起始标记、结束标记、属性名称和属性值。标记生成器识别标记，传递给树构造器，然后接受下一个字符以识别下一个标记；如此反复直到输入的结束</p>
-<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%9B%BE%E7%89%875.png" alt="Image text"></p>
-<p>在创建解析器的同时，也会创建 Document 对象。在树构建阶段，以 Document 为根节点的 DOM 树也会不断进行修改，向其中添加各种元素。标记生成器发送的每个节点都会由树构建器进行处理。规范中定义了每个标记所对应的 DOM 元素，这些元素会在接收到相应的标记时创建。这些元素不仅会添加到 DOM 树中，还会添加到开放元素的堆栈中。此堆栈用于纠正嵌套错误和处理未关闭的标记</p>
-<h5 id="css解析"><a href="#css解析" class="headerlink" title="css解析"></a>css解析</h5><p>解析器会将 CSS 文件解析成 StyleSheet 对象，且每个对象都包含 CSS 规则。CSS 规则对象则包含选择器和声明对象，以及其他与 CSS 语法对应的对象</p>
-<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%9B%BE%E7%89%876.png" alt="Image text"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/vue我的坑记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/07/vue我的坑记/" itemprop="url">vue我的坑记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-07T21:42:30+08:00">
-                2018-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/07/vue我的坑记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/07/vue我的坑记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="element-UI-select下拉选项位置问题"><a href="#element-UI-select下拉选项位置问题" class="headerlink" title="element UI select下拉选项位置问题"></a>element UI select下拉选项位置问题</h4><p>在使用elementUI下拉选项时，可能存在下拉时下拉列表选项框的位置距离下拉框所在的位置距离过大，这个是由于elementUI自己设置的根据下拉框位置定位，而他可能是根据position:absolute;来进行定位的,而我们要在全局设置他的 position:fixed !important;即可。(注意使用!important增加权重)</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/07/vue我的坑记/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/ajax请求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/03/ajax请求/" itemprop="url">ajax请求</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-03T21:24:16+08:00">
-                2018-06-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/03/ajax请求/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/03/ajax请求/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><p>通俗的讲，能够提供某种服务的机器（计算机）称为服务器。</p>
-<h4 id="服务器类型"><a href="#服务器类型" class="headerlink" title="服务器类型"></a>服务器类型</h4><p>按照不同的划分标准，服务可划分为以下类型：</p>
-<ul>
-<li>按服务类型可分为：文件服务器、数据库服务器、邮件服务器、Web 服务器等；</li>
-<li>按操作系统可分为：Linux服务器、Windows服务器等；</li>
-<li>按应用软件可分为 Apache服务器、Nginx 服务器、IIS服务器、Tomcat服务器、Node服务器等</li>
-</ul>
-<h4 id="服务器软件"><a href="#服务器软件" class="headerlink" title="服务器软件"></a>服务器软件</h4><p> 使计算机具备提供某种服务能力的应用软件，称为服务器软件，</p>
-<p> 通过安装相应的服务软件，然后进行配置后就可以使计算具备了提供某种服务的能力。<br>常见的服务器软件有：</p>
-<ul>
-<li>文件服务器：Server-U、FileZilla、VsFTP等；</li>
-<li>数据库服务器：Oracle、MySQL、PostgreSQL、MSSQL等；</li>
-<li>邮件服务器：Postfix、Sendmail等；</li>
-<li>HTTP 服务器：Apache、Nginx、IIS、Tomcat、NodeJS等；</li>
-</ul>
-<h4 id="HTTP服务器"><a href="#HTTP服务器" class="headerlink" title="HTTP服务器"></a>HTTP服务器</h4><p>即网站服务器，主要提供文档(文本、图片、视频、音频)浏览服务，一般安装Apache、Nginx服务器软件。<br>HTTP服务器可以结合某一编程语言处理业务逻辑，由此进行的开发，通常称之为服务端开发。</p>
-<p>常见的运行在服务端的编程语言包括 PHP、Jsp、Asp、Python、Ruby、Perl等。</p>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>具有向服务器索取服务能力的终端，如比如 手机、电脑等，通过安装不同的客户端软件，可以获取不同的服务，比如通过QQ获得即时通讯服务、通过迅雷获得下载服务等。</p>
-<p>常见的客户端软件：浏览器、QQ、迅雷、Foxmail等。</p>
-<p>以浏览器为宿主环境，结合 HTML、CSS、Javascript等技术，而进行的一系列开发，通常称之为前端开发。</p>
-<h3 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h3><h4 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h4><p>所谓IP地址就是给每个连接在互联网上的主机分配的一个32位地址。(就像每部手机能正常通话需要一个号码一样)</p>
-<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址，域名是一个IP地址的“面具”<br>查看域名对应的IP地址 ping、tracert</p>
-<h4 id="DNS服务"><a href="#DNS服务" class="headerlink" title="DNS服务"></a>DNS服务</h4><p>DNS记录了 IP 地址和域名的映射（对应）关系；<br>查找优先级 本机hosts文件、DNS服务器</p>
-<h4 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h4><p>端口号是计算机与外界通讯交流的出口，每个端口对应不同的服务。</p>
-<p>现实生活中，银行不同的窗口办理不同的业务。</p>
-<p>查看端口占用情况 netstat -an</p>
-<p>常见端口号 80、8080、3306、21、22</p>
-<h3 id="C-S和B-S"><a href="#C-S和B-S" class="headerlink" title="C/S和B/S"></a>C/S和B/S</h3><h4 id="C-S"><a href="#C-S" class="headerlink" title="C/S"></a>C/S</h4><p>即Client、Server。C/S工作流程图</p>
-<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180707195753.png" alt="Image text"></p>
-<p>在C/S结构的情况下，不同的服务需要安装不同的客户端软件，比如QQ、迅雷、Foxmail这种情况下安装的软件会越来越多，进而占用非常多的系统资源，除此之外还有其它弊端，比如A出差，需要在B电脑上查收邮件，但是B电脑并未安装Foxmail等类似的客户端软件，这样不得不先去下载Foxmail，非常不方便，并且客户端软件升级后也需要重新下载。</p>
-<h4 id="B-S结构"><a href="#B-S结构" class="headerlink" title="B/S结构"></a>B/S结构</h4><p>B/S（即Broswer、Server）解决了C/S所带来的不便，将所有的服务（如QQ、邮件等）都可以通过浏览器来完成，因为基本所有浏览器都安装了浏览器，这样可以更多的节省系统资源，并且功能升级也无需重新下载，只要刷新网页即可，要但B/S也有一些不利，比如操作稳定性、流畅度等方面相对较弱。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/vue常用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/vue常用/" itemprop="url">vue常用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-01T16:09:38+08:00">
-                2018-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/01/vue常用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/01/vue常用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="vue2-elementUI"><a href="#vue2-elementUI" class="headerlink" title="vue2 + elementUI"></a>vue2 + elementUI</h1><h2 id="vue子父类传值"><a href="#vue子父类传值" class="headerlink" title="vue子父类传值"></a>vue子父类传值</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><ul>
-<li><p>子组件(接收方)在vue对象中，通过props属性声明，声明他期待获得的数据</p>
-<ul>
-<li>props:[“commentId”],</li>
-</ul>
-</li>
-<li><p>父组件(发送方)注册子组件，在使用子组件的时候，以键值对的方式传递给子组件，</p>
-<ul>
-<li>:commentId=”commentId”</li>
-<li>然后再data里面定义commentId的值，</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/01/vue常用/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/移动web开发/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/26/移动web开发/" itemprop="url">移动web开发</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-26T15:18:12+08:00">
-                2018-05-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/26/移动web开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/26/移动web开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
-<li>移动设备与PC设备最大的差异在于屏幕，这主要体现在屏幕尺寸和屏幕分辨率两个方面。<ul>
-<li>通常我们所指的屏幕尺寸，实际上指的是屏幕对角线的长度（一般用英寸来度量）</li>
-<li>分辨率则一般用像素来度量，表示屏幕水平和垂直方向的像素数，</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/26/移动web开发/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/cdn学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/14/cdn学习/" itemprop="url">cdn学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-14T11:30:21+08:00">
-                2018-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/14/cdn学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/14/cdn学习/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="CDN的全称是Content-Delivery-Network，即内容分发网络"><a href="#CDN的全称是Content-Delivery-Network，即内容分发网络" class="headerlink" title="CDN的全称是Content Delivery Network，即内容分发网络"></a>CDN的全称是Content Delivery Network，即内容分发网络</h2><p>其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。</p>
-<p>通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/14/cdn学习/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
 
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -1399,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/08/js面向对象与高级/" itemprop="url">js面向对象与高级</a></h1>
+          <h1 class="post-title" itemprop="name headline">js面向对象与高级</h1>
         
 
         <div class="post-meta">
@@ -1462,9 +321,7 @@
       
 
       
-        
-          
-            <h1 id="JavaScript重点"><a href="#JavaScript重点" class="headerlink" title="JavaScript重点"></a>JavaScript重点</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+        <h1 id="JavaScript重点"><a href="#JavaScript重点" class="headerlink" title="JavaScript重点"></a>JavaScript重点</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
 <li><p>简单数据类型（基本数据类型）</p>
 <ul>
 <li>number</li>
@@ -2200,8 +1057,6 @@
 <li>……</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -2216,294 +1071,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/git/" itemprop="url">git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-15T21:16:16+08:00">
-                2018-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/15/git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/15/git/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h2 id="版本管理工具"><a href="#版本管理工具" class="headerlink" title="版本管理工具"></a>版本管理工具</h2><p>版本管理工具分为集中式和分布式：</p>
-<ul>
-<li>集中式版本控制系统：版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。 集中式版本控制系统最大的毛病就是必须联网才能工作，如果在局域网内还好，带宽够大，速度够快，可如果在互联网上，遇到网速慢的话，可能提交一个10M的文件就需要5分钟，这还不得把人给憋死啊</li>
-<li></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/15/git/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/15/git/" rel="next" title="git">
+                <i class="fa fa-chevron-left"></i> git
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/vue记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Devin_Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="展慧的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/26/vue记录/" itemprop="url">vue记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-26T16:59:04+08:00">
-                2017-11-26
-              </time>
+              <a href="/2018/05/14/cdn学习/" rel="prev" title="cdn学习">
+                cdn学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/26/vue记录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/11/26/vue记录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="Vue的基本概念"><a href="#Vue的基本概念" class="headerlink" title="Vue的基本概念"></a>Vue的基本概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><pre><code>渐进式 JavaScript 框架，核心功能比较小，如果你要做更强大的功能，就要去集成一些插件和第三方包
-
-核心插件:(全家桶)
-    Vue-Router:当触发了页面的超链接之后要渲染出哪个页面(组件)，就得靠路由
-
-    Vuex:全局存取数据(状态管理)
-</code></pre>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/26/vue记录/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -2513,14 +1114,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -2528,6 +1126,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -2548,8 +1160,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -2673,6 +1294,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript重点"><span class="nav-number">1.</span> <span class="nav-text">JavaScript重点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js有几种数据类型？"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">js有几种数据类型？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js提供了哪些内置对象？"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">js提供了哪些内置对象？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型与引用数据类型的存储与赋值"><span class="nav-number">1.2.</span> <span class="nav-text">基本数据类型与引用数据类型的存储与赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引用数据类型"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">引用数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于引用数据类型的考题补充"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">关于引用数据类型的考题补充</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">1.3.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算符-amp-amp"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">逻辑运算符 &amp;&amp; || !</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相等运算符"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">相等运算符 == ===</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句"><span class="nav-number">1.4.</span> <span class="nav-text">语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分支语句"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">分支语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环语句"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">循环语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">1.5.</span> <span class="nav-text">关键字</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类型相等比较"><span class="nav-number">2.</span> <span class="nav-text">类型相等比较</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象与面向过程的概念"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">面向对象与面向过程的概念</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象的方式"><span class="nav-number">2.2.</span> <span class="nav-text">创建对象的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字面量形式"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">字面量形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数形式-gt-复用性更强"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">构造函数形式 ==&gt; 复用性更强</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">2.3.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-1"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回值特点"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">返回值特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类与实例的概念"><span class="nav-number">2.4.</span> <span class="nav-text">类与实例的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类"><span class="nav-number">2.4.0.1.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">2.4.0.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联系"><span class="nav-number">2.4.0.3.</span> <span class="nav-text">联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象类型"><span class="nav-number">2.4.0.4.</span> <span class="nav-text">对象类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">2.5.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型的使用"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">原型的使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象与面向过程优缺点"><span class="nav-number">2.6.</span> <span class="nav-text">面向对象与面向过程优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象"><span class="nav-number">2.6.0.1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向过程"><span class="nav-number">2.6.0.2.</span> <span class="nav-text">面向过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象3大特征"><span class="nav-number">2.7.</span> <span class="nav-text">面向对象3大特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的书写过程"><span class="nav-number">2.8.</span> <span class="nav-text">面向对象的书写过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型其他"><span class="nav-number">2.9.</span> <span class="nav-text">原型其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#谁有prototype与proto"><span class="nav-number">2.9.0.1.</span> <span class="nav-text">谁有prototype与proto</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype与proto联系"><span class="nav-number">2.9.0.2.</span> <span class="nav-text">prototype与proto联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何得到一个对象继承的原型"><span class="nav-number">2.9.0.3.</span> <span class="nav-text">如何得到一个对象继承的原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建对象时内在的4个步骤"><span class="nav-number">2.9.0.4.</span> <span class="nav-text">创建对象时内在的4个步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的属性访问规则"><span class="nav-number">2.9.0.5.</span> <span class="nav-text">对象的属性访问规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的属性赋值"><span class="nav-number">2.9.0.6.</span> <span class="nav-text">对象的属性赋值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型常见书写方式"><span class="nav-number">2.10.</span> <span class="nav-text">原型常见书写方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、默认原型"><span class="nav-number">2.10.0.1.</span> <span class="nav-text">1、默认原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、置换原型"><span class="nav-number">2.10.0.2.</span> <span class="nav-text">2、置换原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、extend复制扩展"><span class="nav-number">2.10.0.3.</span> <span class="nav-text">3、extend复制扩展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Object-create"><span class="nav-number">2.10.0.4.</span> <span class="nav-text">4、Object.create</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现属性复制函数封装"><span class="nav-number">2.10.0.5.</span> <span class="nav-text">实现属性复制函数封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类成员与实例成员"><span class="nav-number">2.10.0.6.</span> <span class="nav-text">类成员与实例成员</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">2.11.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-2"><span class="nav-number">2.11.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象原型链的研究方案"><span class="nav-number">2.11.0.2.</span> <span class="nav-text">对象原型链的研究方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规律与常见对象原型链结构"><span class="nav-number">2.11.0.3.</span> <span class="nav-text">规律与常见对象原型链结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符与方法"><span class="nav-number">2.12.</span> <span class="nav-text">运算符与方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#in-–-运算符"><span class="nav-number">2.12.0.1.</span> <span class="nav-text">in – 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hasOwnProperty-–-方法"><span class="nav-number">2.12.0.2.</span> <span class="nav-text">hasOwnProperty – 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于for-in遍历的补充"><span class="nav-number">2.12.0.3.</span> <span class="nav-text">关于for in遍历的补充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete-–-运算符"><span class="nav-number">2.12.0.4.</span> <span class="nav-text">delete – 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof-–-运算符"><span class="nav-number">2.12.0.5.</span> <span class="nav-text">instanceof – 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-–-内置构造函数"><span class="nav-number">2.12.0.6.</span> <span class="nav-text">Function – 内置构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-–-内置的全局函数"><span class="nav-number">2.12.0.7.</span> <span class="nav-text">eval – 内置的全局函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数四种调用模式"><span class="nav-number">2.13.</span> <span class="nav-text">函数四种调用模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、函数调用模式-gt-函数名"><span class="nav-number">2.13.1.</span> <span class="nav-text">1、函数调用模式 ==&gt; 函数名()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、方法调用模式-gt-对象-函数名"><span class="nav-number">2.13.2.</span> <span class="nav-text">2、方法调用模式 ==&gt; 对象.函数名()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、构造函数调用模式-gt-new-构造函数"><span class="nav-number">2.13.3.</span> <span class="nav-text">3、构造函数调用模式 ==&gt; new 构造函数()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、上下文调用模式-间接调用模式"><span class="nav-number">2.13.4.</span> <span class="nav-text">4、上下文调用模式(间接调用模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply"><span class="nav-number">2.13.5.</span> <span class="nav-text">call和apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply方法借用的原理"><span class="nav-number">2.13.6.</span> <span class="nav-text">call和apply方法借用的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply的技巧"><span class="nav-number">2.13.7.</span> <span class="nav-text">apply的技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call和apply使用技巧"><span class="nav-number">2.13.8.</span> <span class="nav-text">call和apply使用技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">2.14.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-3"><span class="nav-number">2.14.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量"><span class="nav-number">2.14.0.2.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部变量"><span class="nav-number">2.14.0.3.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数作用域"><span class="nav-number">2.14.0.4.</span> <span class="nav-text">函数作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级作用域-gt-js没有"><span class="nav-number">2.14.0.5.</span> <span class="nav-text">块级作用域 ==&gt; js没有</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词法作用域-静态作用域"><span class="nav-number">2.14.0.6.</span> <span class="nav-text">词法作用域(静态作用域)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域的产生"><span class="nav-number">2.14.0.7.</span> <span class="nav-text">作用域的产生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域链"><span class="nav-number">2.14.0.8.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#垃圾回收机制原则"><span class="nav-number">2.14.0.9.</span> <span class="nav-text">垃圾回收机制原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下"><span class="nav-number">2.14.0.10.</span> <span class="nav-text">注意：有一个容易搞混，又没有什么联系的知识点，这里强调一下</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">2.15.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念-4"><span class="nav-number">2.15.0.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自由变量"><span class="nav-number">2.15.0.2.</span> <span class="nav-text">自由变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">2.15.0.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计数器案例"><span class="nav-number">2.15.0.4.</span> <span class="nav-text">计数器案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存操作"><span class="nav-number">2.15.0.5.</span> <span class="nav-text">缓存操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for循环i面试题"><span class="nav-number">2.15.0.6.</span> <span class="nav-text">for循环i面试题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预解析"><span class="nav-number">2.16.</span> <span class="nav-text">预解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预解析做了两件事情"><span class="nav-number">2.16.0.1.</span> <span class="nav-text">预解析做了两件事情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量声明"><span class="nav-number">2.16.0.2.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数声明"><span class="nav-number">2.16.0.3.</span> <span class="nav-text">函数声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预解析的特点"><span class="nav-number">2.16.0.4.</span> <span class="nav-text">预解析的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预解析相关细节"><span class="nav-number">2.16.0.5.</span> <span class="nav-text">预解析相关细节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数执行时形参会优先执行"><span class="nav-number">2.16.0.6.</span> <span class="nav-text">函数执行时形参会优先执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数表达式的名称"><span class="nav-number">2.16.0.7.</span> <span class="nav-text">函数表达式的名称</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的四种调用模式"><span class="nav-number">2.17.</span> <span class="nav-text">函数的四种调用模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#this的特点"><span class="nav-number">2.17.0.1.</span> <span class="nav-text">this的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数调用模式"><span class="nav-number">2.17.0.2.</span> <span class="nav-text">函数调用模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用模式"><span class="nav-number">2.17.0.3.</span> <span class="nav-text">方法调用模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造器调用模式"><span class="nav-number">2.17.0.4.</span> <span class="nav-text">构造器调用模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间接调用模式-上下文调用模式"><span class="nav-number">2.17.0.5.</span> <span class="nav-text">间接调用模式(上下文调用模式)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call和apply的使用范例"><span class="nav-number">2.17.0.6.</span> <span class="nav-text">call和apply的使用范例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES5数组新增的3个方法"><span class="nav-number">2.18.</span> <span class="nav-text">ES5数组新增的3个方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#forEach"><span class="nav-number">2.18.0.1.</span> <span class="nav-text">forEach</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">2.18.0.2.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">2.18.0.3.</span> <span class="nav-text">filter</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call-amp-apply的补充"><span class="nav-number">2.19.</span> <span class="nav-text">call&amp;apply的补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">2.20.</span> <span class="nav-text">严格模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#严格模式的分类"><span class="nav-number">2.20.0.1.</span> <span class="nav-text">严格模式的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需要记住的几条严格模式规则"><span class="nav-number">2.20.0.2.</span> <span class="nav-text">需要记住的几条严格模式规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他-1"><span class="nav-number">2.20.0.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -2849,6 +1486,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -2866,6 +1507,18 @@ show_date_time();
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/04/08/js面向对象与高级/';
+          this.page.identifier = '2018/04/08/js面向对象与高级/';
+          this.page.title = 'js面向对象与高级';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
