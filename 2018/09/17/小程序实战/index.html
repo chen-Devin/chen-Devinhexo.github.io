@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="展慧的博客">
 <meta property="og:description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-22T10:40:34.992Z">
+<meta property="og:updated_time" content="2018-09-23T03:29:58.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序实战">
 <meta name="twitter:description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
@@ -367,7 +367,15 @@ px:小程序的px不是物理像素点。而是对应手机型号的逻辑分辨
 <p>wx:if=”false“ : 判断所属标签是否显示。</p>
 <pre><code>&lt;view&gt;&lt;/view&gt;：相当于&lt;div&gt;&lt;/div&gt;。&lt;view&gt; 是一个组件，会在页面上做渲染；
 &lt;block&gt;:&lt;block&gt;不是一个组件，它仅仅是一个包装元素，只接受控制属性，不会在页面中做任何渲染。
-</code></pre><p>本文来自 老亨 的CSDN 博客 ，全文地址请点击：<a href="https://blog.csdn.net/henryhu712/article/details/80464723?utm_source=copy" target="_blank" rel="noopener">https://blog.csdn.net/henryhu712/article/details/80464723?utm_source=copy</a> </p>
+</code></pre><p>在组件中绑定一个事件处理函数。<br>如bindtap，当用户点击该组件的时候会在该页面对应的Page中找到相应的事件处理函数。设置事件时应在点击事件前面加上 bind  如 tap 事件应该写成 bindtap;</p>
+<pre><code>&lt;view id=&quot;tapTest&quot; data-hi=&quot;WeChat&quot; bindtap=&quot;tapName&quot;&gt; Click me! &lt;/view&gt;
+</code></pre><p>事件分类：事件分为冒泡事件和非冒泡事件：</p>
+<ul>
+<li>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。</li>
+<li><p>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">touchstart	手指触摸动作开始	</span><br><span class="line">touchmove	手指触摸后移动	</span><br><span class="line">touchcancel	手指触摸动作被打断，如来电提醒，弹窗	</span><br><span class="line">touchend	手指触摸动作结束	</span><br><span class="line">tap	手指触摸后马上离开	</span><br><span class="line">longpress	手指触摸后，超过350ms再离开，如果指定了事件回调函数并触发了这个事件，tap事件将不被触发</span><br><span class="line">longtap	手指触摸后，超过350ms再离开（推荐使用longpress事件代替）	</span><br><span class="line">transitionend	会在 WXSS transition 或 wx.createAnimation 动画结束后触发	</span><br><span class="line">animationstart	会在一个 WXSS animation 动画开始时触发	</span><br><span class="line">animationiteration	会在一个 WXSS animation 一次迭代结束时触发	</span><br><span class="line">animationend	会在一个 WXSS animation 动画完成时触发	</span><br><span class="line">touchforcechange	在支持 3D Touch 的 iPhone 设备，重按时会触发</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><p>letter-spacing: 该属性定义了在文本字符框之间插入多少空间。由于字符字形通常比其字符框要窄，指定长度值时，会调整字母之间通常的间隔。因此，normal 就相当于值为 0。</p>
 <p>vertical-align 属性设置元素的垂直对齐方式。</p>
 <h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><p>page:入口文件。</p>
@@ -439,7 +447,15 @@ px:小程序的px不是物理像素点。而是对应手机型号的逻辑分辨
 </code></pre><p>setData(): this.setData(contentData) setData方法多用于点击后改变页面信息或者刷新后与后台交互获取最新的信息。相当于将返回的信息放在data里面方便引用。</p>
 <p>注意：</p>
 <p>直接修改 this.data 而不调用 this.setData 是无法改变页面的状态的，还会造成数据不一致<br>单次设置的数据不能超过1024kB，请尽量避免一次设置过多的数据。</p>
+<p>设置路由跳转（小程序设置跳转到子集页面最多只能有五级）</p>
+<pre><code>wx.navigateTo({        //跳转到子级页面
+    url:&apos;../posts/post&apos;,  
+})
 
+wx.redirectTo({        //跳转到父级页面
+    url:&apos;../posts/post&apos;,
+})
+</code></pre>
       
     </div>
     
@@ -572,7 +588,7 @@ px:小程序的px不是物理像素点。而是对应手机型号的逻辑分辨
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -585,7 +601,7 @@ px:小程序的px不是物理像素点。而是对应手机型号的逻辑分辨
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
