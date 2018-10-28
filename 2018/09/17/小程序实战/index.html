@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="展慧的博客">
 <meta property="og:description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-03T04:23:06.966Z">
+<meta property="og:updated_time" content="2018-10-04T04:57:48.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序实战">
 <meta name="twitter:description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
@@ -463,7 +463,26 @@ wx.redirectTo({        //跳转到父级页面
     fail:function(){},        // 跳转失败时执行
     complete:function(){},        // 无论成功失败都执行
 })
-</code></pre>
+</code></pre><h4 id="template"><a href="#template" class="headerlink" title="template"></a>template</h4><p>模板文件 post-item-template.wxml</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template name=&apos;postItem&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;post-container&apos;&gt;</span><br><span class="line">      &lt;view class=&apos;post-author-date&apos;&gt;</span><br><span class="line">        &lt;image class=&apos;post-author&apos; src=&apos;&#123;&#123;item.avatar&#125;&#125;&apos;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;text class=&apos;post-date&apos;&gt;&#123;&#123;item.date&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">      &lt;text class=&apos;post-title&apos;&gt;&#123;&#123;item.title&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;image class=&apos;post-image&apos; src=&apos;&#123;&#123;item.imgSrc&#125;&#125;&apos;&gt;&lt;/image&gt;</span><br><span class="line">      &lt;text class=&apos;post-content&apos;&gt;&#123;&#123;item.content&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;view class=&apos;post-like&apos;&gt;</span><br><span class="line">        &lt;image class=&apos;post-like-image&apos; src=&apos;../../images/2.png&apos;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;text class=&apos;post-like-font&apos;&gt;&#123;&#123;item.collection&#125;&#125;&lt;/text&gt;</span><br><span class="line">        &lt;image class=&apos;post-like-image&apos;  src=&apos;/images/3.png&apos;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;text class=&apos;post-like-font&apos;&gt;&#123;&#123;item.reading&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>引用的文件</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;import src=&quot;post-item/post-item-template.wxml&quot; /&gt;  //引入文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;block wx:for=&quot;&#123;&#123;posto_key&#125;&#125;&quot; wx:for-item=&quot;item&quot;&gt;</span><br><span class="line">    &lt;template is=&quot;postItem&quot; data=&quot;&#123;&#123;item&#125;&#125;&quot; /&gt;  //需要复用的地方</span><br><span class="line">  &lt;/block&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>注意： </p>
+<ul>
+<li>引用的时候，is 后面跟着的是模板的name;</li>
+<li>引用的时候，data 里面的值是要传递给模板的值；</li>
+</ul>
+<pre><code>&lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
+&lt;template is=&quot;postItem&quot; data=&quot;{{item}}&quot; /&gt;
+</code></pre><p>以上两个不同的data内容，传递给模板里面的数据类型是不同的，item 相当于传递过去一个对象，使用的时候要 item.aaa 来得到所需要的值，，而 …item 相当于将item展开或者平铺之后得到值，，所以使用的时候直接以 aaa 来求值，即直接键值对的形式就可以求到所需要的值。</p>
+<h4 id="点击获取id"><a href="#点击获取id" class="headerlink" title="点击获取id"></a>点击获取id</h4><p>在模板中使用点击事件获取值</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// HTML</span><br><span class="line">  &lt;block wx:for=&quot;&#123;&#123;posto_key&#125;&#125;&quot; wx:for-item=&quot;item&quot;&gt;</span><br><span class="line">    &lt;view catchtap=&apos;onPostTap&apos; data-postId=&quot;&#123;&#123;item.postId&#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;template is=&quot;postItem&quot; data=&quot;&#123;&#123;...item&#125;&#125;&quot; /&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//js</span><br><span class="line">	  onPostTap:function(event)&#123;</span><br><span class="line">	    var postId = event.currentTarget.dataset.postid;</span><br><span class="line">	    wx.navigateTo(&#123;</span><br><span class="line">	      url: &apos;post-detail/post-detail&apos;,</span><br><span class="line">	    &#125;)</span><br><span class="line">	  &#125;,</span><br></pre></td></tr></table></figure>
+</code></pre><p>注意：</p>
+<ul>
+<li>template 是模板，在渲染的时候不显示在页面中，所以点击事件应在之前加一个可显示的标签，，</li>
+<li>所传值写在点击事件中设置，然后在点击事件中的自带值 event 中 event.currentTarget.dataset 取之前页面设置 data- 之后的值，去除 - 并且去除 - 的下个单词字母大写，其余均小写。</li>
+</ul>
+
       
     </div>
     
@@ -596,7 +615,7 @@ wx.redirectTo({        //跳转到父级页面
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -609,7 +628,7 @@ wx.redirectTo({        //跳转到父级页面
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -711,7 +730,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序实战项目"><span class="nav-number">1.</span> <span class="nav-text">小程序实战项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是小程序"><span class="nav-number">1.1.</span> <span class="nav-text">什么是小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#张小龙的定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">张小龙的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">1.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#申请账号"><span class="nav-number">1.1.3.</span> <span class="nav-text">申请账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并安装微信开发者工具"><span class="nav-number">1.1.4.</span> <span class="nav-text">下载并安装微信开发者工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序开始"><span class="nav-number">1.2.</span> <span class="nav-text">小程序开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序编辑"><span class="nav-number">1.4.</span> <span class="nav-text">小程序编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">1.5.</span> <span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html"><span class="nav-number">1.5.1.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html属性设置"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">html属性设置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css"><span class="nav-number">1.5.2.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js"><span class="nav-number">1.5.3.</span> <span class="nav-text">js</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序实战项目"><span class="nav-number">1.</span> <span class="nav-text">小程序实战项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是小程序"><span class="nav-number">1.1.</span> <span class="nav-text">什么是小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#张小龙的定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">张小龙的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">1.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#申请账号"><span class="nav-number">1.1.3.</span> <span class="nav-text">申请账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并安装微信开发者工具"><span class="nav-number">1.1.4.</span> <span class="nav-text">下载并安装微信开发者工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序开始"><span class="nav-number">1.2.</span> <span class="nav-text">小程序开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序编辑"><span class="nav-number">1.4.</span> <span class="nav-text">小程序编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">1.5.</span> <span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html"><span class="nav-number">1.5.1.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html属性设置"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">html属性设置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css"><span class="nav-number">1.5.2.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js"><span class="nav-number">1.5.3.</span> <span class="nav-text">js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#template"><span class="nav-number">1.5.4.</span> <span class="nav-text">template</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击获取id"><span class="nav-number">1.5.5.</span> <span class="nav-text">点击获取id</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
