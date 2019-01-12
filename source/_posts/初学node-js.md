@@ -1,16 +1,22 @@
 ---
 title: 初学node.js
-date: 2019-01-11 11:10:06
-tags: node
+date: 2019-01-01 11:10:06
+tags: node.js
 ---
+### 新年新气象
+
+每年都给自己定几个目标。虽然实现的比较少。但是也算给自己立一个flag
+
+新年新气象，新的一年。向node和区块链进发，加油，骚年，，，
+
 ### node.js 
 Node.js是一个专注于实现高性能Web服务器优化的专家，几经探索，几经挫折后，遇到V8而诞生的项目。Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。
 
 但Node似乎有点不同：Node.js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node.js的使用JavaScript进行编程，运行在JavaScript引擎上（V8）。与PHP、JSP等相比（PHP、JSP、.net都需要运行在服务器程序上，Apache、Naginx、Tomcat、IIS。），Node.js跳过了Apache、Naginx、IIS等HTTP服务器，它自己不用建设在任何服务器软件之上。
 
-Node.js的许多设计理念与经典架构（LAMP = Linux + Apache + MySQL + PHP）有着很大的不同，可以提供强大的伸缩能力。Node.js没有web容器。
-
 <!-- more -->
+
+Node.js的许多设计理念与经典架构（LAMP = Linux + Apache + MySQL + PHP）有着很大的不同，可以提供强大的伸缩能力。Node.js没有web容器。
 
 Node.js自身哲学，是花最小的硬件成本，追求更高的并发，更高的处理性能。
 
