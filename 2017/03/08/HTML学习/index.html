@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="浏览器与服务器浏览器：可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。 主流浏览器：chrome，firefox，Safari，ie，opera 服务器：也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。 浏览器内核：内核（Rendering Engine）">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML学习">
+<meta property="og:url" content="http://yoursite.com/2017/03/08/HTML学习/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="浏览器与服务器浏览器：可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。 主流浏览器：chrome，firefox，Safari，ie，opera 服务器：也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。 浏览器内核：内核（Rendering Engine）">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180709215936.png">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.900Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML学习">
+<meta name="twitter:description" content="浏览器与服务器浏览器：可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。 主流浏览器：chrome，firefox，Safari，ie，opera 服务器：也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。 浏览器内核：内核（Rendering Engine）">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180709215936.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/08/HTML学习/">
+
+
+
+
+
+  <title>HTML学习 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/08/HTML学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-08T21:16:48+08:00">
+                2017-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/08/HTML学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/08/HTML学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="浏览器与服务器"><a href="#浏览器与服务器" class="headerlink" title="浏览器与服务器"></a>浏览器与服务器</h3><p>浏览器：可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。</p>
+<p>主流浏览器：chrome，firefox，Safari，ie，opera</p>
+<p>服务器：也称伺服器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。</p>
+<p>浏览器内核：内核（Rendering Engine）：可大概译为“渲染引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释（如标准通用标记语言下的一个应用HTML、JavaScript）并渲染（显示）网页。<br>内核的分类：</p>
+<a id="more"></a>
+<ul>
+<li>Trident：ie , 猎豹安全浏览器,360极速浏览器,百度浏览器…</li>
+<li>Gecko：Firefox</li>
+<li>Webkit：Safari</li>
+<li>Blink：Chrome，Opera<br>不同的内核在渲染同一内容的时候会有差别</li>
+</ul>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>html:超级文本标记语言（HyperText Markup Language），在浏览器上运行的一种标记语言。</p>
+<p>结构：</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="文件的后缀名和打开方式："><a href="#文件的后缀名和打开方式：" class="headerlink" title="文件的后缀名和打开方式："></a>文件的后缀名和打开方式：</h3><ul>
+<li>文件的后缀名：<ul>
+<li>修改文件的后缀名是不会改变内容的。</li>
+<li>后缀名是用来决定这个文件的打开方式的和类型的.</li>
+<li>（针对我们编写的html页面）如果我们要查看这个文件的内容，直接以浏览器方式打开。但是如果我们要修改这个文件中的内容，应该以记事本的方式打开。</li>
+</ul>
+</li>
+<li>打开方式：<ul>
+<li>电脑中安装了很多的应用程序，可以为某一些的文件选择一种默认的打开方式，如果要修改，可以选中其中一个文件，右键，打开方式（所有的该类程序都以这种方式打开。）</li>
+</ul>
+</li>
+</ul>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>标签：用“&lt;&gt;”包起来的内容。</p>
+<h4 id="Html标签"><a href="#Html标签" class="headerlink" title="Html标签"></a>Html标签</h4><pre><code>&lt;html&gt;&lt;/html&gt;
+</code></pre><h4 id="H系列标签"><a href="#H系列标签" class="headerlink" title="H系列标签"></a>H系列标签</h4><p>作用：把页面上的文字加上标题的语义。</p>
+<p>代码：h1,h2,h3,h4,h5,h6:将文字放大，加粗.并且逐渐变小。（h1标签是最大的。）</p>
+<p>注意：一个页面只能有一个h1标签。</p>
+<h4 id="p标签-Paragraph-：段落标签"><a href="#p标签-Paragraph-：段落标签" class="headerlink" title="p标签(Paragraph)：段落标签"></a>p标签(Paragraph)：段落标签</h4><p>作用：给页面的上一段文字加上段落的语义<br>代码： </p>
+<pre><code>&lt;p&gt;这是段落&lt;/p&gt;
+</code></pre><p>特点：页面上的一个段落，单独占一行，并且与上下内容之间存在距离。</p>
+<h4 id="hr标签-Horizontal-Rule"><a href="#hr标签-Horizontal-Rule" class="headerlink" title="hr标签(Horizontal Rule)"></a>hr标签(Horizontal Rule)</h4><p>作用：在页面显示一条横线。<br>代码：</p>
+<pre><code>&lt;hr/&gt;
+</code></pre><p>特点：在页面显示一条横线，默认占整行。</p>
+<h4 id="br标签-break"><a href="#br标签-break" class="headerlink" title="br标签(break)"></a>br标签(break)</h4><p>作用：换行。<br>代码：</p>
+<pre><code>&lt;br /&gt;
+</code></pre><p>特点：换行。</p>
+<h4 id="b-Bold-u-Underlined-i-Italic-s-Strikethrough-strong-em-del-ins"><a href="#b-Bold-u-Underlined-i-Italic-s-Strikethrough-strong-em-del-ins" class="headerlink" title="b(Bold),u(Underlined),i(Italic),s(Strikethrough),strong,em,del,ins"></a>b(Bold),u(Underlined),i(Italic),s(Strikethrough),strong,em,del,ins</h4><p>作用：</p>
+<pre><code>b：加粗
+u: 下划线
+i:  倾斜
+s: 删除线     
+</code></pre><p>建议不要使用，因为这些标签没有语义。</p>
+<p>作用：</p>
+<pre><code>strong:加粗
+ins:下划线
+em:倾斜
+del:删除线
+</code></pre><p>可以使用</p>
+<h4 id="img标签-image-："><a href="#img标签-image-：" class="headerlink" title="img标签(image)："></a>img标签(image)：</h4><p>作用：在页面显示一张图片。<br>代码：</p>
+<pre><code>&lt;img src=”图片的路径” /&gt;
+</code></pre><p>特点：就是显示图片.</p>
+<p>属性：</p>
+<ul>
+<li>src:显示图片路径</li>
+<li>alt:如果图片加载不出来会显示图片中的文字</li>
+<li>title:介绍这张图片</li>
+</ul>
+<h4 id="a标签-Anchor-：锚"><a href="#a标签-Anchor-：锚" class="headerlink" title="a标签(Anchor)：锚"></a>a标签(Anchor)：锚</h4><p>a标签的其它名称：超级链接，超链接，锚链接。</p>
+<p>作用：可以在一个页面跳转到另一个页面。<br>代码：</p>
+<pre><code>&lt;a href=”页面的路径”&gt;&lt;/a&gt;
+</code></pre><p>注意：在a标签之内必须要写上文字，如果没有，那么这个标签在页面上找不到。</p>
+<p>a标签的其它用法：</p>
+<ul>
+<li>可以不跳转（跳转到当前页面）href=”#”</li>
+<li>可以跳转到另外的页面。</li>
+<li>可以在当前页面进行定位。</li>
+<li>设置a标签的href属性为“#id名”，</li>
+<li>在页面的指定位置加入一个目标标签（可以是任意标签）</li>
+<li>必须给这个标签设置一个id名：   <p id="”mubiao”">这是目标</p></li>
+<li>在跳转的页面进行定位。</li>
+<li>可以进行下载。（强烈不推荐使用）</li>
+<li>a标签的属性：</li>
+</ul>
+<p>href：a标签跳转的目标地址<br>target：</p>
+<pre><code>_blank:保留原始页面，再进行跳转
+_self:在当前页面进行跳转
+</code></pre><p>base：为页面上所有的a标签设置跳转的方式（base标签一般放在titile标签下面）</p>
+<h4 id="DOCTYPE-文档类型"><a href="#DOCTYPE-文档类型" class="headerlink" title="DOCTYPE:文档类型"></a>DOCTYPE:文档类型</h4><p>DTD(Document Type Definition):文档类型定义</p>
+<p>声明位于文档中的最前面的位置，处于 <html> 标签之前。此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范.</html></p>
+<p>注意：</p>
+<ul>
+<li>将来在使用DOCTYPE的时候把html后面的所有的内容全部去掉，因为如果不去掉使用的html，xhtml中的规范但是现在这些规范都过时了，因为h5问世。</li>
+<li>每个页面都必须设置一个doctype，如果不设置，浏览器会默认开启quirks mode（怪异模式）解析（quirks mode是浏览器为了兼容很早之前针对旧版本浏览器设计、并未严格遵循 W3C 标准的网页而产生的一种页面渲染模式）。</li>
+</ul>
+<h4 id="Html标签-1"><a href="#Html标签-1" class="headerlink" title="Html标签"></a>Html标签</h4><p>作用所有html中标签的一个根节点。</p>
+<p>lang:用来设置当页面的语言。<br>作用：</p>
+<ul>
+<li>设置页面上主要使用语言的类型。</li>
+<li>将来做SEO的时候在权重上起到一定的作用。 </li>
+<li>用于特殊设备上的设置</li>
+</ul>
+<h4 id="Head标签："><a href="#Head标签：" class="headerlink" title="Head标签："></a>Head标签：</h4><p>作用：用于存放：<br>title,meta,base,style,script,link</p>
+<p>注意：每个head标签中都必须有一个有title标签，其它的可选。</p>
+<h4 id="Body标签："><a href="#Body标签：" class="headerlink" title="Body标签："></a>Body标签：</h4><p>作用：用于存放所有的html的结构标签：<br>p,h,a,b,u,i,s,em,del,ins,strong,ul,li,ol,</p>
+<h4 id="Title标签："><a href="#Title标签：" class="headerlink" title="Title标签："></a>Title标签：</h4><p>作用：让页面拥有一个属于自己的标题。</p>
+<h4 id="meta-标签："><a href="#meta-标签：" class="headerlink" title="meta 标签："></a>meta 标签：</h4><p>常用用法：</p>
+<ol>
+<li>Description：可以描述页面，可以用来使用百度程序（网络爬虫）来收录关键信息，以此提高页面的排名。</li>
+<li>Keywords：关键词，可以用来提高页。面的关健词的比重（前升排名的一种方式。）</li>
+<li><p>字符集（编码格式）：</p>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+</li>
+</ol>
+<p>Charset（字符集的格式）：UTF-8.</p>
+<p>注意：字符集（文字在电脑是存储的字典）：<br>电脑是不能直接存储文字的，一般情况下电脑存储的是这个文字在“字典”里对应的位置。</p>
+<pre><code>gb2313----&gt;gbk;
+国标2313----&gt;国标扩
+</code></pre><p>所有一般看到乱码的原因是因为查找的字典不对：</p>
+<h4 id="gbk-utf-8之间的区别："><a href="#gbk-utf-8之间的区别：" class="headerlink" title="gbk,utf-8之间的区别："></a>gbk,utf-8之间的区别：</h4><p>相同点：都是字符的编码格式。</p>
+<p>区别：</p>
+<ul>
+<li>utf-8:收录是全世界所有的语言中的文字。</li>
+<li>gbk:收录了汉字，片假名。</li>
+</ul>
+<p>大小：</p>
+<ul>
+<li>utf-8&gt;gbk</li>
+</ul>
+<p>性能：</p>
+<ul>
+<li>uft-8&lt;gbk</li>
+</ul>
+<p>约定：将来我们在整个学习过程中都用utf-8;</p>
+<ul>
+<li>utf-8存储一个汉字占3个字节，</li>
+<li>gbk存储一个汉字上2个字节</li>
+</ul>
+<h4 id="标签的分类："><a href="#标签的分类：" class="headerlink" title="标签的分类："></a>标签的分类：</h4><p>双标签：有开始有结束，开始和结束之间是存在内容</p>
+<pre><code>&lt;h1&gt;&lt;/h1&gt;,&lt;p&gt;&lt;/p&gt;
+</code></pre><p>单标签：只有一个标签，自己闭合自己。</p>
+<pre><code>&lt;hr /&gt; ,&lt;br /&gt;
+</code></pre><h4 id="标签与标签之间的关系："><a href="#标签与标签之间的关系：" class="headerlink" title="标签与标签之间的关系："></a>标签与标签之间的关系：</h4><p> 嵌套关系：一个标签包含另外一个标签，他们之间构造父子关系。</p>
+<p> 并列关系：两个标签并列，他们构造兄弟关系。</p>
+<p> 注意：将来在书写代码的时候如果两个标签之间的关系是嵌套关系，最好通过代码直接反映出来（子元素相对于父元素有一个缩进）。如果是并列关系，最好要有对齐。</p>
+<h4 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h4><p>第一种：绝对路径<br>带有盘符的路径：C:\上课内容\上课视频\01html第一天\4-源代码\1.jpg.</p>
+<p>第二种：相对路径<br>由页面是一个文件，图片 也是一个文件，而现在需要在页面上输出图片，所以需要得到图片相对于文件的路径.</p>
+<h3 id="列表："><a href="#列表：" class="headerlink" title="列表："></a>列表：</h3><p>作用：页面有一些数据需要显示。</p>
+<h4 id="无序列表："><a href="#无序列表：" class="headerlink" title="无序列表："></a>无序列表：</h4><p>作用：显示一列没有排列顺序的数据。p</p>
+<p>语义：就是一组没有顺序的数据。<br>代码：ul:Unordered List  li:List Item</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>注意：</p>
+<ol>
+<li>无序列表中的数据没有先后顺序之分。</li>
+<li>ul标签最好不要单独出现。</li>
+<li>ul标签是用来管理li标签。</li>
+<li>ul标签中只能放li标签。</li>
+<li>li标签中可以放其它标签。</li>
+<li>li标签是一个容器。</li>
+</ol>
+<h4 id="有序列表："><a href="#有序列表：" class="headerlink" title="有序列表："></a>有序列表：</h4><p>作用：显示一段有顺序的数据。<br>语义：一组有顺序的数据。</p>
+<p>代码：ol:Ordered List</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><p>注意：有序列表中的所有数据都是顺序的。</p>
+<p>现在一般情况下ul标签用的比较多，ol标签用的比较少。</p>
+<h4 id="自定义列表："><a href="#自定义列表：" class="headerlink" title="自定义列表："></a>自定义列表：</h4><p>作用：显示一段数据，格式自己定义<br>代码：dl:Definition List dt:Definition Term  dd:Definition Description</p>
+<pre><code>&lt;dl&gt;
+    &lt;dt&gt;&lt;/dt&gt;
+    &lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre><p>处理兼容性：将所有的标签设置一个统一的样式。</p>
+<h4 id="Html中空格的合并现象："><a href="#Html中空格的合并现象：" class="headerlink" title="Html中空格的合并现象："></a>Html中空格的合并现象：</h4><p>特点：无论在页面有同时出现多少个空格，缩进，换行，将来浏览器在解析的时候只会当一个空格显示。</p>
+<p>结论：html中对空格，缩进，换行不敏感，如果同时出现多个空格缩进或者执行，页面只会把它们当作一个空格来解析。</p>
+<p>特殊字符对应的转义符：<br><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180709215936.png" alt="Image text"></p>
+<h4 id="SEO与标签的语义化："><a href="#SEO与标签的语义化：" class="headerlink" title="SEO与标签的语义化："></a>SEO与标签的语义化：</h4><p>作用：用来优化网站，使用网站在搜索引擎上的排名先前。</p>
+<p>百度自己写的一个程序来收录每个网站的信息。</p>
+<ol>
+<li>花钱买排名<ul>
+<li>缺点：烧钱。</li>
+<li>优点：效果杠杠的。</li>
+</ul>
+</li>
+<li>将页面做成静态页面（html）..(了解)</li>
+<li>发外链（网站就越受欢迎，将来被用户搜索出来的机会就要大）</li>
+<li>页面的友好性（语义化规范）：<br>标签语义化的应用：每个html标签都有属于自己的语义，有使用标签时候要一定要了解每个标签的语义，合理使用。（在合适的地方使用合适的标签。）<br>语义化的好处：<ul>
+<li>对搜索引擎的友好（将来网络爬虫进入页面之后可以很方便的得到页面的重要信息。）</li>
+<li>提升用户体验</li>
+<li>利于代码的可读、维护、提高开发效率</li>
+</ul>
+</li>
+</ol>
+<h4 id="没有语义的标签"><a href="#没有语义的标签" class="headerlink" title="没有语义的标签:"></a>没有语义的标签:</h4><p>Html中大部分的标签都具有语义，所在使用的时候一定要注意。还有一部分标签没有语义，没有语义的标签一般只用来进行布局。</p>
+<ol>
+<li><p>Div</p>
+<p><div></div><br>特点：默认占一整行，一行里面只能显示一个。</p>
+</li>
+</ol>
+<p>默认情况下，高由内容决定，（如果没有内容高是0），宽一整行。</p>
+<ol start="2">
+<li><p>Span</p>
+<p> <span></span><br>特点：如果没有设置内容，宽高为0。<br>大小由内容来决定，并且一行里面可以显示多个。</p>
+</li>
+<li><p>Div和span默认显示特点：</p>
+</li>
+</ol>
+<p>Div默认占一整行（根据浏览器的显示大小），div的高度是由div中的内容来决定的。<br>Span的宽度和高度都是由内容来决定。</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>html:超文本标记语言。可以表示图片，音频，视频，超连接（a）</p>
+<p>html的作用：用来页面的内容添加语义，用来确定html页面的结构。</p>
+<p>html：决定页面的结构（给内容添加语义） 骨骼</p>
+<p>Css: 决定页面的样式（使用页面更好看）    穿着</p>
+<p>Javascript:决定页面的行为（使页面动起来） 行为</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/19/我的hexo搭建学习过程/" rel="prev" title="我的hexo搭建学习过程">
+                我的hexo搭建学习过程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器与服务器"><span class="nav-number">1.</span> <span class="nav-text">浏览器与服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">2.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的后缀名和打开方式："><span class="nav-number">3.</span> <span class="nav-text">文件的后缀名和打开方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签"><span class="nav-number">4.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Html标签"><span class="nav-number">4.1.</span> <span class="nav-text">Html标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#H系列标签"><span class="nav-number">4.2.</span> <span class="nav-text">H系列标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#p标签-Paragraph-：段落标签"><span class="nav-number">4.3.</span> <span class="nav-text">p标签(Paragraph)：段落标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hr标签-Horizontal-Rule"><span class="nav-number">4.4.</span> <span class="nav-text">hr标签(Horizontal Rule)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#br标签-break"><span class="nav-number">4.5.</span> <span class="nav-text">br标签(break)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-Bold-u-Underlined-i-Italic-s-Strikethrough-strong-em-del-ins"><span class="nav-number">4.6.</span> <span class="nav-text">b(Bold),u(Underlined),i(Italic),s(Strikethrough),strong,em,del,ins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#img标签-image-："><span class="nav-number">4.7.</span> <span class="nav-text">img标签(image)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a标签-Anchor-：锚"><span class="nav-number">4.8.</span> <span class="nav-text">a标签(Anchor)：锚</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOCTYPE-文档类型"><span class="nav-number">4.9.</span> <span class="nav-text">DOCTYPE:文档类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Html标签-1"><span class="nav-number">4.10.</span> <span class="nav-text">Html标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Head标签："><span class="nav-number">4.11.</span> <span class="nav-text">Head标签：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Body标签："><span class="nav-number">4.12.</span> <span class="nav-text">Body标签：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Title标签："><span class="nav-number">4.13.</span> <span class="nav-text">Title标签：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#meta-标签："><span class="nav-number">4.14.</span> <span class="nav-text">meta 标签：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gbk-utf-8之间的区别："><span class="nav-number">4.15.</span> <span class="nav-text">gbk,utf-8之间的区别：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签的分类："><span class="nav-number">4.16.</span> <span class="nav-text">标签的分类：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签与标签之间的关系："><span class="nav-number">4.17.</span> <span class="nav-text">标签与标签之间的关系：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路径问题"><span class="nav-number">4.18.</span> <span class="nav-text">路径问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表："><span class="nav-number">5.</span> <span class="nav-text">列表：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#无序列表："><span class="nav-number">5.1.</span> <span class="nav-text">无序列表：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序列表："><span class="nav-number">5.2.</span> <span class="nav-text">有序列表：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义列表："><span class="nav-number">5.3.</span> <span class="nav-text">自定义列表：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Html中空格的合并现象："><span class="nav-number">5.4.</span> <span class="nav-text">Html中空格的合并现象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SEO与标签的语义化："><span class="nav-number">5.5.</span> <span class="nav-text">SEO与标签的语义化：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#没有语义的标签"><span class="nav-number">5.6.</span> <span class="nav-text">没有语义的标签:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">5.7.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/03/08/HTML学习/';
+          this.page.identifier = '2017/03/08/HTML学习/';
+          this.page.title = 'HTML学习';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

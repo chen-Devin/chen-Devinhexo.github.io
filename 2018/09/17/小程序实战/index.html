@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小程序,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序实战">
+<meta property="og:url" content="http://yoursite.com/2018/09/17/小程序实战/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.913Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小程序实战">
+<meta name="twitter:description" content="小程序实战项目什么是小程序张小龙的定义 不需要下载安装即可使用； 用户’用完即走’，不用关心是否安装太多应用； 应用将无处不在，随时可用；  B2C(人与商品)：京东，淘宝。 P2p(人与人)：微信，QQ; C2P(人与服务)：微信小程序；">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/17/小程序实战/">
+
+
+
+
+
+  <title>小程序实战 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/17/小程序实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">小程序实战</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-17T19:39:21+08:00">
+                2018-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/17/小程序实战/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/17/小程序实战/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="小程序实战项目"><a href="#小程序实战项目" class="headerlink" title="小程序实战项目"></a>小程序实战项目</h2><h3 id="什么是小程序"><a href="#什么是小程序" class="headerlink" title="什么是小程序"></a>什么是小程序</h3><h4 id="张小龙的定义"><a href="#张小龙的定义" class="headerlink" title="张小龙的定义"></a>张小龙的定义</h4><ul>
+<li>不需要下载安装即可使用；</li>
+<li>用户’用完即走’，不用关心是否安装太多应用；</li>
+<li>应用将无处不在，随时可用；</li>
+</ul>
+<p>B2C(人与商品)：京东，淘宝。</p>
+<p>P2p(人与人)：微信，QQ;</p>
+<p>C2P(人与服务)：微信小程序；</p>
+<a id="more"></a>  
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>业务逻辑简单</li>
+<li>使用频率低</li>
+<li>性能要求低</li>
+</ul>
+<p>###小程序起步</p>
+<h4 id="申请账号"><a href="#申请账号" class="headerlink" title="申请账号"></a>申请账号</h4><p>开发小程序的第一步，你需要拥有一个小程序帐号，通过这个帐号你就可以管理你的小程序。详情见微信公众平台。<br>然后在设置开发设置中获取到我们的AppID.</p>
+<h4 id="下载并安装微信开发者工具"><a href="#下载并安装微信开发者工具" class="headerlink" title="下载并安装微信开发者工具"></a>下载并安装微信开发者工具</h4><p>下载之后新建个人要编辑的项目</p>
+<h3 id="小程序开始"><a href="#小程序开始" class="headerlink" title="小程序开始"></a>小程序开始</h3><p>大小限制：小程序上传体积不能超过一M;<br>级别限制：小程序级别文件最多不超过五个子级；<br>就近原则：小程序配置样式等以离该文件最近配置为准</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在app.json中实现全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。QuickStart 项目里边的 app.json 配置内容如下：</p>
+<pre><code>{
+  &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
+  ],
+  &quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,
+    &quot;navigationBarTextStyle&quot;:&quot;black&quot;
+  }
+}
+</code></pre><p>我们简单说一下这个配置各个项的含义:</p>
+<p>pages字段 —— 用于描述当前小程序所有页面路径，这是为了让微信客户端知道当前你的小程序页面定义在哪个目录。</p>
+<ul>
+<li>pages 下面的第一个路径是默认打开项目的第一页。且每个页面都要在此注册。</li>
+</ul>
+<p>window字段 —— 定义小程序所有页面的顶部背景颜色，文字颜色定义等。</p>
+<h3 id="小程序编辑"><a href="#小程序编辑" class="headerlink" title="小程序编辑"></a>小程序编辑</h3><pre><code>&lt;view&gt;&lt;/view&gt;：相当于&lt;div&gt;&lt;/div&gt;
+</code></pre><p>轮播图纵向滚动：vertical=”true”</p>
+<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><pre><code>&lt;text&gt;:只有被text包围的页面才能在手机端被长按选中；
+&lt;text&gt;:标签里面的文字支持转义‘/n’
+px:小程序的px不是物理像素点。而是对应手机型号的逻辑分辨率(pt)。（建议以iphone6的尺寸750个像素的宽度做效果图，然后图片写对象px的rpx）
+
+Alt+shift+f:可格式化代码格式；
+</code></pre><h5 id="html属性设置"><a href="#html属性设置" class="headerlink" title="html属性设置"></a>html属性设置</h5><p>html属性设置时，如果设置为true,可直接设置为true。如：vertical=’true’;但是如果设置为false,要设置为：vertical=’false‘;因为false是字符串，然后程序会自动类型转换，转换成boolear类型。</p>
+<p>wx:if=”false“ : 判断所属标签是否显示。</p>
+<pre><code>&lt;view&gt;&lt;/view&gt;：相当于&lt;div&gt;&lt;/div&gt;。&lt;view&gt; 是一个组件，会在页面上做渲染；
+&lt;block&gt;:&lt;block&gt;不是一个组件，它仅仅是一个包装元素，只接受控制属性，不会在页面中做任何渲染。
+</code></pre><p>在组件中绑定一个事件处理函数。<br>如bindtap，当用户点击该组件的时候会在该页面对应的Page中找到相应的事件处理函数。设置事件时应在点击事件前面加上 bind  如 tap 事件应该写成 bindtap;</p>
+<pre><code>&lt;view id=&quot;tapTest&quot; data-hi=&quot;WeChat&quot; bindtap=&quot;tapName&quot;&gt; Click me! &lt;/view&gt;
+</code></pre><p>事件分类：事件分为冒泡事件和非冒泡事件：</p>
+<ul>
+<li>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。  在事件前加bind;</li>
+<li><p>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。 在事件前加 catch;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">touchstart	手指触摸动作开始	</span><br><span class="line">touchmove	手指触摸后移动	</span><br><span class="line">touchcancel	手指触摸动作被打断，如来电提醒，弹窗	</span><br><span class="line">touchend	手指触摸动作结束	</span><br><span class="line">tap	手指触摸后马上离开	</span><br><span class="line">longpress	手指触摸后，超过350ms再离开，如果指定了事件回调函数并触发了这个事件，tap事件将不被触发</span><br><span class="line">longtap	手指触摸后，超过350ms再离开（推荐使用longpress事件代替）	</span><br><span class="line">transitionend	会在 WXSS transition 或 wx.createAnimation 动画结束后触发	</span><br><span class="line">animationstart	会在一个 WXSS animation 动画开始时触发	</span><br><span class="line">animationiteration	会在一个 WXSS animation 一次迭代结束时触发	</span><br><span class="line">animationend	会在一个 WXSS animation 动画完成时触发	</span><br><span class="line">touchforcechange	在支持 3D Touch 的 iPhone 设备，重按时会触发</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><p>letter-spacing: 该属性定义了在文本字符框之间插入多少空间。由于字符字形通常比其字符框要窄，指定长度值时，会调整字母之间通常的间隔。因此，normal 就相当于值为 0。</p>
+<p>vertical-align 属性设置元素的垂直对齐方式。</p>
+<h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><p>page:入口文件。</p>
+<pre><code>Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面加载，options为页面跳转所带来的参数
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})
+</code></pre><p>setData(): this.setData(contentData) setData方法多用于点击后改变页面信息或者刷新后与后台交互获取最新的信息。相当于将返回的信息放在data里面方便引用。</p>
+<p>注意：</p>
+<p>直接修改 this.data 而不调用 this.setData 是无法改变页面的状态的，还会造成数据不一致<br>单次设置的数据不能超过1024kB，请尽量避免一次设置过多的数据。</p>
+<p>设置路由跳转（小程序设置跳转到子集页面最多只能有五级）</p>
+<pre><code>wx.navigateTo({        //跳转到子级页面
+    url:&apos;../posts/post&apos;,  
+    success:function(){},  // 跳转成功时执行
+    fail:function(){},        // 跳转失败时执行
+    complete:function(){},        // 无论成功失败都执行
+})
+
+wx.redirectTo({        //跳转到父级页面
+    url:&apos;../posts/post&apos;,
+    success:function(){},  // 跳转成功时执行
+    fail:function(){},        // 跳转失败时执行
+    complete:function(){},        // 无论成功失败都执行
+})
+</code></pre><h4 id="template"><a href="#template" class="headerlink" title="template"></a>template</h4><p>模板文件 post-item-template.wxml</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template name=&apos;postItem&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;post-container&apos;&gt;</span><br><span class="line">      &lt;view class=&apos;post-author-date&apos;&gt;</span><br><span class="line">        &lt;image class=&apos;post-author&apos; src=&apos;&#123;&#123;item.avatar&#125;&#125;&apos;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;text class=&apos;post-date&apos;&gt;&#123;&#123;item.date&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">      &lt;text class=&apos;post-title&apos;&gt;&#123;&#123;item.title&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;image class=&apos;post-image&apos; src=&apos;&#123;&#123;item.imgSrc&#125;&#125;&apos;&gt;&lt;/image&gt;</span><br><span class="line">      &lt;text class=&apos;post-content&apos;&gt;&#123;&#123;item.content&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;view class=&apos;post-like&apos;&gt;</span><br><span class="line">        &lt;image class=&apos;post-like-image&apos; src=&apos;../../images/2.png&apos;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;text class=&apos;post-like-font&apos;&gt;&#123;&#123;item.collection&#125;&#125;&lt;/text&gt;</span><br><span class="line">        &lt;image class=&apos;post-like-image&apos;  src=&apos;/images/3.png&apos;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;text class=&apos;post-like-font&apos;&gt;&#123;&#123;item.reading&#125;&#125;&lt;/text&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>引用的文件</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;import src=&quot;post-item/post-item-template.wxml&quot; /&gt;  //引入文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;block wx:for=&quot;&#123;&#123;posto_key&#125;&#125;&quot; wx:for-item=&quot;item&quot;&gt;</span><br><span class="line">    &lt;template is=&quot;postItem&quot; data=&quot;&#123;&#123;item&#125;&#125;&quot; /&gt;  //需要复用的地方</span><br><span class="line">  &lt;/block&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>注意： </p>
+<ul>
+<li>引用的时候，is 后面跟着的是模板的name;</li>
+<li>引用的时候，data 里面的值是要传递给模板的值；</li>
+</ul>
+<pre><code>&lt;template is=&quot;postItem&quot; data=&quot;{{...item}}&quot; /&gt;
+&lt;template is=&quot;postItem&quot; data=&quot;{{item}}&quot; /&gt;
+</code></pre><p>以上两个不同的data内容，传递给模板里面的数据类型是不同的，item 相当于传递过去一个对象，使用的时候要 item.aaa 来得到所需要的值，，而 …item 相当于将item展开或者平铺之后得到值，，所以使用的时候直接以 aaa 来求值，即直接键值对的形式就可以求到所需要的值。</p>
+<h4 id="点击获取自定义值"><a href="#点击获取自定义值" class="headerlink" title="点击获取自定义值"></a>点击获取自定义值</h4><p>在模板中使用点击事件获取值</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// HTML</span><br><span class="line">  &lt;block wx:for=&quot;&#123;&#123;posto_key&#125;&#125;&quot; wx:for-item=&quot;item&quot;&gt;</span><br><span class="line">    &lt;view catchtap=&apos;onPostTap&apos; data-postId=&quot;&#123;&#123;item.postId&#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;template is=&quot;postItem&quot; data=&quot;&#123;&#123;...item&#125;&#125;&quot; /&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//js</span><br><span class="line">	  onPostTap:function(event)&#123;</span><br><span class="line">	    var postId = event.currentTarget.dataset.postid;</span><br><span class="line">	    wx.navigateTo(&#123;</span><br><span class="line">	      url: &apos;post-detail/post-detail&apos;,</span><br><span class="line">	    &#125;)</span><br><span class="line">	  &#125;,</span><br></pre></td></tr></table></figure>
+</code></pre><p>注意：</p>
+<ul>
+<li>template 是模板，在渲染的时候不显示在页面中，所以点击事件应在之前加一个可显示的标签，，</li>
+<li>所传值写在点击事件中设置，然后在点击事件中的自带值 event 中 event.currentTarget.dataset 取之前页面设置 data- 之后的值，去除 - 并且去除 - 的下个单词字母大写，其余均小写。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/正则表达式/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/22/ES6-let-const/" rel="prev" title="ES6-let&const">
+                ES6-let&const <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序实战项目"><span class="nav-number">1.</span> <span class="nav-text">小程序实战项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是小程序"><span class="nav-number">1.1.</span> <span class="nav-text">什么是小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#张小龙的定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">张小龙的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">1.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#申请账号"><span class="nav-number">1.1.3.</span> <span class="nav-text">申请账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载并安装微信开发者工具"><span class="nav-number">1.1.4.</span> <span class="nav-text">下载并安装微信开发者工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序开始"><span class="nav-number">1.2.</span> <span class="nav-text">小程序开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序编辑"><span class="nav-number">1.4.</span> <span class="nav-text">小程序编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">1.5.</span> <span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html"><span class="nav-number">1.5.1.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html属性设置"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">html属性设置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css"><span class="nav-number">1.5.2.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js"><span class="nav-number">1.5.3.</span> <span class="nav-text">js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#template"><span class="nav-number">1.5.4.</span> <span class="nav-text">template</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击获取自定义值"><span class="nav-number">1.5.5.</span> <span class="nav-text">点击获取自定义值</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/09/17/小程序实战/';
+          this.page.identifier = '2018/09/17/小程序实战/';
+          this.page.title = '小程序实战';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

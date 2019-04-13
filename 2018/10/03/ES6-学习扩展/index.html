@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="es6,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ES6扩展字符串的扩展includes(), startsWith(), endsWith()传统上，JavaScript 只有indexOf方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。  includes()：返回布尔值，表示是否找到了参数字符串。 startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。 endsWith()：返回布尔值，">
+<meta name="keywords" content="es6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6-学习扩展">
+<meta property="og:url" content="http://yoursite.com/2018/10/03/ES6-学习扩展/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="ES6扩展字符串的扩展includes(), startsWith(), endsWith()传统上，JavaScript 只有indexOf方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。  includes()：返回布尔值，表示是否找到了参数字符串。 startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。 endsWith()：返回布尔值，">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.899Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6-学习扩展">
+<meta name="twitter:description" content="ES6扩展字符串的扩展includes(), startsWith(), endsWith()传统上，JavaScript 只有indexOf方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。  includes()：返回布尔值，表示是否找到了参数字符串。 startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。 endsWith()：返回布尔值，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/03/ES6-学习扩展/">
+
+
+
+
+
+  <title>ES6-学习扩展 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/ES6-学习扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6-学习扩展</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-03T11:21:34+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/03/ES6-学习扩展/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/03/ES6-学习扩展/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="ES6扩展"><a href="#ES6扩展" class="headerlink" title="ES6扩展"></a>ES6扩展</h3><h4 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h4><h5 id="includes-startsWith-endsWith"><a href="#includes-startsWith-endsWith" class="headerlink" title="includes(), startsWith(), endsWith()"></a>includes(), startsWith(), endsWith()</h5><p>传统上，JavaScript 只有indexOf方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。</p>
+<ul>
+<li>includes()：返回布尔值，表示是否找到了参数字符串。</li>
+<li>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。</li>
+<li>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</li>
+</ul>
+<a id="more"></a>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let s = &apos;Hello world!&apos;;</span><br><span class="line">s.startsWith(&apos;Hello&apos;) // true</span><br><span class="line">s.endsWith(&apos;!&apos;) // true</span><br><span class="line">s.includes(&apos;o&apos;) // true</span><br></pre></td></tr></table></figure>
+</code></pre><p>这三个方法都支持第二个参数，表示开始搜索的位置。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let s = &apos;Hello world!&apos;;</span><br><span class="line"></span><br><span class="line">s.startsWith(&apos;world&apos;, 6) // true</span><br><span class="line">s.endsWith(&apos;Hello&apos;, 5) // true</span><br><span class="line">s.includes(&apos;Hello&apos;, 6) // false</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码表示，使用第二个参数n时，endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。</p>
+<h5 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h5><p>repeat方法返回一个新字符串，表示将原字符串重复n次。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;x&apos;.repeat(3) // &quot;xxx&quot;</span><br><span class="line">&apos;hello&apos;.repeat(2) // &quot;hellohello&quot;</span><br><span class="line">&apos;na&apos;.repeat(0) // &quot;&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>参数如果是小数，会被取整。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;na&apos;.repeat(2.9) // &quot;nana&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果repeat的参数是负数或者Infinity，会报错。Infinity:表示正无穷大的数值。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;na&apos;.repeat(Infinity)</span><br><span class="line">// RangeError</span><br><span class="line">&apos;na&apos;.repeat(-1)</span><br><span class="line">// RangeError</span><br></pre></td></tr></table></figure>
+</code></pre><p>但是，如果参数是 0 到-1 之间的小数，则等同于 0，这是因为会先进行取整运算。0 到-1 之间的小数，取整以后等于-0，repeat视同为 0。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;na&apos;.repeat(-0.9) // &quot;&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>参数NaN等同于 0。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;na&apos;.repeat(NaN) // &quot;&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果repeat的参数是字符串，则会先转换成数字。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;na&apos;.repeat(&apos;na&apos;) // &quot;&quot;</span><br><span class="line">&apos;na&apos;.repeat(&apos;3&apos;) // &quot;nanana&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="padStart-，padEnd"><a href="#padStart-，padEnd" class="headerlink" title="padStart()，padEnd()"></a>padStart()，padEnd()</h5><p>ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;x&apos;.padStart(5, &apos;ab&apos;) // &apos;ababx&apos;</span><br><span class="line">&apos;x&apos;.padStart(4, &apos;ab&apos;) // &apos;abax&apos;</span><br><span class="line"></span><br><span class="line">&apos;x&apos;.padEnd(5, &apos;ab&apos;) // &apos;xabab&apos;</span><br><span class="line">&apos;x&apos;.padEnd(4, &apos;ab&apos;) // &apos;xaba&apos;</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码中，padStart和padEnd一共接受两个参数，第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。</p>
+<p>如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;xxx&apos;.padStart(2, &apos;ab&apos;) // &apos;xxx&apos;</span><br><span class="line">&apos;xxx&apos;.padEnd(2, &apos;ab&apos;) // &apos;xxx&apos;</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果用来补全的字符串与原字符串，两者的长度之和超过了指定的最小长度，则会截去超出位数的补全字符串。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;abc&apos;.padStart(10, &apos;0123456789&apos;)</span><br><span class="line">// &apos;0123456abc&apos;</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果省略第二个参数，默认使用空格补全长度。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;x&apos;.padStart(4) // &apos;   x&apos;</span><br><span class="line">&apos;x&apos;.padEnd(4) // &apos;x   &apos;</span><br></pre></td></tr></table></figure>
+</code></pre><p>padStart的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&apos;1&apos;.padStart(10, &apos;0&apos;) // &quot;0000000001&quot;</span><br><span class="line">&apos;12&apos;.padStart(10, &apos;0&apos;) // &quot;0000000012&quot;</span><br><span class="line">&apos;123456&apos;.padStart(10, &apos;0&apos;) // &quot;0000123456&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>另一个用途是提示字符串格式。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;12&apos;.padStart(10, &apos;YYYY-MM-DD&apos;) // &quot;YYYY-MM-12&quot;</span><br><span class="line">&apos;09-12&apos;.padStart(10, &apos;YYYY-MM-DD&apos;) // &quot;YYYY-09-12&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h5><p>传统的 JavaScript 语言，输出模板通常是这样写的（下面使用了 jQuery 的方法）。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#result&apos;).append(</span><br><span class="line">  &apos;There are &lt;b&gt;&apos; + basket.count + &apos;&lt;/b&gt; &apos; +</span><br><span class="line">  &apos;items in your basket, &apos; +</span><br><span class="line">  &apos;&lt;em&gt;&apos; + basket.onSale +</span><br><span class="line">  &apos;&lt;/em&gt; are on sale!&apos;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面这种写法相当繁琐不方便，ES6 引入了模板字符串解决这个问题。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#result&apos;).append(`</span><br><span class="line">  There are &lt;b&gt;$&#123;basket.count&#125;&lt;/b&gt; items</span><br><span class="line">   in your basket, &lt;em&gt;$&#123;basket.onSale&#125;&lt;/em&gt;</span><br><span class="line">  are on sale!</span><br><span class="line">`);</span><br></pre></td></tr></table></figure>
+</code></pre><p>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 普通字符串</span><br><span class="line">`In JavaScript &apos;\n&apos; is a line-feed.`</span><br><span class="line"></span><br><span class="line">// 多行字符串</span><br><span class="line">`In JavaScript this is</span><br><span class="line"> not legal.`</span><br><span class="line"></span><br><span class="line">console.log(`string text line 1</span><br><span class="line">string text line 2`);</span><br><span class="line"></span><br><span class="line">// 字符串中嵌入变量</span><br><span class="line">let name = &quot;Bob&quot;, time = &quot;today&quot;;</span><br><span class="line">`Hello $&#123;name&#125;, how are you $&#123;time&#125;?`</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码中的模板字符串，都是用反引号表示。如果在模板字符串中需要使用反引号，则前面要用反斜杠转义。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let greeting = `\`Yo\` World!`;</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#list&apos;).html(`</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;first&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;second&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">`);</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码中，所有模板字符串的空格和换行，都是被保留的，比如<ul>标签前面会有一个换行。如果你不想要这个换行，可以使用trim方法消除它。</ul></p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#list&apos;).html(`</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;first&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;second&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">`.trim());</span><br></pre></td></tr></table></figure>
+</code></pre><p>模板字符串中嵌入变量，需要将变量名写在${}之中。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function authorize(user, action) &#123;</span><br><span class="line">  if (!user.hasPrivilege(action)) &#123;</span><br><span class="line">    throw new Error(</span><br><span class="line">      // 传统写法为</span><br><span class="line">      // &apos;User &apos;</span><br><span class="line">      // + user.name</span><br><span class="line">      // + &apos; is not authorized to do &apos;</span><br><span class="line">      // + action</span><br><span class="line">      // + &apos;.&apos;</span><br><span class="line">      `User $&#123;user.name&#125; is not authorized to do $&#123;action&#125;.`);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>大括号内部可以放入任意的 JavaScript 表达式，可以进行运算，以及引用对象属性。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let x = 1;</span><br><span class="line">let y = 2;</span><br><span class="line"></span><br><span class="line">`$&#123;x&#125; + $&#123;y&#125; = $&#123;x + y&#125;`</span><br><span class="line">// &quot;1 + 2 = 3&quot;</span><br><span class="line"></span><br><span class="line">`$&#123;x&#125; + $&#123;y * 2&#125; = $&#123;x + y * 2&#125;`</span><br><span class="line">// &quot;1 + 4 = 5&quot;</span><br><span class="line"></span><br><span class="line">let obj = &#123;x: 1, y: 2&#125;;</span><br><span class="line">`$&#123;obj.x + obj.y&#125;`</span><br><span class="line">// &quot;3&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>模板字符串之中还能调用函数。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fn() &#123;</span><br><span class="line">  return &quot;Hello World&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">`foo $&#123;fn()&#125; bar`</span><br><span class="line">// foo Hello World bar</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果大括号中的值不是字符串，将按照一般的规则转为字符串。比如，大括号中是一个对象，将默认调用对象的toString方法。</p>
+<p>如果模板字符串中的变量没有声明，将报错。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 变量place没有声明</span><br><span class="line">let msg = `Hello, $&#123;place&#125;`;</span><br><span class="line">// 报错</span><br></pre></td></tr></table></figure>
+</code></pre><p>由于模板字符串的大括号内部，就是执行 JavaScript 代码，因此如果大括号内部是一个字符串，将会原样输出。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`Hello $&#123;&apos;World&apos;&#125;`</span><br><span class="line">// &quot;Hello World&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><p>模板字符串甚至还能嵌套。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const tmpl = addrs =&gt; `</span><br><span class="line">  &lt;table&gt;</span><br><span class="line">  $&#123;addrs.map(addr =&gt; `</span><br><span class="line">    &lt;tr&gt;&lt;td&gt;$&#123;addr.first&#125;&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;&lt;td&gt;$&#123;addr.last&#125;&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">  `).join(&apos;&apos;)&#125;</span><br><span class="line">  &lt;/table&gt;</span><br><span class="line">`;</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码中，模板字符串的变量之中，又嵌入了另一个模板字符串，使用方法如下。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const data = [</span><br><span class="line">    &#123; first: &apos;&lt;Jane&gt;&apos;, last: &apos;Bond&apos; &#125;,</span><br><span class="line">    &#123; first: &apos;Lars&apos;, last: &apos;&lt;Croft&gt;&apos; &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">console.log(tmpl(data));</span><br><span class="line">// &lt;table&gt;</span><br><span class="line">//</span><br><span class="line">//   &lt;tr&gt;&lt;td&gt;&lt;Jane&gt;&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">//   &lt;tr&gt;&lt;td&gt;Bond&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">//</span><br><span class="line">//   &lt;tr&gt;&lt;td&gt;Lars&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">//   &lt;tr&gt;&lt;td&gt;&lt;Croft&gt;&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">//</span><br><span class="line">// &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果需要引用模板字符串本身，在需要时执行，可以像下面这样写。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 写法一</span><br><span class="line">let str = &apos;return &apos; + &apos;`Hello $&#123;name&#125;!`&apos;;</span><br><span class="line">let func = new Function(&apos;name&apos;, str);</span><br><span class="line">func(&apos;Jack&apos;) // &quot;Hello Jack!&quot;</span><br><span class="line"></span><br><span class="line">// 写法二</span><br><span class="line">let str = &apos;(name) =&gt; `Hello $&#123;name&#125;!`&apos;;</span><br><span class="line">let func = eval.call(null, str);</span><br><span class="line">func(&apos;Jack&apos;) // &quot;Hello Jack!&quot;</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="模板编译"><a href="#模板编译" class="headerlink" title="模板编译"></a>模板编译</h5><p>下面，我们来看一个通过模板字符串，生成正式模板的实例。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let template = `</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;% for(let i=0; i &lt; data.supplies.length; i++) &#123; %&gt;</span><br><span class="line">    &lt;li&gt;&lt;%= data.supplies[i] %&gt;&lt;/li&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">`;</span><br></pre></td></tr></table></figure>
+</code></pre><p>上面代码在模板字符串之中，放置了一个常规模板。该模板使用&lt;%…%&gt;放置 JavaScript 代码，使用&lt;%= … %&gt;输出 JavaScript 表达式。</p>
+<p>怎么编译这个模板字符串呢？</p>
+<p>一种思路是将其转换为 JavaScript 表达式字符串。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo(&apos;&lt;ul&gt;&apos;);</span><br><span class="line">for(let i=0; i &lt; data.supplies.length; i++) &#123;</span><br><span class="line">  echo(&apos;&lt;li&gt;&apos;);</span><br><span class="line">  echo(data.supplies[i]);</span><br><span class="line">  echo(&apos;&lt;/li&gt;&apos;);</span><br><span class="line">&#125;;</span><br><span class="line">echo(&apos;&lt;/ul&gt;&apos;);</span><br></pre></td></tr></table></figure>
+</code></pre><p>这个转换使用正则表达式就行了。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let evalExpr = /&lt;%=(.+?)%&gt;/g;</span><br><span class="line">let expr = /&lt;%([\s\S]+?)%&gt;/g;</span><br><span class="line"></span><br><span class="line">template = template</span><br><span class="line">  .replace(evalExpr, &apos;`); \n  echo( $1 ); \n  echo(`&apos;)</span><br><span class="line">  .replace(expr, &apos;`); \n $1 \n  echo(`&apos;);</span><br><span class="line"></span><br><span class="line">template = &apos;echo(`&apos; + template + &apos;`);&apos;;</span><br></pre></td></tr></table></figure>
+</code></pre><p>然后，将template封装在一个函数里面返回，就可以了。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let script =</span><br><span class="line">`(function parse(data)&#123;</span><br><span class="line">  let output = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">  function echo(html)&#123;</span><br><span class="line">    output += html;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  $&#123; template &#125;</span><br><span class="line"></span><br><span class="line">  return output;</span><br><span class="line">&#125;)`;</span><br><span class="line"></span><br><span class="line">return script;</span><br></pre></td></tr></table></figure>
+</code></pre><p>将上面的内容拼装成一个模板编译函数compile。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function compile(template)&#123;</span><br><span class="line">  const evalExpr = /&lt;%=(.+?)%&gt;/g;</span><br><span class="line">  const expr = /&lt;%([\s\S]+?)%&gt;/g;</span><br><span class="line"></span><br><span class="line">  template = template</span><br><span class="line">    .replace(evalExpr, &apos;`); \n  echo( $1 ); \n  echo(`&apos;)</span><br><span class="line">    .replace(expr, &apos;`); \n $1 \n  echo(`&apos;);</span><br><span class="line"></span><br><span class="line">  template = &apos;echo(`&apos; + template + &apos;`);&apos;;</span><br><span class="line"></span><br><span class="line">  let script =</span><br><span class="line">  `(function parse(data)&#123;</span><br><span class="line">    let output = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    function echo(html)&#123;</span><br><span class="line">      output += html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $&#123; template &#125;</span><br><span class="line"></span><br><span class="line">    return output;</span><br><span class="line">  &#125;)`;</span><br><span class="line"></span><br><span class="line">  return script;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>compile函数的用法如下。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let parse = eval(compile(template));</span><br><span class="line">div.innerHTML = parse(&#123; supplies: [ &quot;broom&quot;, &quot;mop&quot;, &quot;cleaner&quot; ] &#125;);</span><br><span class="line">//   &lt;ul&gt;</span><br><span class="line">//     &lt;li&gt;broom&lt;/li&gt;</span><br><span class="line">//     &lt;li&gt;mop&lt;/li&gt;</span><br><span class="line">//     &lt;li&gt;cleaner&lt;/li&gt;</span><br><span class="line">//   &lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h4><h5 id="Number-isFinite-Number-isNaN"><a href="#Number-isFinite-Number-isNaN" class="headerlink" title="Number.isFinite(), Number.isNaN()"></a>Number.isFinite(), Number.isNaN()</h5><p>ES6 在Number对象上，新提供了Number.isFinite()和Number.isNaN()两个方法。</p>
+<p>Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Number.isFinite(15); // true</span><br><span class="line">Number.isFinite(0.8); // true</span><br><span class="line">Number.isFinite(NaN); // false</span><br><span class="line">Number.isFinite(Infinity); // false</span><br><span class="line">Number.isFinite(-Infinity); // false</span><br><span class="line">Number.isFinite(&apos;foo&apos;); // false</span><br><span class="line">Number.isFinite(&apos;15&apos;); // false</span><br><span class="line">Number.isFinite(true); // false</span><br></pre></td></tr></table></figure>
+</code></pre><p>注意，如果参数类型不是数值，Number.isFinite一律返回false。</p>
+<p>Number.isNaN()用来检查一个值是否为NaN。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Number.isNaN(NaN) // true</span><br><span class="line">Number.isNaN(15) // false</span><br><span class="line">Number.isNaN(&apos;15&apos;) // false</span><br><span class="line">Number.isNaN(true) // false</span><br><span class="line">Number.isNaN(9/NaN) // true</span><br><span class="line">Number.isNaN(&apos;true&apos; / 0) // true</span><br><span class="line">Number.isNaN(&apos;true&apos; / &apos;true&apos;) // true</span><br></pre></td></tr></table></figure>
+</code></pre><p>如果参数类型不是NaN，Number.isNaN一律返回false。</p>
+<p>它们与传统的全局方法isFinite()和isNaN()的区别在于，传统方法先调用Number()将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，Number.isFinite()对于非数值一律返回false, Number.isNaN()只有对于NaN才返回true，非NaN一律返回false。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">isFinite(25) // true</span><br><span class="line">isFinite(&quot;25&quot;) // true</span><br><span class="line">Number.isFinite(25) // true</span><br><span class="line">Number.isFinite(&quot;25&quot;) // false</span><br><span class="line">isNaN(NaN) // true</span><br><span class="line">isNaN(&quot;NaN&quot;) // true</span><br><span class="line">Number.isNaN(NaN) // true</span><br><span class="line">Number.isNaN(&quot;NaN&quot;) // false</span><br><span class="line">Number.isNaN(1) // false</span><br></pre></td></tr></table></figure>
+</code></pre><h5 id="Number-parseInt-Number-parseFloat"><a href="#Number-parseInt-Number-parseFloat" class="headerlink" title="Number.parseInt(), Number.parseFloat()"></a>Number.parseInt(), Number.parseFloat()</h5><p>ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// ES5的写法</span><br><span class="line">parseInt(&apos;12.34&apos;) // 12</span><br><span class="line">parseFloat(&apos;123.45#&apos;) // 123.45</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line">Number.parseInt(&apos;12.34&apos;) // 12</span><br><span class="line">Number.parseFloat(&apos;123.45#&apos;) // 123.45</span><br></pre></td></tr></table></figure>
+</code></pre><p>这样做的目的，是逐步减少全局性方法，使得语言逐步模块化。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number.parseInt === parseInt // true</span><br><span class="line">Number.parseFloat === parseFloat // true</span><br></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/es6/" rel="tag"># es6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/25/ES6-变量的结构赋值/" rel="next" title="ES6-变量的结构赋值">
+                <i class="fa fa-chevron-left"></i> ES6-变量的结构赋值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/28/大西北/" rel="prev" title="大西北">
+                大西北 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6扩展"><span class="nav-number">1.</span> <span class="nav-text">ES6扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的扩展"><span class="nav-number">1.1.</span> <span class="nav-text">字符串的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#includes-startsWith-endsWith"><span class="nav-number">1.1.1.</span> <span class="nav-text">includes(), startsWith(), endsWith()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#repeat"><span class="nav-number">1.1.2.</span> <span class="nav-text">repeat()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#padStart-，padEnd"><span class="nav-number">1.1.3.</span> <span class="nav-text">padStart()，padEnd()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模板字符串"><span class="nav-number">1.1.4.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模板编译"><span class="nav-number">1.1.5.</span> <span class="nav-text">模板编译</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值的扩展"><span class="nav-number">1.2.</span> <span class="nav-text">数值的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number-isFinite-Number-isNaN"><span class="nav-number">1.2.1.</span> <span class="nav-text">Number.isFinite(), Number.isNaN()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Number-parseInt-Number-parseFloat"><span class="nav-number">1.2.2.</span> <span class="nav-text">Number.parseInt(), Number.parseFloat()</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/10/03/ES6-学习扩展/';
+          this.page.identifier = '2018/10/03/ES6-学习扩展/';
+          this.page.title = 'ES6-学习扩展';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

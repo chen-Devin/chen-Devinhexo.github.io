@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSScss的初体验：1 所有与css相关的设置都放在style标签中，style标签是一个双标签，它放在head标签之中，在title标签下面。 2 结构： 12345678&amp;lt;style&amp;gt;  	选择器 ｛		属性名1：属性值1;		属性名2：属性值2;		......	｝&amp;lt;/style&amp;gt;">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS学习">
+<meta property="og:url" content="http://yoursite.com/2017/04/09/CSS学习/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="CSScss的初体验：1 所有与css相关的设置都放在style标签中，style标签是一个双标签，它放在head标签之中，在title标签下面。 2 结构： 12345678&amp;lt;style&amp;gt;  	选择器 ｛		属性名1：属性值1;		属性名2：属性值2;		......	｝&amp;lt;/style&amp;gt;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.877Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS学习">
+<meta name="twitter:description" content="CSScss的初体验：1 所有与css相关的设置都放在style标签中，style标签是一个双标签，它放在head标签之中，在title标签下面。 2 结构： 12345678&amp;lt;style&amp;gt;  	选择器 ｛		属性名1：属性值1;		属性名2：属性值2;		......	｝&amp;lt;/style&amp;gt;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/09/CSS学习/">
+
+
+
+
+
+  <title>CSS学习 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/09/CSS学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-09T21:17:01+08:00">
+                2017-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/09/CSS学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/09/CSS学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="css的初体验："><a href="#css的初体验：" class="headerlink" title="css的初体验："></a>css的初体验：</h3><p>1 所有与css相关的设置都放在style标签中，style标签是一个双标签，它放在head标签之中，在title标签下面。</p>
+<p>2 结构：</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style&gt;  </span><br><span class="line">	选择器 ｛</span><br><span class="line">		属性名1：属性值1;</span><br><span class="line">		属性名2：属性值2;</span><br><span class="line">		......</span><br><span class="line">	｝</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><a id="more"></a>
+<p>总结：css是用来给页面上的结构“穿上衣服”（设置样式）。</p>
+<h3 id="css相关的属性："><a href="#css相关的属性：" class="headerlink" title="css相关的属性："></a>css相关的属性：</h3><p>例如：</p>
+<ul>
+<li>color:设置字体的颜色。</li>
+<li>font-size: 设置字体的大小。</li>
+<li>background:设置背景颜色。</li>
+<li>width:设置宽</li>
+<li>height:设置高</li>
+</ul>
+<h3 id="字体相关的属性："><a href="#字体相关的属性：" class="headerlink" title="字体相关的属性："></a>字体相关的属性：</h3><ul>
+<li>font-size（字体的大小）:xxpx;</li>
+<li>font-weight（字体的粗细）:<br>  可以设置具体的数值：是整百的数100-900<br>  还可以设置一些关键字：<pre><code>bold:加粗
+normal:正常 
+</code></pre></li>
+<li>font-family（字体的类型）:”Times New Roman”,Georgia,Serif;</li>
+<li>font-style（字体的样式）:normal(标注) italic(斜体) oblique(倾斜的字体);</li>
+</ul>
+<p>字体的连写形式：</p>
+<pre><code>font: font-style font-weight font-size font-family;
+</code></pre><p>注意： font-style与font-weight:是可选属性</p>
+<h3 id="颜色的赋值："><a href="#颜色的赋值：" class="headerlink" title="颜色的赋值："></a>颜色的赋值：</h3><p>color:属性的取值可以是：</p>
+<pre><code>1 具体的颜色的英文单词:yellow,pink,red。
+2 使用十六进制颜色表示法：(#000000=&gt;#000 #003300=&gt;#030)
+3 0rgb表示法：rgb(100,100,100);
+4 0rgba表示法： a表示透明度
+</code></pre><h3 id="背景颜色的赋值"><a href="#背景颜色的赋值" class="headerlink" title="背景颜色的赋值"></a>背景颜色的赋值</h3><p>background</p>
+<p>背景相关的属性：</p>
+<ul>
+<li>background-color:设置背景颜色</li>
+<li>background-image:设置背景图片</li>
+<li>background-image:url(图片的路径);//默认情况下图片如果比容器要小，它会平铺。</li>
+<li><p>background-repeat:设置背景是否平铺：</p>
+<p>  取值：</p>
+<pre><code>no-repeat:不平铺
+repeat-x：在水平方向上平铺
+repeat-y:在垂直方向上平铺
+repeat:平铺
+</code></pre></li>
+<li><p>background-position:设置背景图片的位置</p>
+<p>  用法：</p>
+<pre><code>background-postion: x y;
+</code></pre><p>  注意：x,y可以是具体的数值</p>
+<pre><code>x,y又可以是一些英文单词。
+x: left 左  center 中 right 右
+y: top 上  center 中 bottom下
+</code></pre></li>
+</ul>
+<p>背景的连写方式：</p>
+<p>  background: background-color background-image background-repeat background-position;</p>
+<h3 id="元素的显示方式："><a href="#元素的显示方式：" class="headerlink" title="元素的显示方式："></a>元素的显示方式：</h3><h4 id="行内元素："><a href="#行内元素：" class="headerlink" title="行内元素："></a>行内元素：</h4><pre><code>a,span,b,u,i,s,strong,em,ins,del
+</code></pre><p>属性：display: inline<br>特点：</p>
+<ol>
+<li>0一行里面可以显示多个</li>
+<li>0无法设置宽高</li>
+<li>0大小由内容来决定<br>缺点：</li>
+</ol>
+<ul>
+<li>不能设置宽高</li>
+</ul>
+<h4 id="块级元素："><a href="#块级元素：" class="headerlink" title="块级元素："></a>块级元素：</h4><pre><code>p,h1-h6,div,ul,li,ol,li,dl,dt,dd
+</code></pre><p>属性： display:block<br>特点：</p>
+<ol>
+<li>独占一行</li>
+<li>可以设置宽高</li>
+<li>默认宽度一整行</li>
+</ol>
+<p>缺点：</p>
+<p>独占一行。</p>
+<h4 id="行内块级元素"><a href="#行内块级元素" class="headerlink" title="行内块级元素"></a>行内块级元素</h4><pre><code>img,input
+</code></pre><p>属性：display:inline-block</p>
+<p>特点：</p>
+<ol>
+<li>可以设置宽高</li>
+<li>一行内可显示多个</li>
+</ol>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="标签选择器："><a href="#标签选择器：" class="headerlink" title="标签选择器："></a>标签选择器：</h3><p>结构：</p>
+<pre><code>&lt;style&gt;
+    标签名（选择器） {
+    属性名1：属性值1;
+    属性名2：属性值2;
+    .......
+    }
+&lt;/style&gt;
+</code></pre><p>效果：会将所有的这类标签都加上相同的属性。</p>
+<h3 id="类选择器："><a href="#类选择器：" class="headerlink" title="类选择器："></a>类选择器：</h3><p>给要设置的标签添加一个类名：class</p>
+<pre><code>例如：&lt;p class=”zm”&gt;我就是我&lt;/p&gt;
+结构：
+    &lt;style&gt;
+        .类名（选择器） {
+        属性名1：属性值1;
+        属性名2：属性值2;
+        .......
+        }
+    &lt;/style&gt;
+</code></pre><p>效果：会将所有拥有这个类名的那些标签都加上相同的属性。</p>
+<h3 id="id选择器："><a href="#id选择器：" class="headerlink" title="id选择器："></a>id选择器：</h3><p>与类选择基本上相同：</p>
+<pre><code>结构：
+    &lt;style&gt;
+        #id名（选择器） {
+            属性名1：属性值1;
+            属性名2：属性值2;
+            .......
+        }
+</code></pre><p><br>效果：会将所有拥有这个id名的标签加上相同的属性。</p>
+<h3 id="id选择器与类选择器之间区别："><a href="#id选择器与类选择器之间区别：" class="headerlink" title="id选择器与类选择器之间区别："></a>id选择器与类选择器之间区别：</h3><p>类名：相当于是人的姓名。（可以重复）<br>特点： </p>
+<pre><code>1. 一个类名可以设置给多个标签
+2. 一个标签可以有多个类名 
+</code></pre><p>id名：相当于是身份证号码。（必须唯一）</p>
+<p>特点：</p>
+<pre><code>1. 只能给一个标签设置这个id名
+2.一个标签只能有一个id名。
+</code></pre><p>id不是给css使用的，而是javascript来使用的。</p>
+<h3 id="id与类名命名的规则："><a href="#id与类名命名的规则：" class="headerlink" title="id与类名命名的规则："></a>id与类名命名的规则：</h3><p>命名的取值范围只能是：0-9,a-z,A-Z,_,-并且不能以数字开头。</p>
+<h3 id="通配符："><a href="#通配符：" class="headerlink" title="通配符："></a>通配符：</h3><p>代码：</p>
+<pre><code>&lt;style&gt;
+    * {
+        属性名1：属性值;
+        ....
+    }
+&lt;style&gt;
+</code></pre><p>作用：会将页面上所有的标签都设置这个属性。会去页面上一个一个的遍历页面的标签，然后给他们进行设置（效率低）。</p>
+<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p>代码</p>
+<pre><code>&lt;style&gt;
+    p,.zm {
+        属性名1：属性值;
+        ....
+    }
+&lt;style&gt;
+</code></pre><p>作用：会将所有拥有这个标签或者有这个类名的标签加上相同的属性，</p>
+<h3 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h3><p>代码</p>
+<pre><code>&lt;style&gt;
+    p.zm {
+        属性名1：属性值;
+        ....
+    }
+&lt;style&gt;
+</code></pre><p>作用：会将所有拥有这个标签并且有这个类名的标签加上相同的属性，<br>注意：交集选择书写的时候一定要注意：选择器的名称组成中如果有标签名那么标签必须写在最前面。</p>
+<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><p>代码</p>
+<pre><code>&lt;style&gt;
+    .zm p{
+        属性名1：属性值;
+        ....
+    }
+&lt;style&gt;
+</code></pre><p>作用：会将所有拥有这个类名的标签后面拥有这个属性的标签加上相同的属性，</p>
+<h3 id="子代选择器"><a href="#子代选择器" class="headerlink" title="子代选择器"></a>子代选择器</h3><p>代码</p>
+<pre><code>&lt;style&gt;
+    .zm p{
+        属性名1：属性值;
+        ....
+    }
+&lt;style&gt;
+</code></pre><p>作用：会将所有拥有这个类名的标签并且直接子代有这个属性的标签加上相同的属性，</p>
+<h3 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h3><p>效果：可以将页面上的一段代码让它失去作用。<br>应用：使用注释将页面的结构标注出来。</p>
+<pre><code>&lt;!-- --&gt;:html中的注释。
+</code></pre><p>这个注释不能嵌套。</p>
+<pre><code>/**/:css中的注释。
+</code></pre><p>快捷键：不管是html,还是css它们注释的快捷键都是ctrl+/;</p>
+<h3 id="css样式的三种类型："><a href="#css样式的三种类型：" class="headerlink" title="css样式的三种类型："></a>css样式的三种类型：</h3><p>1.0嵌套样式（内部样式）</p>
+<pre><code>&lt;style&gt;
+    .zm p{
+        属性名1：属性值;
+        ....
+    }
+&lt;style&gt;
+</code></pre><p>2.0行内样式（内联样式）<br> <div style:"属性名：属性值">aaa</div><br>3.0外联样式（外部样式）<br>新建一个文件，后缀叫.css，在这个文件中直接写样式（不需要加上style标签）.在另一个页面引用的时候用加上：</p>
+<link rel="”stylesheet”" href="”外联样式的路径”">
+
+<h2 id="新的属性"><a href="#新的属性" class="headerlink" title="新的属性"></a>新的属性</h2><h3 id="首行缩进及文本位置"><a href="#首行缩进及文本位置" class="headerlink" title="首行缩进及文本位置"></a>首行缩进及文本位置</h3><p>text-indent:</p>
+<pre><code>作用：设置首行缩进。
+用法：text-indent: 2em;
+em:一个文本的距离。
+</code></pre><p>text-align:</p>
+<pre><code>作用：设置文本的位置
+取值：
+    center:设置内容在容器的水平方向上居中。
+    left:设置内容在窗口的水平方向上靠左
+    right:设置内容在容器的水平方向上靠右
+</code></pre><p>text-decoration:     </p>
+<pre><code>作用：设置文本的装饰
+取值：
+    none:没有任何装饰
+    underline:下划线
+</code></pre><p>margin: 0 auto;</p>
+<pre><code>作用：设置容器自身水平居中。
+</code></pre><h2 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h2><h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>作用：子元素可以继承父元素的样式。</p>
+<pre><code>什么样的属性才可以继承：
+    text-,font-,line-开头的属性都是可以继承的
+    color.
+</code></pre><p>具体应用：在写页面之前我们会通过给body设置一个字体，来将页面上所有的标签都能够继承这个属性。<br>特殊性：</p>
+<pre><code>1. a标签的颜色不能继承，如果一定要修改a标签的颜色直接作用在a标签上面。
+2. h标签的大小不能继承，如果一定要修改h标签的大小直接作用在h标签上面。
+3. div的高度如果不设置由内容来决定（没有内容那么高度为0），宽度默认由父元素继承过来。
+</code></pre><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>是浏览器处理样式冲突的一个特性。</p>
+<p>作用：如果一个样式通过两个选择器设置到同一个元素上面，那么这个时候一个样式就会将另一个样式层叠掉。如果多个不两只的属性通过两个选择器设置到一个元素上面，那么不会发生层叠。</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>！important&gt;行内样式&gt;id选择器&gt;类选择器&gt;标签选择器&gt;通配符&gt;继承</p>
+<p>####变数：!important<br>注意：虽然important是一个变数，但是不能作用在继承上。!important属性无法继承。</p>
+<h4 id="权重："><a href="#权重：" class="headerlink" title="权重："></a>权重：</h4><p>作用：多个选择器组合以后的优先级。</p>
+<p>算法：</p>
+<p>（0，0，0，0）==》第一个0对应的是important的个数，第二个0对应的是id选择器的个数，第三个0对应的类选择器的个数，第四个0对应的是标签选择器的个数，就是当前选择器的权重。<br>比较：<br>先从第一个0开始比较，如果第一个0大，那么说明这个选择器的权重高，如果第一个相同，比较第二个，依次类推。<br>总结：权重其它是优先级的算法</p>
+<p>优先级是层叠表现。</p>
+<h4 id="选择器工作的一个原理："><a href="#选择器工作的一个原理：" class="headerlink" title="选择器工作的一个原理："></a>选择器工作的一个原理：</h4><p>选择器在查找元素的时候不是从左往右找，而是从右往左找。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/19/我的hexo搭建学习过程/" rel="next" title="我的hexo搭建学习过程">
+                <i class="fa fa-chevron-left"></i> 我的hexo搭建学习过程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/15/常用属性记录/" rel="prev" title="常用属性记录">
+                常用属性记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">1.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css的初体验："><span class="nav-number">1.1.</span> <span class="nav-text">css的初体验：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css相关的属性："><span class="nav-number">1.2.</span> <span class="nav-text">css相关的属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体相关的属性："><span class="nav-number">1.3.</span> <span class="nav-text">字体相关的属性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色的赋值："><span class="nav-number">1.4.</span> <span class="nav-text">颜色的赋值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景颜色的赋值"><span class="nav-number">1.5.</span> <span class="nav-text">背景颜色的赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素的显示方式："><span class="nav-number">1.6.</span> <span class="nav-text">元素的显示方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#行内元素："><span class="nav-number">1.6.1.</span> <span class="nav-text">行内元素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素："><span class="nav-number">1.6.2.</span> <span class="nav-text">块级元素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行内块级元素"><span class="nav-number">1.6.3.</span> <span class="nav-text">行内块级元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">2.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签选择器："><span class="nav-number">2.1.</span> <span class="nav-text">标签选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类选择器："><span class="nav-number">2.2.</span> <span class="nav-text">类选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id选择器："><span class="nav-number">2.3.</span> <span class="nav-text">id选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id选择器与类选择器之间区别："><span class="nav-number">2.4.</span> <span class="nav-text">id选择器与类选择器之间区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id与类名命名的规则："><span class="nav-number">2.5.</span> <span class="nav-text">id与类名命名的规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符："><span class="nav-number">2.6.</span> <span class="nav-text">通配符：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并集选择器"><span class="nav-number">2.7.</span> <span class="nav-text">并集选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交集选择器"><span class="nav-number">2.8.</span> <span class="nav-text">交集选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后代选择器"><span class="nav-number">2.9.</span> <span class="nav-text">后代选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子代选择器"><span class="nav-number">2.10.</span> <span class="nav-text">子代选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释："><span class="nav-number">2.11.</span> <span class="nav-text">注释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css样式的三种类型："><span class="nav-number">2.12.</span> <span class="nav-text">css样式的三种类型：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新的属性"><span class="nav-number">3.</span> <span class="nav-text">新的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首行缩进及文本位置"><span class="nav-number">3.1.</span> <span class="nav-text">首行缩进及文本位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS三大特性"><span class="nav-number">4.</span> <span class="nav-text">CSS三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承性"><span class="nav-number">4.1.</span> <span class="nav-text">继承性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层叠性"><span class="nav-number">4.2.</span> <span class="nav-text">层叠性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级"><span class="nav-number">4.3.</span> <span class="nav-text">优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#权重："><span class="nav-number">4.3.1.</span> <span class="nav-text">权重：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器工作的一个原理："><span class="nav-number">4.3.2.</span> <span class="nav-text">选择器工作的一个原理：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/04/09/CSS学习/';
+          this.page.identifier = '2017/04/09/CSS学习/';
+          this.page.title = 'CSS学习';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

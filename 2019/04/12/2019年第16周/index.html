@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="每周学习记录,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="学习把一个vue项目拷贝到另一个地方启动不了的解决办法把一个vue项目文件拷贝到另一个地方，然后 npm run dev 启动不了.造成这样的原因是当你在一台电脑上编译后npm会有cache缓存，到另外一个地方编译这个项目的缓存与原缓存不一致，导致编译报错。 解决办法：  删掉node_modules文件夹，  2.然后cnpm install 和npm run dev就可以在这台电脑运行你的项目">
+<meta name="keywords" content="每周学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019年第16周">
+<meta property="og:url" content="http://yoursite.com/2019/04/12/2019年第16周/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="学习把一个vue项目拷贝到另一个地方启动不了的解决办法把一个vue项目文件拷贝到另一个地方，然后 npm run dev 启动不了.造成这样的原因是当你在一台电脑上编译后npm会有cache缓存，到另外一个地方编译这个项目的缓存与原缓存不一致，导致编译报错。 解决办法：  删掉node_modules文件夹，  2.然后cnpm install 和npm run dev就可以在这台电脑运行你的项目">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190411145801213.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190411150551529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbHlfX2Fu,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-04-13T09:47:42.035Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019年第16周">
+<meta name="twitter:description" content="学习把一个vue项目拷贝到另一个地方启动不了的解决办法把一个vue项目文件拷贝到另一个地方，然后 npm run dev 启动不了.造成这样的原因是当你在一台电脑上编译后npm会有cache缓存，到另外一个地方编译这个项目的缓存与原缓存不一致，导致编译报错。 解决办法：  删掉node_modules文件夹，  2.然后cnpm install 和npm run dev就可以在这台电脑运行你的项目">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190411145801213.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/12/2019年第16周/">
+
+
+
+
+
+  <title>2019年第16周 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/2019年第16周/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2019年第16周</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-12T17:44:52+08:00">
+                2019-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/12/2019年第16周/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/12/2019年第16周/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><h4 id="把一个vue项目拷贝到另一个地方启动不了的解决办法"><a href="#把一个vue项目拷贝到另一个地方启动不了的解决办法" class="headerlink" title="把一个vue项目拷贝到另一个地方启动不了的解决办法"></a>把一个vue项目拷贝到另一个地方启动不了的解决办法</h4><p>把一个vue项目文件拷贝到另一个地方，然后 npm run dev 启动不了.造成这样的原因是当你在一台电脑上编译后npm会有cache缓存，到另外一个地方编译这个项目的缓存与原缓存不一致，导致编译报错。</p>
+<p>解决办法：</p>
+<ol>
+<li>删掉node_modules文件夹，</li>
+</ol>
+<p>2.然后cnpm install 和npm run dev就可以在这台电脑运行你的项目</p>
+<a id="more"></a>  
+<h4 id="vue项目-vant组件css文件没有找到bug处理"><a href="#vue项目-vant组件css文件没有找到bug处理" class="headerlink" title="vue项目 vant组件css文件没有找到bug处理"></a>vue项目 vant组件css文件没有找到bug处理</h4><p><img src="https://img-blog.csdnimg.cn/20190411145801213.png" alt></p>
+<p>之前写过一个vant的项目，近期重新拉下来修改代码，运行时抛出这个问题</p>
+<p>重新下载了全部依赖不行，然后重新下载了vant组件库依然不行，</p>
+<p>最后通过vant官网介绍，引入cdn线上css文件地址</p>
+<p><img src="https://img-blog.csdnimg.cn/20190411150551529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbHlfX2Fu,size_16,color_FFFFFF,t_70" alt></p>
+<p>引入之后文件照常运行；</p>
+<p>由于自己百度没有看到更好的方法，故将此方法共享，如果哪位大佬有更好的解决办法，请指教 </p>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><h4 id="外边距折叠-collapsing-margins"><a href="#外边距折叠-collapsing-margins" class="headerlink" title="外边距折叠(collapsing margins)"></a>外边距折叠(collapsing margins)</h4><p>毗邻的两个或多个 margin 会合并成一个margin，叫做外边距折叠。只会发生在垂直方向上，而水平方向上不会发生。规则如下：</p>
+<ul>
+<li>两个或多个毗邻的普通流中的块元素垂直方向上的margin会折叠</li>
+<li>浮动元素或inline-block元素或绝对定位元素的margin不会和垂直方向上的其他元素的margin折叠</li>
+<li>创建了块级格式化上下文的元素，不会和它的子元素发生margin折叠</li>
+<li>元素自身的margin-bottom和margin-top相邻时也会折</li>
+</ul>
+<h4 id="介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？"><a href="#介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？" class="headerlink" title="介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？"></a>介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</h4><ul>
+<li>有两种， IE 盒子模型、W3C 盒子模型；</li>
+<li>盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；</li>
+<li>区 别： IE的content部分把 border 和 padding计算了进去;</li>
+</ul>
+<h4 id="CSS选择符有哪些？哪些属性可以继承？"><a href="#CSS选择符有哪些？哪些属性可以继承？" class="headerlink" title="CSS选择符有哪些？哪些属性可以继承？"></a>CSS选择符有哪些？哪些属性可以继承？</h4><ul>
+<li>id选择器（ # myid）</li>
+<li>类选择器（.myclassname）</li>
+<li>标签选择器（div, h1, p）</li>
+<li>相邻选择器（h1 + p）</li>
+<li>子选择器（ul &gt; li）</li>
+<li>后代选择器（li a）</li>
+<li>通配符选择器（ * ）</li>
+<li>属性选择器（a[rel = “external”]）</li>
+<li>伪类选择器（a:hover, li:nth-child）</li>
+<li>可继承的样式： font-size font-family color, UL LI DL DD DT</li>
+<li>不可继承的样式：border padding margin width height</li>
+</ul>
+<h4 id="CSS优先级算法如何计算？"><a href="#CSS优先级算法如何计算？" class="headerlink" title="CSS优先级算法如何计算？"></a>CSS优先级算法如何计算？</h4><ul>
+<li>优先级就近原则，同权重情况下样式定义最近者为准</li>
+<li>载入样式以最后载入的定位为准</li>
+<li>优先级为: !important &gt; id &gt; class &gt; tag important 比 内联优先级高</li>
+</ul>
+<h4 id="CSS3新增伪类有那些？"><a href="#CSS3新增伪类有那些？" class="headerlink" title="CSS3新增伪类有那些？"></a>CSS3新增伪类有那些？</h4><pre><code>p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
+p:only-child        选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。
+p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。
+
+:after          在元素之前添加内容,也可以用来做清除浮动。
+:before         在元素之后添加内容
+:enabled        
+:disabled       控制表单控件的禁用状态。
+:checked        单选框或复选框被选中
+</code></pre><h4 id="如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？"><a href="#如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？" class="headerlink" title="如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？"></a>如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？</h4><ul>
+<li>给div设置一个宽度，然后添加margin:0 auto属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    margin:0 auto;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>居中一个浮动元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//确定容器的宽高 宽500 高 300 的层</span><br><span class="line">//设置层的外边距</span><br><span class="line"></span><br><span class="line"> .div &#123;</span><br><span class="line">      width:500px ; height:300px;//高度可以不设</span><br><span class="line">      margin: -150px 0 0 -250px;</span><br><span class="line">      position:relative;         //相对定位</span><br><span class="line">      background-color:pink;     //方便看效果</span><br><span class="line">      left:50%;</span><br><span class="line">      top:50%;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>让绝对定位的div居中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">position: absolute;</span><br><span class="line">width: 1200px;</span><br><span class="line">background: none;</span><br><span class="line">margin: 0 auto;</span><br><span class="line">top: 0;</span><br><span class="line">left: 0;</span><br><span class="line">bottom: 0;</span><br><span class="line">right: 0;</span><br></pre></td></tr></table></figure>
+<h4 id="display有哪些值？说明他们的作用"><a href="#display有哪些值？说明他们的作用" class="headerlink" title="display有哪些值？说明他们的作用"></a>display有哪些值？说明他们的作用</h4><ul>
+<li>block 象块类型元素一样显示。</li>
+<li>none 缺省值。象行内元素类型一样显示。</li>
+<li>inline-block 象行内元素一样显示，但其内容象块类型元素一样显示。</li>
+<li>list-item 象块类型元素一样显示，并添加样式列表标记。</li>
+<li>table 此元素会作为块级表格来显示</li>
+<li>inherit 规定应该从父元素继承 display 属性的值</li>
+</ul>
+<h4 id="position的值relative和absolute定位原点是？"><a href="#position的值relative和absolute定位原点是？" class="headerlink" title="position的值relative和absolute定位原点是？"></a>position的值relative和absolute定位原点是？</h4><ul>
+<li>absolute<ul>
+<li>生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。</li>
+</ul>
+</li>
+<li>fixed （老IE不支持）<ul>
+<li>生成绝对定位的元素，相对于浏览器窗口进行定位。</li>
+</ul>
+</li>
+<li>relative<ul>
+<li>生成相对定位的元素，相对于其正常位置进行定位。</li>
+</ul>
+</li>
+<li>static<ul>
+<li>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right - z-index 声明）。</li>
+</ul>
+</li>
+<li>inherit<ul>
+<li>规定从父元素继承 position 属性的值</li>
+</ul>
+</li>
+</ul>
+<h4 id="CSS3有哪些新特性？"><a href="#CSS3有哪些新特性？" class="headerlink" title="CSS3有哪些新特性？"></a>CSS3有哪些新特性？</h4><ul>
+<li>新增各种CSS选择器 （: not(.input)：所有 class 不是“input”的节点）</li>
+<li>圆角 （border-radius:8px）</li>
+<li>多列布局 （multi-column layout）</li>
+<li>阴影和反射 （Shadow\Reflect）</li>
+<li>文字特效 （text-shadow、）</li>
+<li>文字渲染 （Text-decoration）</li>
+<li>线性渐变 （gradient）</li>
+<li>旋转 （transform）</li>
+<li>增加了旋转,缩放,定位,倾斜,动画，多背景</li>
+<li>transform:\scale(0.85,0.90)\ translate(0px,-30px)\ skew(-9deg,0deg)\Animation:</li>
+</ul>
+<h4 id="用纯CSS创建一个三角形的原理是什么？"><a href="#用纯CSS创建一个三角形的原理是什么？" class="headerlink" title="用纯CSS创建一个三角形的原理是什么？"></a>用纯CSS创建一个三角形的原理是什么？</h4><p> 把上、左、右三条边隐藏掉（颜色设为 transparent）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#demo &#123;</span><br><span class="line">  width: 0;</span><br><span class="line">  height: 0;</span><br><span class="line">  border-width: 20px;</span><br><span class="line">  border-style: solid;</span><br><span class="line">  border-color: transparent transparent red transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="一个满屏-品-字布局-如何设计"><a href="#一个满屏-品-字布局-如何设计" class="headerlink" title="一个满屏 品 字布局 如何设计?"></a>一个满屏 品 字布局 如何设计?</h4><ul>
+<li>简单的方式：<ul>
+<li>上面的div宽100%，</li>
+<li>下面的两个div分别宽50%，</li>
+<li>然后用float或者inline使其不换行即可</li>
+</ul>
+</li>
+</ul>
+<h4 id="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧-？"><a href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧-？" class="headerlink" title="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？"></a>经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？</h4><ul>
+<li>png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.</li>
+<li>浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一</li>
+<li>IE下,可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性;</li>
+<li>Firefox下,只能使用getAttribute()获取自定义属性。 </li>
+<li>解决方法:统一通过getAttribute()获取自定义属性</li>
+<li>IE下,even对象有x,y属性,但是没有pageX,pageY属性</li>
+<li>Firefox下,event对象有pageX,pageY属性,但是没有x,y属性</li>
+</ul>
+<h4 id="li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"><a href="#li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？" class="headerlink" title="li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"></a>li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</h4><p>行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了</p>
+<h4 id="为什么要初始化CSS样式"><a href="#为什么要初始化CSS样式" class="headerlink" title="为什么要初始化CSS样式"></a>为什么要初始化CSS样式</h4><ul>
+<li>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异</li>
+</ul>
+<h4 id="对BFC规范-块级格式化上下文：block-formatting-context-的理解？"><a href="#对BFC规范-块级格式化上下文：block-formatting-context-的理解？" class="headerlink" title="对BFC规范(块级格式化上下文：block formatting context)的理解？"></a>对BFC规范(块级格式化上下文：block formatting context)的理解？</h4><ul>
+<li>一个页面是由很多个 Box 组成的,元素的类型和 display 属性,决定了这个 Box 的类型</li>
+<li>不同类型的 Box,会参与不同的 Formatting Context（决定如何渲染文档的容器）,因此Box内的元素会以不同的方式渲染,也就是说BFC内部的元素和外部的元素不会互相影响</li>
+</ul>
+<h4 id="css定义的权重"><a href="#css定义的权重" class="headerlink" title="css定义的权重"></a>css定义的权重</h4><p>// 以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下/// 例子是演示各种定义的权重值：</p>
+<pre><code>/*权重为1*/
+div{
+}
+/*权重为10*/
+.class1{
+}
+/*权重为100*/
+#id1{
+}
+/*权重为100+1=101*/
+#id1 div{
+}
+/*权重为10+1=11*/
+.class1 div{
+}
+/*权重为10+10+1=21*/
+.class1 .class2 div{
+}
+</code></pre><p>// 如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现</p>
+<h4 id="display-inline-block-什么时候会显示间隙？"><a href="#display-inline-block-什么时候会显示间隙？" class="headerlink" title="display:inline-block 什么时候会显示间隙？"></a>display:inline-block 什么时候会显示间隙？</h4><p>移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing</p>
+<h4 id="浮动和清除浮动"><a href="#浮动和清除浮动" class="headerlink" title="浮动和清除浮动"></a>浮动和清除浮动</h4><ul>
+<li>浮动的框可以向左或向右移动，直到他的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框不在文档的普通流中，所以文档的普通流的块框表现得就像浮动框不存在一样。浮动的块框会漂浮在文档普通流的块框上<br>介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</li>
+<li>盒子模型构成：内容(content)、内填充(padding)、 边框(border)、外边距(margin)</li>
+<li>IE8及其以下版本浏览器，未声明 DOCTYPE，内容宽高会包含内填充和边框，称为怪异盒模型(IE盒模型)</li>
+<li>标准(W3C)盒模型：元素宽度 = width + padding + border + margin</li>
+<li>怪异(IE)盒模型：元素宽度 = width + margin</li>
+<li>标准浏览器通过设置 css3 的 box-sizing: border-box 属性，触发“怪异模式”解析计算宽高</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/每周学习记录/" rel="tag"># 每周学习记录</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/04/2019年第15周/" rel="next" title="2019年第15周">
+                <i class="fa fa-chevron-left"></i> 2019年第15周
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#学习"><span class="nav-number">1.</span> <span class="nav-text">学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#把一个vue项目拷贝到另一个地方启动不了的解决办法"><span class="nav-number">1.1.</span> <span class="nav-text">把一个vue项目拷贝到另一个地方启动不了的解决办法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue项目-vant组件css文件没有找到bug处理"><span class="nav-number">1.2.</span> <span class="nav-text">vue项目 vant组件css文件没有找到bug处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css"><span class="nav-number">2.</span> <span class="nav-text">css</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外边距折叠-collapsing-margins"><span class="nav-number">2.1.</span> <span class="nav-text">外边距折叠(collapsing margins)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？"><span class="nav-number">2.2.</span> <span class="nav-text">介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS选择符有哪些？哪些属性可以继承？"><span class="nav-number">2.3.</span> <span class="nav-text">CSS选择符有哪些？哪些属性可以继承？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS优先级算法如何计算？"><span class="nav-number">2.4.</span> <span class="nav-text">CSS优先级算法如何计算？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3新增伪类有那些？"><span class="nav-number">2.5.</span> <span class="nav-text">CSS3新增伪类有那些？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？"><span class="nav-number">2.6.</span> <span class="nav-text">如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display有哪些值？说明他们的作用"><span class="nav-number">2.7.</span> <span class="nav-text">display有哪些值？说明他们的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#position的值relative和absolute定位原点是？"><span class="nav-number">2.8.</span> <span class="nav-text">position的值relative和absolute定位原点是？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3有哪些新特性？"><span class="nav-number">2.9.</span> <span class="nav-text">CSS3有哪些新特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用纯CSS创建一个三角形的原理是什么？"><span class="nav-number">2.10.</span> <span class="nav-text">用纯CSS创建一个三角形的原理是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个满屏-品-字布局-如何设计"><span class="nav-number">2.11.</span> <span class="nav-text">一个满屏 品 字布局 如何设计?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧-？"><span class="nav-number">2.12.</span> <span class="nav-text">经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"><span class="nav-number">2.13.</span> <span class="nav-text">li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要初始化CSS样式"><span class="nav-number">2.14.</span> <span class="nav-text">为什么要初始化CSS样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对BFC规范-块级格式化上下文：block-formatting-context-的理解？"><span class="nav-number">2.15.</span> <span class="nav-text">对BFC规范(块级格式化上下文：block formatting context)的理解？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css定义的权重"><span class="nav-number">2.16.</span> <span class="nav-text">css定义的权重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display-inline-block-什么时候会显示间隙？"><span class="nav-number">2.17.</span> <span class="nav-text">display:inline-block 什么时候会显示间隙？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮动和清除浮动"><span class="nav-number">2.18.</span> <span class="nav-text">浮动和清除浮动</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/04/12/2019年第16周/';
+          this.page.identifier = '2019/04/12/2019年第16周/';
+          this.page.title = '2019年第16周';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

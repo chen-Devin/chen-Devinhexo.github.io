@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="小程序,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="小程序小程序：小程序就是基于微信平台的H5轻应用，微信将系统底层功能（设备、位置、媒体、文件等）和微信自身功能（登录、支付、分享等）封装成相应API供小程序调用。 小程序的基本概念 开发工具：为了配合小程序开发，微信专门配备了自己的开发工具（微信web开发者工具），自行选择对应版本安装。  创建项目应用：安装完成后，打开并扫码登录。小程序发布需要企业级的认证公众号，所以个人订阅号是不能发布的。所以">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序">
+<meta property="og:url" content="http://yoursite.com/2018/08/03/小程序/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="小程序小程序：小程序就是基于微信平台的H5轻应用，微信将系统底层功能（设备、位置、媒体、文件等）和微信自身功能（登录、支付、分享等）封装成相应API供小程序调用。 小程序的基本概念 开发工具：为了配合小程序开发，微信专门配备了自己的开发工具（微信web开发者工具），自行选择对应版本安装。  创建项目应用：安装完成后，打开并扫码登录。小程序发布需要企业级的认证公众号，所以个人订阅号是不能发布的。所以">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.913Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小程序">
+<meta name="twitter:description" content="小程序小程序：小程序就是基于微信平台的H5轻应用，微信将系统底层功能（设备、位置、媒体、文件等）和微信自身功能（登录、支付、分享等）封装成相应API供小程序调用。 小程序的基本概念 开发工具：为了配合小程序开发，微信专门配备了自己的开发工具（微信web开发者工具），自行选择对应版本安装。  创建项目应用：安装完成后，打开并扫码登录。小程序发布需要企业级的认证公众号，所以个人订阅号是不能发布的。所以">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/03/小程序/">
+
+
+
+
+
+  <title>小程序 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/小程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">小程序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T16:37:18+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/03/小程序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/03/小程序/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h2><p>小程序：小程序就是基于微信平台的H5轻应用，微信将系统底层功能（设备、位置、媒体、文件等）和微信自身功能（登录、支付、分享等）封装成相应API供小程序调用。</p>
+<h3 id="小程序的基本概念"><a href="#小程序的基本概念" class="headerlink" title="小程序的基本概念"></a>小程序的基本概念</h3><ul>
+<li><p>开发工具：为了配合小程序开发，微信专门配备了自己的开发工具（微信web开发者工具），自行选择对应版本安装。</p>
+</li>
+<li><p>创建项目应用：安装完成后，打开并扫码登录。小程序发布需要企业级的认证公众号，所以个人订阅号是不能发布的。所以我这里选择无AppID，创建项目选择一个本地空文件夹，</p>
+</li>
+</ul>
+<a id="more"></a>  
+<ul>
+<li><p>编写小程序：demo初始化并包含了一些简单的代码文件，其中app.js、app.json、app.wxss 这三个是必不可少的，小程序会读取这些文件初始化实例。</p>
+<ul>
+<li><p>app.js是小程序的初始化脚本，可以在这个文件中监听小程序的生命周期，申请全局变量和调用API等</p>
+</li>
+<li><p>app.json是对小程序的全局配置，pages设置页面路径组成（默认第一条为首页），window设置默认页面的窗口表现等</p>
+</li>
+<li><p>app.wxss 是整个小程序的公共样式表。类似网站开发中的common.css</p>
+</li>
+</ul>
+</li>
+<li><p>创建页面：在pages目录下，由一个文件夹中的四个同名不同类型文件组成。.js是脚本文件，.json是配置文件，.wxss是样式表文件，.wxml是页面结构文件，其中json和wxss文件为非必须（默认会继承app的json和wxss默认设置）。</p>
+</li>
+</ul>
+<h3 id="小程序的框架"><a href="#小程序的框架" class="headerlink" title="小程序的框架"></a>小程序的框架</h3><h4 id="小程序的配置"><a href="#小程序的配置" class="headerlink" title="小程序的配置"></a>小程序的配置</h4><p>app.json主要分为五个部分：</p>
+<ul>
+<li>pages：页面组，</li>
+<li>window：框架样式（状态栏、导航条、标题、窗口背景色），</li>
+<li>tabBar：底部菜单，</li>
+<li>networkTimeout：网络超时设置，</li>
+<li>debug：开启debug模式</li>
+</ul>
+<p>　　page.json针对页面单独设置，层叠掉app.json的全局设置</p>
+<pre><code>//app.json
+{
+  &quot;pages&quot;:[
+    &quot;pages/index/index&quot;,
+    &quot;pages/logs/logs&quot;
+  ],
+  &quot;window&quot;:{
+    &quot;backgroundTextStyle&quot;:&quot;light&quot;,
+    &quot;navigationBarBackgroundColor&quot;: &quot;#000&quot;,
+    &quot;navigationBarTitleText&quot;: &quot;WeChat&quot;,
+    &quot;navigationBarTextStyle&quot;:&quot;white&quot;
+  }
+}
+</code></pre><h4 id="小程序的逻辑"><a href="#小程序的逻辑" class="headerlink" title="小程序的逻辑"></a>小程序的逻辑</h4><p>使用App()来注册一个小程序，必须在app.js中注册，且不能注册多个</p>
+<pre><code>App({//如下为小程序的生命周期
+  onLaunch: function() { },//监听初始化
+  onShow: function() {  },//监听显示（进入前台）
+  onHide: function() {  },//监听隐藏（进入后台：按home离开微信）
+  onError: function(msg) {  },//监听错误
+  //如下为自定义的全局方法和全局变量  
+  globalFun:function(){},
+  globalData: &apos;I am global data&apos;
+})
+</code></pre><p>使用Page()注册一个页面，在每个页面的js文件中注册</p>
+<pre><code>复制代码
+Page({
+  data: {text: &quot;This is page data.&quot;},//页面数据，用来维护视图，json格式
+  onLoad: function(options) {  },//监听加载
+  onReady: function() {  },//监听初次渲染完成
+  onShow: function() {  },//监听显示
+  onHide: function() {  },//监听隐藏
+  onUnload: function() {  },//监听卸载
+  onPullDownRefresh: function() {  },//监听下拉
+  onReachBottom: function() {  },//监听上拉触底
+  onShareAppMessage: function () {  },//监听右上角分享
+  //如下为自定义的事件处理函数（视图中绑定的）
+  viewTap: function() {//setData设置data值，同时将更新视图
+    this.setData({text: &apos;Set some data for updating view.&apos;})
+  }
+})
+</code></pre><h4 id="小程序的视图与事件绑定"><a href="#小程序的视图与事件绑定" class="headerlink" title="小程序的视图与事件绑定"></a>小程序的视图与事件绑定</h4><p>　　在每个页面中的wxml文件中，对页面js中data进行数据绑定，以及自定义事件绑定</p>
+<pre><code>&lt;!--{{}}绑定data中的指定数据并渲染到视图--&gt;
+&lt;view class=&quot;title&quot;&gt;{{text}}&lt;/view&gt;
+
+&lt;!--wx:for获取数组数据进行循环渲染，item为数组的每项--&gt;
+&lt;view wx:for=&quot;{{array}}&quot;&gt; {{item}} &lt;/view&gt;
+
+&lt;!--wx:if条件渲染--&gt;
+&lt;view wx:if=&quot;{{view == 'WEBVIEW'}}&quot;&gt; WEBVIEW &lt;/view&gt;
+&lt;view wx:elif=&quot;{{view == 'APP'}}&quot;&gt; APP &lt;/view&gt;
+&lt;view wx:else=&quot;{{view == 'MINA'}}&quot;&gt; MINA &lt;/view&gt;
+
+&lt;!--模板--&gt;
+&lt;template name=&quot;staffName&quot;&gt;
+  &lt;view&gt;FirstName: {{firstName}}, LastName: {{lastName}}&lt;/view&gt;
+&lt;/template&gt;
+&lt;template is=&quot;staffName&quot; data=&quot;{{...template.staffA}}&quot;&gt;&lt;/template&gt;
+&lt;template is=&quot;staffName&quot; data=&quot;{{...template.staffB}}&quot;&gt;&lt;/template&gt;
+
+&lt;!--bindtap指定tap事件处理函数为ViewTap--&gt;
+&lt;view bindtap=&quot;ViewTap&quot;&gt; 点我点我 &lt;/view&gt;
+
+
+
+
+Page({
+  data: {//data数据主要用于视图绑定
+    text:&quot;我是一条测试&quot;,
+    array:[0,1,2,3,4],
+    view:&quot;APP&quot;,
+    template:{
+        staffA: {firstName: &apos;Hulk&apos;, lastName: &apos;Hu&apos;},
+        staffB: {firstName: &apos;Shang&apos;, lastName: &apos;You&apos;}
+    }
+  },
+  ViewTap:function(){console.log(&apos;额，点到我了了~&apos;)}//自定义事件，主要用于事件绑定
+})
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/25/vuex/" rel="next" title="vuex">
+                <i class="fa fa-chevron-left"></i> vuex
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/02/正则表达式/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序"><span class="nav-number">1.</span> <span class="nav-text">小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序的基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">小程序的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小程序的框架"><span class="nav-number">1.2.</span> <span class="nav-text">小程序的框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小程序的配置"><span class="nav-number">1.2.1.</span> <span class="nav-text">小程序的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小程序的逻辑"><span class="nav-number">1.2.2.</span> <span class="nav-text">小程序的逻辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小程序的视图与事件绑定"><span class="nav-number">1.2.3.</span> <span class="nav-text">小程序的视图与事件绑定</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/08/03/小程序/';
+          this.page.identifier = '2018/08/03/小程序/';
+          this.page.title = '小程序';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

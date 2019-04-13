@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="移动web,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="刮刮乐项目框架搭建vue-cli:vue脚手架搭建项目框架 环境搭建 安装node：  查询是否安装完成打开命令行工具（快捷键win+r,然后输入cmd）；然后输入 node -v出现版本号即为成功；注:因为在官网下载安装node.js后，就已经自带npm（包管理工具）了，另需要注意的是npm的版本最好是3.x.x以上，以免对后续产生影响。">
+<meta name="keywords" content="移动web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刮刮乐">
+<meta property="og:url" content="http://yoursite.com/2018/11/03/刮刮乐/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="刮刮乐项目框架搭建vue-cli:vue脚手架搭建项目框架 环境搭建 安装node：  查询是否安装完成打开命令行工具（快捷键win+r,然后输入cmd）；然后输入 node -v出现版本号即为成功；注:因为在官网下载安装node.js后，就已经自带npm（包管理工具）了，另需要注意的是npm的版本最好是3.x.x以上，以免对后续产生影响。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://segmentfault.com/img/bVPh7j?w=750&h=359">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="刮刮乐">
+<meta name="twitter:description" content="刮刮乐项目框架搭建vue-cli:vue脚手架搭建项目框架 环境搭建 安装node：  查询是否安装完成打开命令行工具（快捷键win+r,然后输入cmd）；然后输入 node -v出现版本号即为成功；注:因为在官网下载安装node.js后，就已经自带npm（包管理工具）了，另需要注意的是npm的版本最好是3.x.x以上，以免对后续产生影响。">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVPh7j?w=750&h=359">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/03/刮刮乐/">
+
+
+
+
+
+  <title>刮刮乐 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/刮刮乐/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">刮刮乐</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-03T10:27:14+08:00">
+                2018-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/03/刮刮乐/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/03/刮刮乐/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="刮刮乐"><a href="#刮刮乐" class="headerlink" title="刮刮乐"></a>刮刮乐</h2><h4 id="项目框架搭建"><a href="#项目框架搭建" class="headerlink" title="项目框架搭建"></a>项目框架搭建</h4><p>vue-cli:vue脚手架搭建项目框架</p>
+<h5 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h5><ul>
+<li>安装node：  查询是否安装完成打开命令行工具（快捷键win+r,然后输入cmd）；然后输入 node -v出现版本号即为成功；注:因为在官网下载安装node.js后，就已经自带npm（包管理工具）了，另需要注意的是npm的版本最好是3.x.x以上，以免对后续产生影响。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>安装淘宝镜像： 打开命令行工具，把这个（npm install -g cnpm –registry= <a href="https://registry.npm.taobao.org）复制，有的时候我们安装“依赖”的时候很很慢很慢超级慢，所以就用这个cnpm来安装我们说需要的“依赖”。安装完成之后输入" target="_blank" rel="noopener">https://registry.npm.taobao.org）复制，有的时候我们安装“依赖”的时候很很慢很慢超级慢，所以就用这个cnpm来安装我们说需要的“依赖”。安装完成之后输入</a> cnpm -v，如下图，如果出现相应的版本号，则说明安装成功。</li>
+<li>安装webpack: 打开命令行工具输入：npm install webpack -g,安装完成之后输入 webpack -v ，出现版本号，即说明安装成功；</li>
+<li>安装vue-cli脚手架构建工具：打开命令行工具输入： npm install vue-cli -g ,安装完成后输入： vue -V (注意：此处的V为大写)，出现响应的版本号。则说明安装成功；</li>
+</ul>
+<h5 id="用vue-cli-来构建项目"><a href="#用vue-cli-来构建项目" class="headerlink" title="用vue-cli 来构建项目"></a>用vue-cli 来构建项目</h5><p>1 找个放文件的地方。有两种方式可以指定到相关目录：</p>
+<pre><code>* cd目录路径
+* 如果安装了git，则可以在相关路径右键选择Git Bash Here;
+</code></pre><p>2 安装vue脚手架输入：vue init webpack scratchTicket ,注意这里的exprice是项目名称，但是不能用中文,且不能有大写</p>
+<pre><code>*** 
+
+    ? Project name (scratch-ticket)
+    ? Project name scratch-ticket
+    ? Project description (A Vue.js project)
+    ? Project description A Vue.js project
+    ? Author (Devin_Chen &lt;ChenZhanhui1992@outlook.com&gt;)
+    ? Author Devin_Chen &lt;ChenZhanhui1992@outlook.com&gt;
+    ? Vue build standalone
+    ? Install vue-router? (Y/n)
+    ? Install vue-router? Yes
+    ? Use ESLint to lint your code? (Y/n) n
+    ? Use ESLint to lint your code? No
+    ? Set up unit tests (Y/n)
+    ? Set up unit tests Yes
+    ? Pick a test runner (Use arrow keys)
+    ? Pick a test runner jest
+    ? Setup e2e tests with Nightwatch? (Y/n)
+    ? Setup e2e tests with Nightwatch? Yes
+    ? Should we run `npm install` for you after the project has been created? (recom
+    ? Should we run `npm install` for you after the project has been created? (recom
+    mended) npm
+
+       vue-cli · Generated &quot;scratch-ticket&quot;.
+
+
+    To get started:
+
+      cd scratch-ticket
+      npm run dev
+
+    Documentation can be found at https://vuejs-templates.github.io/webpack
+
+
+*** 
+</code></pre><p>3 cd进入创建的工程目录，首先cd scratch-ticket<br>4 安装依赖： npm install ,因为自动构建过程中产生了package.json 文件。所以直接安装依赖就行了<br>5 安装vue 路由模块 vue-router 和网络请求 vue-resource 输入 cnpm install vue-router vue-resource –save.<br>6 启动项目 输入： npm run dev </p>
+<h4 id="移动端rem适配"><a href="#移动端rem适配" class="headerlink" title="移动端rem适配"></a>移动端rem适配</h4><p>获取窗口宽度（width） : document.documentElement.clientWidth 或者 window.innerWidth;</p>
+<p>index.html</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(function(doc,win)&#123;</span><br><span class="line">  var docEl = doc.documentElement,</span><br><span class="line">  var clientWidth = docEl.clientWidth;</span><br><span class="line">   //这里是假设在750px宽度设计稿的情况下，1rem = 30px；</span><br><span class="line">  docEl.style.fontSize = 30*(clientWidth/750)+&apos;px&apos;;</span><br><span class="line">&#125;)(document,window)</span><br></pre></td></tr></table></figure>
+</code></pre><p>引入sass 之后。在static文件夹中创建一个scss.scss文件。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> @function px2Rem($sn)&#123;</span><br><span class="line">		//sass允许自定义函数</span><br><span class="line">  @return ($sn/30)*1rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><p>然后在需要应用的地方。引入scss.scss文件</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped lang=&quot;scss&quot;&gt;</span><br><span class="line">@import &apos;../../static/scss.scss&apos;;</span><br><span class="line">.hello&#123;</span><br><span class="line">  height: px2Rem(200);</span><br><span class="line">  width: px2Rem(300);</span><br><span class="line">  font-size: px2Rem(24);</span><br><span class="line">  background-color: blue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="引入scss"><a href="#引入scss" class="headerlink" title="引入scss"></a>引入scss</h4><p>随着sass/less等css预处理器的出现，编写css变的越来越有乐趣。所以现在越来越多的人在项目中喜欢使用scss或者less。</p>
+<h5 id="vue-loader"><a href="#vue-loader" class="headerlink" title="vue-loader"></a>vue-loader</h5><p>在vue项目中使用scss之前，我们先来简单了解一个概念，那就是vue-loader。vue-loader是什么东西呢？vue-loader其实就是一个webpack的loader。用来把vue组件转换成可部署的js,html,css模块。所以我们如果要想在vue项目中使用scss,肯定要告诉vue-loader怎么样解析我的scss文件。<br>不了解webpack的同学可以先去自行百度。我这里就放一张图，看完大家可以也就能知道webpack能做些什么事情了。<br><img src="https://segmentfault.com/img/bVPh7j?w=750&amp;h=359" alt></p>
+<h5 id="配置loader"><a href="#配置loader" class="headerlink" title="配置loader"></a>配置loader</h5><p>在webpack中，所有预处理器都要匹配相应的loader,vue-loader允许其他的webpack-loader处理组件中的一部分吗，然后它根据lang属性自动判断出要使用的loaders。所以，其实只要安装处理sass/scss的loader。就能在vue中使用scss了。<br>现在我们来安装sass/scss loader</p>
+<pre><code>npm install sass-loader node-sass --save-dev
+</code></pre><p>这样就可以愉快的使用scss了</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style scoped lang=&quot;sass&quot;&gt;</span><br><span class="line">      xxxx</span><br><span class="line">      xxxx</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动web/" rel="tag"># 移动web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/03/发票夹小程序/" rel="next" title="发票夹小程序">
+                <i class="fa fa-chevron-left"></i> 发票夹小程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/13/ES6-慕课/" rel="prev" title="ES6-慕课">
+                ES6-慕课 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#刮刮乐"><span class="nav-number">1.</span> <span class="nav-text">刮刮乐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#项目框架搭建"><span class="nav-number">1.0.1.</span> <span class="nav-text">项目框架搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用vue-cli-来构建项目"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">用vue-cli 来构建项目</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端rem适配"><span class="nav-number">1.0.2.</span> <span class="nav-text">移动端rem适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入scss"><span class="nav-number">1.0.3.</span> <span class="nav-text">引入scss</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#vue-loader"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">vue-loader</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置loader"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">配置loader</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/11/03/刮刮乐/';
+          this.page.identifier = '2018/11/03/刮刮乐/';
+          this.page.title = '刮刮乐';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

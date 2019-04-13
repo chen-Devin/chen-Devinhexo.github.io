@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="jQuery选择器 所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery总结">
+<meta property="og:url" content="http://yoursite.com/2017/07/07/jQuery总结/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="jQuery选择器 所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.904Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery总结">
+<meta name="twitter:description" content="jQuery选择器 所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/07/jQuery总结/">
+
+
+
+
+
+  <title>jQuery总结 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/07/jQuery总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-07T22:33:23+08:00">
+                2017-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/07/jQuery总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/07/jQuery总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><blockquote>
+<p>所有选择器获取的对象均为包装集，需通过[index]或get(index)获取，jQuery内部有隐式迭代，通过$.each()实现</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h3><blockquote>
+<p>id选择器$(#id)                 选中对应id的标签</p>
+<p>类名选择器$(.className)        选中对应类名的标签，获得为多个</p>
+<p>标签选择器$(tagName)            选中对应标签名的标签，获得为多个</p>
+<p>交集选择器$(tagName.className#id) 选中对应标签名中对应类名（或其他）的标签，获得为多个</p>
+<p>并集选择器$(a,b,c,)</p>
+</blockquote>
+<h3 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h3><blockquote>
+<p>子代选择$(“选择器a&gt;选择器b”)        选中选择器a的亲儿子中对应选择器b的标签</p>
+</blockquote>
+<blockquote>
+<p>后代选择$(“选择器a 选择器b”)        选中选择器a的子级标签中对应选择器b的标签</p>
+</blockquote>
+<blockquote>
+<p>相邻选择器$(“选择器a+选择器b”)   选中选择器a的下一个兄弟标签对应选择器b,中间不能有间隔</p>
+</blockquote>
+<blockquote>
+<p>兄弟选择器$(“选择器a～选择器b”)   获取选择器a的后面的所有符合选择器b的兄弟级标签，有间隔也没事</p>
+<p>$(“选择器a“).children()   表示获取所有的选择器a中的子类标签（亲儿子）</p>
+<p>$(“选择器a“).children(“选择器b”)   表示获取选择器a中的子类标签中(所有亲儿子中)的符合选择器b要求的标签，相当于拿到子类标签后用.filter(“选择器b”)方法</p>
+<p>$(“选择器a“).find(“选择器b”)  必须带参数，表示查找选择器a的子级元素符合选择器b要求的标签</p>
+<p>$(“选择器a“).siblings()     表示获取自己的所有的兄弟姊妹级标签，不包括自己</p>
+<p>$(“选择器a“).next()/.prev()            表示获取选择器a的下一个/或前一个兄弟标签</p>
+<p>$(“选择器a“).nextAll()    /.prevAll()        表示获取选择器a的后面／或前面所有兄弟标签</p>
+</blockquote>
+<h3 id="父级选择器"><a href="#父级选择器" class="headerlink" title="父级选择器"></a>父级选择器</h3><blockquote>
+<p>$(“选择器a”).parent()            获取当前元素选择器a的父元素，亲父亲。</p>
+<p>$(“选择器a”).parents()            获取当前元素选择器a的父级元素，一直到html级</p>
+<p>   如不想所有父级元素都拿，可在（）中传入参数</p>
+<p>$(“选择器a”).parents(“选择器b”)            获取当前元素选择器a的父级元素中”选择器b”的元素</p>
+<p>offsetParent() 这是方法！拿到最近的有定位的父级元素，如没有则拿到html。</p>
+</blockquote>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><blockquote>
+<p>$(“ul li:first”)    同$(“ul li”).first()选中元素中第一个<br>同$(“ul li:eq(0)”)同$(“ul li”).eq(0)</p>
+<p>$(“ul li:last”)        同$(“ul li”).last()    选中元素中最后一个</p>
+<p>$(“ul li:even”)                选中元素中偶数个，从0开始，第一个元素为偶数。</p>
+<p>$(“ul li:odd”)                选中元素中奇数个,第二个元素为奇数。</p>
+<p>$(“ul li:eq(n)”)    同$(“ul li”).eq(n)        n表示第n个。(筛选、过滤选择器)</p>
+</blockquote>
+<h3 id="filter和not选择器"><a href="#filter和not选择器" class="headerlink" title="filter和not选择器"></a>filter和not选择器</h3><blockquote>
+<p>filter用法：$(“选择器a”).filter(“选择器b”）从选择器a取到的数组里用选择器b过滤</p>
+<p>not用法：$(“选择器a”).not(“选择器b”）从选择器a取到的数组里去掉选择器b对应的</p>
+</blockquote>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><blockquote>
+<p>$(this).index()  返回this所在父元素中的标签顺序，只与亲兄弟有关</p>
+</blockquote>
+<blockquote>
+<p>   return ( this[0] &amp;&amp; this[0].parentNode ) ?     this.first().prevAll().length : -1;</p>
+</blockquote>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><h3 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h3><blockquote>
+<p>简单注册事件</p>
+</blockquote>
+<pre><code>click(handler)              单击事件
+blur(handler)               失去焦点事件
+mouseenter(handler)         鼠标进入事件
+mouseleave(handler)         鼠标离开事件
+dbclick(handler)            双击事件
+change(handler)             改变事件，如：文本框值改变，下来列表值改变等
+focus(handler)              获得焦点事件
+keydown(handler)            键盘按下事件
+</code></pre><blockquote>
+<p>bind方式</p>
+</blockquote>
+<pre><code>.bind( eventType [, eventData ], handler )
+可在第一个参数传入多个事件，用空格隔开，同时注册，缺点是不支持动态创建的元素。
+</code></pre><blockquote>
+<p>delegate方式</p>
+</blockquote>
+<pre><code>$(selector).delegate( selector, eventType, handler );
+第一个参数：selector，对$(selector)包装集下的所有子元素进行过滤，用于指定哪些后代元素可以触发绑定的事件。
+第二个参数：事件类型
+第三个参数：事件处理函数
+</code></pre><blockquote>
+<p>on的方式注册事件</p>
+</blockquote>
+<pre><code>$(selector).on(events[,selector][,data],handler);
+第一个参数：events，绑定事件的名称可以是由空格分隔的多个事件（标准事件或者自定义事件）
+第二个参数：selector, 对$(selector)包装集下的所有子元素进行过滤，用于指定哪些    后代元素可以触发绑定的事件。
+第三个参数：data，传递给处理函数的数据，事件触发的时候在事件处理函数中通过event.data来使用
+第四个参数：handler，事件处理函数
+</code></pre><h3 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h3><h4 id="unbind-undelegate"><a href="#unbind-undelegate" class="headerlink" title="unbind undelegate"></a>unbind undelegate</h4><blockquote>
+<p>.unbind() 解绑 bind方式绑定的所有事件</p>
+<p>.unbind(“click”) 解绑 bind方式绑定的指定事件</p>
+<p>undelegate同unbind，仅解绑的是delegate方式注册的事件</p>
+<p>off解绑on方式绑定的事件</p>
+</blockquote>
+<pre><code>$(selector).off(); 解绑匹配元素的所有事件，包括代理的。
+$(selector).off(&quot;click&quot;); 解绑匹配元素的所有click事件,包括代理的。
+$(selector).off( &quot;click&quot;, &quot;**&quot; );  解绑所有代理的click事件(子元素事件)，元素本身的事件不会被解绑 
+</code></pre><h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><blockquote>
+<p>同原生js，.stopPropagation();</p>
+</blockquote>
+<h3 id="阻止默认行为-如a标签跳转，等"><a href="#阻止默认行为-如a标签跳转，等" class="headerlink" title="阻止默认行为(如a标签跳转，等)"></a>阻止默认行为(如a标签跳转，等)</h3><blockquote>
+<p>同原生js，.preventDefault();</p>
+</blockquote>
+<h3 id="事件触发-trigger"><a href="#事件触发-trigger" class="headerlink" title="事件触发 trigger"></a>事件触发 trigger</h3><pre><code>$(selector).triggerHandler( type, data )调用了trigger，等于jQuery.event.trigger( type, data, $(selector)[0], true )
+触发绑定的处理函数，但不触发其默认行为。只影响 jQuery 对象的第一个匹配元素。
+返回的是事件处理函数的返回值，而不是具有可链性的 jQuery 对象。此外，如果没有处理程序被触发，则这个方法返回 undefined。
+
+ trigger( event, data, elem, onlyHandlers ) 触发事件，event传入事件名即可,默认onliHandlers为false，是否由handler引发。
+ trigger(event,[arguments]*)    可在trigger中传入参数。
+ trigger默认会触发事件冒泡，会引起事件（比如表单提交）的默认行为。 会操作 jQuery 对象匹配的所有元素。返回是jQuery对象。
+</code></pre><h3 id="几个属性"><a href="#几个属性" class="headerlink" title="几个属性"></a>几个属性</h3><pre><code>this    指代当前对象，执行处理程序的对象
+currentTarget    指代当前对象，执行处理程序的对象
+delegateTarget 指代委托对象，执行处理程序的对象，谁注册指代谁。
+target    最原始的事件源，同原生(原生中ie8为srcElement)。
+</code></pre><h3 id="几个坐标"><a href="#几个坐标" class="headerlink" title="几个坐标"></a>几个坐标</h3><pre><code>screenX/screenY 同原生，鼠标点击位置到屏幕左上角坐标
+clientX/clientY 同原生，点击位置到浏览器左上角位置
+pageX/pageY 同原生，没有兼容性问题，点击位置到页面左上角位置，包括滚动长度
+</code></pre><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><h3 id="文本和属性"><a href="#文本和属性" class="headerlink" title="文本和属性"></a>文本和属性</h3><blockquote>
+<p>方法均通过jQuery对象调用</p>
+<p>text()    获取文本，有标签会忽略</p>
+<p>text(“需要设置的文本”)    设置文本，有标签先转义</p>
+<p>表单内容获取使用 .val() 同样，如果带参数表示设置value值</p>
+<p>css(“需要获取的属性如width”) 如只有一个参数，则用来获取属性，如果调用css方法的对象为具有多个元素的包装集，则只返回第一个元素的属性。如$(“ul li”).css(“font-size”)默认返回第一个ul下第一个li的文字尺寸。</p>
+<p>但如第一个参数为键值对则用来设置属性，如有两个参数为设置属性。</p>
+<p>举例（均为设置属性）：</p>
+</blockquote>
+<pre><code>$(&quot;div&quot;).css(&quot;width&quot;,&quot;600&quot;);
+$(&quot;div&quot;).css({
+  &apos;width&apos;:&apos;300px&apos;,
+  &apos;height&apos;:&apos;500px&apos;,
+  &apos;background-color&apos;:&quot;blue&quot;
+})
+</code></pre><h3 id="操作类样式"><a href="#操作类样式" class="headerlink" title="操作类样式"></a>操作类样式</h3><blockquote>
+<p>$(“div”).addClass(‘demo’); 为div增加demo类，保留原有其他类</p>
+<p>$(“div”).removeClass(‘demo’); 为div移除demo类，保留原有其他类</p>
+<p>$(“div”).toggleClass(‘demo’); demo切换类，如有demo类则移除没有则增加，对原有其他类无影响。</p>
+</blockquote>
+<h3 id="end-方法"><a href="#end-方法" class="headerlink" title="end()方法"></a>end()方法</h3><blockquote>
+<p>返回jQuery对象持有的prevObject。每个jQuery均有此属性，默认为document。链式编程中每对原对象造成一次破坏性的返回则对现有对象prevObject属性增加原对象的引用。</p>
+</blockquote>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>所有speed参数均可传入字符串或是数字，对应slow=600，normal=400，fast=200，不传或是传入字符串不对则默认normal(show及hide方法例外)。如果为number类型，则表示动画的持续时间毫秒值。所有的动画都可带回调函数，当动画结束时调用。</p>
+<h3 id="隐藏和显示、切换"><a href="#隐藏和显示、切换" class="headerlink" title="隐藏和显示、切换"></a>隐藏和显示、切换</h3><blockquote>
+<p>show() </p>
+<blockquote>
+<p>无参数        此时表示显示对象，注意无动画效果，相当于css(“display”,”block);</p>
+<p>带第一个参数，表示speed参数。</p>
+<p>带两个参数，第一个参数同上，第二个参数为动画完成后的回调函数。</p>
+<p>hide()        类似show方法。</p>
+</blockquote>
+<p>toggle()    </p>
+<blockquote>
+<p>类似show方法。在调用对象显示时调用hide方法，隐藏时调用show方法。</p>
+<p>以上三个方法均可传键值对对象。属性包括duration持续时间 easing动画类型（默认swing，还有linear等） complete回调函数 queue是否加入队列。还有其他较少用参数。</p>
+</blockquote>
+</blockquote>
+<h3 id="slide-滑入滑出改变的是高度"><a href="#slide-滑入滑出改变的是高度" class="headerlink" title="slide 滑入滑出改变的是高度"></a>slide 滑入滑出改变的是高度</h3><blockquote>
+<p>高度只是暂时改变，再调用fade、show之类方法会回复原状。</p>
+<p>slideDown(speed,callback)    用法及参数传入均同show方法，注意无参会有动画效果。</p>
+<p>slideUp()            往上拉</p>
+<p>slideToggle()</p>
+</blockquote>
+<h3 id="fade-淡入淡出改变的是不透明度"><a href="#fade-淡入淡出改变的是不透明度" class="headerlink" title="fade 淡入淡出改变的是不透明度"></a>fade 淡入淡出改变的是不透明度</h3><blockquote>
+<p>fadeIn         淡入，显示出来</p>
+<p>fadeOut        淡出，慢慢消失</p>
+<p>fadeToggle</p>
+<p>fadeTo(speed,to)    to必须位于第二个参数，第一个参数同speed。注意，经fadeTo改变后的不透明度，其他fadeIn或是fadeToggle重新显示出来时只会等于to，同样fadeTo也可以有回调函数。</p>
+</blockquote>
+<h3 id="动画-1"><a href="#动画-1" class="headerlink" title="动画"></a>动画</h3><blockquote>
+<p>.animate({params}, speed, callback) 第一个参数必选且需为键值对对象。</p>
+<p>.stop(clearQueue, jumpToEnd) 默认两个参数均为false，表示立即停止现有动画并执行下一个动画。第一个参数表示后续动画是否不执行true不执行，false执行(动画队列，链式编程可能会有动画队列)。第二个参数true时立即跳至当前动画结束位置，false时立即停止当前动画。动画还未执行完时调用stop方法则回调函数不执行。</p>
+<p>举例 $ele.animate(1).animate(2),如1过程中执行stop()，则1停止并马上执行2. stop(true,true)立即跳至1动画末不动。stop(false,true)立即跳至1动画末位置并执行2.stop(true)全部停止。</p>
+</blockquote>
+<h2 id="动态创建元素"><a href="#动态创建元素" class="headerlink" title="动态创建元素"></a>动态创建元素</h2><h2 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h2><blockquote>
+<p>使用$(“<a href="#">这是一个a标签</a>“)  </p>
+<p>html() 不传参数则获取标签内容，传参数为设置内容，同innerHtml。</p>
+</blockquote>
+<h2 id="添加元素方法"><a href="#添加元素方法" class="headerlink" title="添加元素方法"></a>添加元素方法</h2><blockquote>
+<p>append()与appendTo()         同appendChild()方法，调用举例：</p>
+<pre><code>$parentNode.append($node)同$node.appendTo($parentNode)
+同parentNode.appendChild(node)
+</code></pre><p>表示在子元素最后增加node节点，方法由父元素调用。</p>
+<p>如果是给多个目标追加一个元素，那么append()方法的内部会复制多份这个元素，然后追加到多个目标里面去(原有元素删除)。</p>
+<p>prepend()与prependTo()        由父元素节点调用，调用举例：</p>
+<pre><code>$parentNode.prepend($node)同$node.prependTo($parentNode)
+同parentNode.insertBefore(node,parentNode.firstElementChild);
+</code></pre><p>after()和insertAfter()    </p>
+<p>before()和insertBefort()        由兄弟节点调用，调用举例：</p>
+<pre><code>A.after(B)同B.insertAfter(A) 表示A节点后面增加B节点
+A.before(B)同B.insertBefore(A) 表示A节点前面增加B节点    
+</code></pre><p>clone() jQuery对象的clone方法都是深度克隆，也可以传入boolean参数，但是true表示克隆事件，false则不克隆事件。</p>
+</blockquote>
+<h2 id="清空节点"><a href="#清空节点" class="headerlink" title="清空节点"></a>清空节点</h2><blockquote>
+<p>$node.empty()同$node.html(“”)，清空标签内容，但标签名仍在。empty()会清除标签事件所以推荐使用，html不会不建议使用。</p>
+<p>$node.remove() 如果无参数或是传入可转为false的字符如undefined、NaN等则删除node自身，标签名都删除。如果传入参数则相当于传入filter，根据选择器删除node集合中匹配的节点。    </p>
+</blockquote>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="设置及获取"><a href="#设置及获取" class="headerlink" title="设置及获取"></a>设置及获取</h3><blockquote>
+<p>attr()</p>
+<p>prop() 如果设置单属性值，比如checked,disabled,selected时使用，原因：checked属性被选中后如鼠标点选改变选中属性此时行内属性不改变，所以设置过一次后再设置无效。</p>
+<p>注意：prop设置了属性后检查元素时行内属性看不出改变，但实际有效果，原因不明。</p>
+<p>可以设置为空，比如.prop(“onclick”,null);ie8,9,11需用这种方式移除行内onclick。</p>
+<p>removeAttr() 传入参数，移除对应属性，连属性名一起移除.如无参数则不移除。多参数可用空格隔开。</p>
+</blockquote>
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><blockquote>
+<p>.offset()  offset() 返回一个对象，此对象里面有两个属性  left  top  获取的left  top值，始终是以页面为准.这是一个可读写的属性，设置时传入键值对，格式为.offset(left:num1,top:num2)设置,num1、num2为number类型。如元素本身无定位则会强制给其增加一相对定位,此定位是以border外边框为基准计算的。</p>
+<p>.position()   返回一个对象，此对象里面有两个属性  left  top获取的自身的margin到离自己最近的定义的父盒子的border内边框之间的距离，获取的为number类型数据 。只能获取属性，同node.style.left获取到的距离(带px)。</p>
+<blockquote>
+<p>$(selector).css(“height”);  字符串类型 带单位px。</p>
+</blockquote>
+<p>width、height    获取对象可视区宽度或高度，均为number类型。获取的是实际宽高，padding内边框区域。</p>
+<p>scrollTop/scrollLeft(offset) 方法返回或设置匹配元素的滚动条的垂直位置/水平位置。</p>
+</blockquote>
+<pre><code>注释：该方法对于可见元素和不可见元素均有效。
+注释：当用于获取值时，该方法只返回第一个匹配元素的scrollTop/scrollLeft(offset)。
+注释：当用于设置值时，该方法设置所有匹配元素的 scrollTop/scrollLeft(offset)。
+</code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="each"><a href="#each" class="headerlink" title="each"></a>each</h3><blockquote>
+<p>对应原生js为foreach，用法：</p>
+</blockquote>
+<pre><code>原生forEach
+var arr=[10,20,30,40,50];
+arr.forEach(item,index){
+    console.log(index+&quot;:&quot;+item);
+}
+也可写成：
+arr.forEach(function (item,index) {
+    console.log(index+&quot;:&quot;+item)
+})
+输出：0:10,1:20,2,30,3:40,4:50
+只能遍历数组。
+</code></pre><blockquote>
+</blockquote>
+<pre><code>jQuery中的each
+用法一遍历数组：
+$.each(arr,callback(key,value));
+var arr=[10,20,30,40,50];
+$.each(arr,function (index,item) {
+    console.log(index+&quot;:&quot;+item)
+})
+输出：0:10,1:20,2,30,3:40,4:50
+
+用法二遍历对象：
+$.each(obj,callback(key,value));
+
+用法三遍历jQuery对象
+$(selector).each(function(index,ele){}),注意其中ele为Dom对象
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/20/致未来的女朋友/" rel="next" title="致未来的女朋友">
+                <i class="fa fa-chevron-left"></i> 致未来的女朋友
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/10/我喜欢你，是余生都想有你的那种喜欢/" rel="prev" title="我喜欢你，是余生都想有你的那种喜欢">
+                我喜欢你，是余生都想有你的那种喜欢 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery"><span class="nav-number">1.</span> <span class="nav-text">jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">1.1.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层级选择器"><span class="nav-number">1.1.2.</span> <span class="nav-text">层级选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父级选择器"><span class="nav-number">1.1.3.</span> <span class="nav-text">父级选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪类选择器"><span class="nav-number">1.1.4.</span> <span class="nav-text">伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter和not选择器"><span class="nav-number">1.1.5.</span> <span class="nav-text">filter和not选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引"><span class="nav-number">1.1.6.</span> <span class="nav-text">索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件对象"><span class="nav-number">1.2.</span> <span class="nav-text">事件对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册事件"><span class="nav-number">1.2.1.</span> <span class="nav-text">注册事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件解绑"><span class="nav-number">1.2.2.</span> <span class="nav-text">事件解绑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#unbind-undelegate"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">unbind undelegate</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻止冒泡"><span class="nav-number">1.2.3.</span> <span class="nav-text">阻止冒泡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻止默认行为-如a标签跳转，等"><span class="nav-number">1.2.4.</span> <span class="nav-text">阻止默认行为(如a标签跳转，等)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件触发-trigger"><span class="nav-number">1.2.5.</span> <span class="nav-text">事件触发 trigger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个属性"><span class="nav-number">1.2.6.</span> <span class="nav-text">几个属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个坐标"><span class="nav-number">1.2.7.</span> <span class="nav-text">几个坐标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">1.3.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本和属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">文本和属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作类样式"><span class="nav-number">1.3.2.</span> <span class="nav-text">操作类样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end-方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">end()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">1.4.</span> <span class="nav-text">动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏和显示、切换"><span class="nav-number">1.4.1.</span> <span class="nav-text">隐藏和显示、切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slide-滑入滑出改变的是高度"><span class="nav-number">1.4.2.</span> <span class="nav-text">slide 滑入滑出改变的是高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fade-淡入淡出改变的是不透明度"><span class="nav-number">1.4.3.</span> <span class="nav-text">fade 淡入淡出改变的是不透明度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">动画</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态创建元素"><span class="nav-number">1.5.</span> <span class="nav-text">动态创建元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建方式"><span class="nav-number">1.6.</span> <span class="nav-text">创建方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加元素方法"><span class="nav-number">1.7.</span> <span class="nav-text">添加元素方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清空节点"><span class="nav-number">1.8.</span> <span class="nav-text">清空节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.9.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置及获取"><span class="nav-number">1.9.1.</span> <span class="nav-text">设置及获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位置"><span class="nav-number">1.9.2.</span> <span class="nav-text">位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.10.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#each"><span class="nav-number">1.10.1.</span> <span class="nav-text">each</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/07/07/jQuery总结/';
+          this.page.identifier = '2017/07/07/jQuery总结/';
+          this.page.title = 'jQuery总结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="element UI select下拉选项位置问题在使用elementUI下拉选项时，可能存在下拉时下拉列表选项框的位置距离下拉框所在的位置距离过大，这个是由于elementUI自己设置的根据下拉框位置定位，而他可能是根据position:absolute;来进行定位的,而我们要在全局设置他的 position:fixed !important;即可。(注意使用!important增加权重)">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue我的坑记">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/vue我的坑记/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="element UI select下拉选项位置问题在使用elementUI下拉选项时，可能存在下拉时下拉列表选项框的位置距离下拉框所在的位置距离过大，这个是由于elementUI自己设置的根据下拉框位置定位，而他可能是根据position:absolute;来进行定位的,而我们要在全局设置他的 position:fixed !important;即可。(注意使用!important增加权重)">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180619120350.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180619121857.png">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.906Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue我的坑记">
+<meta name="twitter:description" content="element UI select下拉选项位置问题在使用elementUI下拉选项时，可能存在下拉时下拉列表选项框的位置距离下拉框所在的位置距离过大，这个是由于elementUI自己设置的根据下拉框位置定位，而他可能是根据position:absolute;来进行定位的,而我们要在全局设置他的 position:fixed !important;即可。(注意使用!important增加权重)">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180619120350.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/07/vue我的坑记/">
+
+
+
+
+
+  <title>vue我的坑记 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/vue我的坑记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue我的坑记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-07T21:42:30+08:00">
+                2018-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/07/vue我的坑记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/07/vue我的坑记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="element-UI-select下拉选项位置问题"><a href="#element-UI-select下拉选项位置问题" class="headerlink" title="element UI select下拉选项位置问题"></a>element UI select下拉选项位置问题</h4><p>在使用elementUI下拉选项时，可能存在下拉时下拉列表选项框的位置距离下拉框所在的位置距离过大，这个是由于elementUI自己设置的根据下拉框位置定位，而他可能是根据position:absolute;来进行定位的,而我们要在全局设置他的 position:fixed !important;即可。(注意使用!important增加权重)</p>
+<a id="more"></a>
+<p>附加position各种值</p>
+<ul>
+<li>absolute:生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</li>
+<li>fixed:生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</li>
+<li>relative:生成相对定位的元素，相对于其正常位置进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</li>
+<li>static:默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</li>
+<li>inherit:规定应该从父元素继承 position 属性的值。</li>
+</ul>
+<h4 id="element-UI-组件默认传参和自定义传参的解决方法"><a href="#element-UI-组件默认传参和自定义传参的解决方法" class="headerlink" title="element UI 组件默认传参和自定义传参的解决方法"></a>element UI 组件默认传参和自定义传参的解决方法</h4><p>如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div v-for=&quot;(item,index) in object.cooperationDepartmentNumber&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;entrustingPartyList&quot;&gt;</span><br><span class="line">    &lt;el-row&gt;</span><br><span class="line">      &lt;el-col :span=&quot;12&quot;&gt; </span><br><span class="line">        &lt;el-form-item label=&quot;协办单位&quot;&gt;</span><br><span class="line">        &lt;el-autocomplete</span><br><span class="line">          class=&quot;inline-input&quot;</span><br><span class="line">          v-model=&quot;object.cooperationDepartment.otherArray[index].unit&quot;</span><br><span class="line">          :fetch-suggestions=&quot;unitQuerySearch&quot;</span><br><span class="line">          placeholder=&quot;请输入协办单位&quot;</span><br><span class="line">          :trigger-on-focus=&quot;false&quot;</span><br><span class="line">          @select=&quot;unitHandleSelect&quot;</span><br><span class="line">        &gt;&lt;/el-autocomplete&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">      &lt;el-col :span=&quot;12&quot;&gt; </span><br><span class="line">        &lt;el-form-item label=&quot;协办部门&quot; v-show=&quot;interior&quot;&gt;</span><br><span class="line">          &lt;el-input v-model=&quot;object.cooperationDepartment.otherArray[index].cooperation&quot; placeholder=&quot;协办部门&quot;&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">      &lt;el-col :span=&quot;12&quot;&gt; </span><br><span class="line">        &lt;el-form-item label=&quot;协办单位联系人&quot; v-show=&quot;external&quot;&gt;</span><br><span class="line">          &lt;el-input v-model=&quot;object.cooperationDepartment.otherArray[index].cooperation&quot; placeholder=&quot;协办部门&quot;&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">    &lt;/el-row&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当我们v-for有很多个相同的组件时，我们需要知道选中的是第几个组件,那么我们肯定想要知道对应的[index],你会想到下面这样[item]是默认的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;el-col :span=&quot;12&quot;&gt; </span><br><span class="line">  &lt;el-form-item label=&quot;协办单位&quot;&gt;</span><br><span class="line">  &lt;el-autocomplete</span><br><span class="line">    class=&quot;inline-input&quot;</span><br><span class="line">    v-model=&quot;object.cooperationDepartment.otherArray[index].unit&quot;</span><br><span class="line">    :fetch-suggestions=&quot;unitQuerySearch&quot;</span><br><span class="line">    placeholder=&quot;请输入协办单位&quot;</span><br><span class="line">    :trigger-on-focus=&quot;false&quot;</span><br><span class="line">    @select=&quot;unitHandleSelect(item, index)&quot;</span><br><span class="line">  &gt;&lt;/el-autocomplete&gt;</span><br><span class="line">  &lt;/el-form-item&gt;</span><br><span class="line">&lt;/el-col&gt;</span><br></pre></td></tr></table></figure></p>
+<p>解决办法是写个闭包，这样index就表示你的第几个组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;el-col :span=&quot;12&quot;&gt; </span><br><span class="line">  &lt;el-form-item label=&quot;协办单位&quot;&gt;</span><br><span class="line">  &lt;el-autocomplete</span><br><span class="line">    class=&quot;inline-input&quot;</span><br><span class="line">    v-model=&quot;object.cooperationDepartment.otherArray[index].unit&quot;</span><br><span class="line">    :fetch-suggestions=&quot;unitQuerySearch&quot;</span><br><span class="line">    placeholder=&quot;请输入协办单位&quot;</span><br><span class="line">    :trigger-on-focus=&quot;false&quot;</span><br><span class="line">    @select=&quot;((item)=&gt;&#123;unitHandleSelect(item, index)&#125;)&quot;</span><br><span class="line">  &gt;&lt;/el-autocomplete&gt;</span><br><span class="line">  &lt;/el-form-item&gt;</span><br><span class="line">&lt;/el-col&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样你在调用这个方法的时候就可以知道是第几个组件对应的了，然后就可以对那个组件进行操作了。</p>
+<h4 id="vue路由跳转参数传递"><a href="#vue路由跳转参数传递" class="headerlink" title="vue路由跳转参数传递"></a>vue路由跳转参数传递</h4><p>发送方路由跳转方法时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">clickRowValFun(data)&#123;</span><br><span class="line">     this.$router.push(&#123;path:&apos;/pending-particulars/&apos;+data.id&#125;);</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure></p>
+<p>在需要跳转的路由后面加上你需要传递的参数</p>
+<p>设置路由时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    path: &apos;/pending-particulars/:projectId&apos;,</span><br><span class="line">    name: &apos;pendingParticulars&apos;,</span><br><span class="line">    component: PendingParticulars</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<p>接收方接收时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">created()&#123;</span><br><span class="line">    this.projectId = this.$route.params.projectId;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="vue2-“Cannot-read-property-‘length’-of-undefined”"><a href="#vue2-“Cannot-read-property-‘length’-of-undefined”" class="headerlink" title="vue2 “Cannot read property ‘length’ of undefined”"></a>vue2 “Cannot read property ‘length’ of undefined”</h4><p>最近在项目中总是遇见报错”length of undefined”的问题，因为项目的需要要显示存在的个数，所以通过length来进行求职</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	     </span><br><span class="line">this.projectReportSumNum = val.reportArray.length;</span><br></pre></td></tr></table></figure>
+<p>虽然界面可以显示length数据，但是控制台肥肠傲娇一直报错。大概是说找不到一个undefined的length</p>
+<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180619120350.png" alt="Image text"></p>
+<p>这明明不是找到了，为什么还报错呢？<br>花了点时间研究下才知道，vue的数据绑定在刚开始只是和内存建立联系，并没有真正的和后台的数据挂上钩，所以一开始的val.reportArray只是一个空值，必须在之前加个if判断，确保有值以后再开始计算length</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if(val.reportArray)&#123;</span><br><span class="line">    this.projectReportSumNum = val.reportArray.length;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>这样就不会在控制台显示报错了。。</p>
+<h4 id="vscode使用vue中的v-for提示错误"><a href="#vscode使用vue中的v-for提示错误" class="headerlink" title="vscode使用vue中的v-for提示错误"></a>vscode使用vue中的v-for提示错误</h4><p>在项目中是用v-for时，vscode提示错误信息</p>
+<p><img src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180619121857.png" alt="Image text"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	      </span><br><span class="line">&lt;div v-for=&quot;(item,index) in object.cooperationDepartmentNumber&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>Vue 2.2 之后，要求 component 进行列表渲染时，必须指定 key，因此这里可能是 vscode 的一个误报（tr 不是 component），如果不想看到这样的提示，你可以绑定一个 key：<tr v-for="(word,index) in list" :key="index"></tr></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	      </span><br><span class="line">&lt;div v-for=&quot;(item,index) in object.cooperationDepartmentNumber&quot; :key:&quot;index&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>如上所示：在v-for循环中加入：key值即可消除该提示。</p>
+<h4 id="vue-改变对象属性。视图不刷新问题"><a href="#vue-改变对象属性。视图不刷新问题" class="headerlink" title="vue 改变对象属性。视图不刷新问题"></a>vue 改变对象属性。视图不刷新问题</h4><p>在vue的data数据中心定义一个对象obj，然后在触发事件时给obj添加或修改属性的时候，页面中的视图不会同步更新，只有当其他数据发生改变时，视图才会同步更新数据，按理来说vue data数据中心的数据是双向绑定的，当数据中心的数据发生改变时，视图就会同步更新才对。</p>
+<p>后来通过查阅官网资料发现：</p>
+<p>Vue 不能检测到对象属性的添加或删除。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化过程，所以属性必须在 data 对象上存在才能让 Vue 转换它，这样才能让它是响应的。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">     </span><br><span class="line">      var vm = new Vue(&#123;</span><br><span class="line">data:&#123;</span><br><span class="line">a:1</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line">// `vm.a` 是响应的</span><br><span class="line">vm.b = 2</span><br><span class="line">// `vm.b` 是非响应的</span><br></pre></td></tr></table></figure>
+<p>Vue 不允许在已经创建的实例上动态添加新的根级响应式属性(root-level reactive property)。然而它可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	      </span><br><span class="line">Vue.set(vm.someObject, &apos;b&apos;, 2)</span><br></pre></td></tr></table></figure>
+<p>您还可以使用 vm.$set 实例方法，这也是全局 Vue.set 方法的别名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	      </span><br><span class="line">this.$set(this.someObject,&apos;b&apos;,2)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/03/ajax请求/" rel="next" title="ajax请求">
+                <i class="fa fa-chevron-left"></i> ajax请求
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/25/HTTP状态码/" rel="prev" title="HTTP状态码">
+                HTTP状态码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#element-UI-select下拉选项位置问题"><span class="nav-number">1.</span> <span class="nav-text">element UI select下拉选项位置问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#element-UI-组件默认传参和自定义传参的解决方法"><span class="nav-number">2.</span> <span class="nav-text">element UI 组件默认传参和自定义传参的解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue路由跳转参数传递"><span class="nav-number">3.</span> <span class="nav-text">vue路由跳转参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue2-“Cannot-read-property-‘length’-of-undefined”"><span class="nav-number">4.</span> <span class="nav-text">vue2 “Cannot read property ‘length’ of undefined”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode使用vue中的v-for提示错误"><span class="nav-number">5.</span> <span class="nav-text">vscode使用vue中的v-for提示错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-改变对象属性。视图不刷新问题"><span class="nav-number">6.</span> <span class="nav-text">vue 改变对象属性。视图不刷新问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/06/07/vue我的坑记/';
+          this.page.identifier = '2018/06/07/vue我的坑记/';
+          this.page.title = 'vue我的坑记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

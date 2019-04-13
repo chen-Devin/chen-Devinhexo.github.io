@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="参考地址 https://baijiahao.baidu.com/s?id=1583368048854689204&amp;amp;wfr=spider&amp;amp;for=pc 什么是数据埋点数据分析是我们获得需求的来源之一，通过对数据的比对，对数据趋势的分析，能让我们发 现哪些环节存在问题，哪些环节有提高空间。同时，数据分析也是检验功能是否有效，是否受欢迎的重要佐证。 非常的直观，以一种数据的形式呈现出来">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端埋点功能介绍">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/前端埋点功能介绍/index.html">
+<meta property="og:site_name" content="Devin_Chen的博客">
+<meta property="og:description" content="参考地址 https://baijiahao.baidu.com/s?id=1583368048854689204&amp;amp;wfr=spider&amp;amp;for=pc 什么是数据埋点数据分析是我们获得需求的来源之一，通过对数据的比对，对数据趋势的分析，能让我们发 现哪些环节存在问题，哪些环节有提高空间。同时，数据分析也是检验功能是否有效，是否受欢迎的重要佐证。 非常的直观，以一种数据的形式呈现出来">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T09:40:54.911Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端埋点功能介绍">
+<meta name="twitter:description" content="参考地址 https://baijiahao.baidu.com/s?id=1583368048854689204&amp;amp;wfr=spider&amp;amp;for=pc 什么是数据埋点数据分析是我们获得需求的来源之一，通过对数据的比对，对数据趋势的分析，能让我们发 现哪些环节存在问题，哪些环节有提高空间。同时，数据分析也是检验功能是否有效，是否受欢迎的重要佐证。 非常的直观，以一种数据的形式呈现出来">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/17/前端埋点功能介绍/">
+
+
+
+
+
+  <title>前端埋点功能介绍 | Devin_Chen的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Devin_Chen的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">码农的精彩，是你我同在</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/前端埋点功能介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Devin_Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Devin_Chen的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端埋点功能介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-17T21:03:10+08:00">
+                2018-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/17/前端埋点功能介绍/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/17/前端埋点功能介绍/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h3><p> <a href="https://baijiahao.baidu.com/s?id=1583368048854689204&amp;wfr=spider&amp;for=pc" title="https://baijiahao.baidu.com/s?id=1583368048854689204&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1583368048854689204&amp;wfr=spider&amp;for=pc</a></p>
+<h3 id="什么是数据埋点"><a href="#什么是数据埋点" class="headerlink" title="什么是数据埋点"></a>什么是数据埋点</h3><pre><code>数据分析是我们获得需求的来源之一，通过对数据的比对，对数据趋势的分析，能让我们发
+现哪些环节存在问题，哪些环节有提高空间。同时，数据分析也是检验功能是否有效，是否受欢迎的重要佐证。
+非常的直观，以一种数据的形式呈现出来，而这些数据有大部分都来自于对数据的埋点。
+</code></pre><a id="more"></a>
+<pre><code>1. 数据埋点是一种良好的私有化部署数据采集方式。数据采集准确，满足了企业去粗取精，
+   实现产品、服务快速优化迭代的需求。数据埋点分为初级、中级、高级三种方式，分别为：
+
+    初级：在产品、服务转化关键点植入统计代码，据其独立ID确保数据采集不重复（如购买按钮点击率）；
+
+    中级：植入多段代码，追踪用户在平台每个界面上的系列行为，事件之间相互独立（如打开商
+          品详情页——选择商品型号——加入购物车——下订单——购买完成）；
+
+    高级：联合公司工程、ETL采集分析用户全量行为，建立用户画像，还原用户行为模型，作为产品分析、优化的基础。
+</code></pre><h3 id="数据埋点原理"><a href="#数据埋点原理" class="headerlink" title="数据埋点原理:"></a>数据埋点原理:</h3><pre><code>以APP举例，我们可以简单的分为四个层级，表层是UI层，底层是数据表和日志。（必要时，我们可以将层级分的更加清晰。）
+
+数据埋点的发生场景便是在表层-UI层里，其作用是监控用户在UI层产生的行为。也就是用户对界面的操作。
+
+数据埋点其实无法统计有多少用户发布了朋友圈，但可以统计有多少用户点击了朋友圈的发布按钮，以及有多少
+用户在朋友圈发布页点击了确认发布的按钮。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">数据埋点我们可以分成两类，其一是页面统计，其二是行为统计：</span><br><span class="line">    </span><br><span class="line">    页面统计： 页面统计可以帮我们知晓某个页面被多少人访问了多少次。</span><br><span class="line">        </span><br><span class="line">              其本质是监控页面加载的行为，尽管此时用户并没有对UI产生行为，但却是由上一个点击行为触发的一个结果。</span><br><span class="line"></span><br><span class="line">              除了访问的人数与次数，也可以监控到用户在某个页面停留的时长，部分产品希望用户在某个页面停留的时</span><br><span class="line">              间越长越好。</span><br><span class="line">                </span><br><span class="line">              追求停留时间的产品，典型的便是信息流产品。这表示用户正在持续的进行阅读，停留的时间越长，表</span><br><span class="line">              示内容对用 户的吸引力越高，这样才能产生持续的阅读行为。</span><br><span class="line">                </span><br><span class="line">             （诸如微博，朋友圈等以短信息为主要内容的信息流，长信息会更加侧重跳转详情页的数值）</span><br><span class="line">    </span><br><span class="line">    行为统计： 行为统计是指用户在界面上的操作行为，应用最为广泛的便是按钮的点击次数。</span><br><span class="line">                </span><br><span class="line">                其实，通过数据埋点捕捉到的数据，有三层，第一层是基础层，比较通用的数据，像是日活，新增，</span><br><span class="line">                第二层是页面访问，第三层就是行为统计，名词上来讲通常被称为“事件统计”</span><br><span class="line">                </span><br><span class="line">                通过对UI界面响应事件的捕捉，我们能够得知某个按钮的点击数及对应的点击率。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">基础应用知识</span><br><span class="line">   </span><br><span class="line">   数据分析是很一门很复杂的学科，对于PM而言，是一个重要的需求源，而我们用来分析数据采用的方法，也非常的多，</span><br><span class="line">   并且复杂的分析方法，可以复杂到让我们怀疑人生</span><br><span class="line">   </span><br><span class="line">页面统计–页面访问率:</span><br><span class="line">   </span><br><span class="line">   APP里，有的页面是存在唯一的主次关系，意思是B页面仅能从A页面进入。</span><br><span class="line"></span><br><span class="line">   此时，我们结合两个页面的访问数值，就能得到A页面到B页面的转化率。</span><br><span class="line">   </span><br><span class="line">   并以此判断两个页面是否存在可优化空间。</span><br><span class="line">   </span><br><span class="line">   数据里所隐藏的优化空间，往往是存在多种可能性的。</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   实例:</span><br><span class="line">   </span><br><span class="line">       A页面与B页面具备唯一主次关系， B页面仅能从A页面跳转进入，（如：微信的，某人的相册，仅能从个人资料进入）</span><br><span class="line">       </span><br><span class="line">       若 A页面访问人数为100人，B页面访问人数只有10人。</span><br><span class="line">       </span><br><span class="line">       分析结果就有两种可能性：</span><br><span class="line">       </span><br><span class="line">       1.A页面转化部分设计有问题，就像文章的阅读数和标题息息相关，我们可能需要优化入口的设计。</span><br><span class="line">       </span><br><span class="line">       2.B页面留存有问题，无法让用户产生二次访问行为，以及无法让用户形成更高频率的访问。</span><br><span class="line">       </span><br><span class="line">       此概念类似于“复购率”和“复购频次”</span><br><span class="line">       </span><br><span class="line">       对于 有多个入口的页面，页面路径的分析方法就没有作用了，此时，我们就需要借助行为统计。</span><br><span class="line">       </span><br><span class="line">行为统计–页面访问率:</span><br><span class="line">   </span><br><span class="line">   一些基础的功能，往往被多个页面应用，也能通过两个以上的页面进入，也就是我们所熟知的“多个入口”的概念。</span><br><span class="line"></span><br><span class="line">   此时，我们可以借助 指定入口页的访问人数，入口按钮的点击人数，来判断该页面的转化率。</span><br><span class="line">   </span><br><span class="line">   B页面可以通过ACD三个页面点击对应按钮进入，我们想要知道A页面到B页面的转化率是多少。</span><br><span class="line">   </span><br><span class="line">   若A页面访问人数是100，按钮点击人数是30，B页面访问人数是40，</span><br><span class="line">   </span><br><span class="line">   问题就变成了，在A页面点击按钮的点击率，其分析价值与页面访问率相同。</span><br><span class="line">   </span><br><span class="line">   第二种分析方法，更多的是侧重对入口所在页的分析，通常提到的转化率，也是指类似的分析方法。</span><br><span class="line">   </span><br><span class="line">   对于第二种方法，比较典型的是广告转化率提升的设计方法。</span><br><span class="line">   </span><br><span class="line">   此类型产品，几乎不考虑“复购”问题，其追求的目标是最大限度，在不影响原有用户体</span><br><span class="line">   验的基础之上，提高用户点击广告的几率。</span><br><span class="line">   </span><br><span class="line">   与之对应的产品设计方法，更多的在于视觉的设计，类似加粗，图片，特殊形状，诱惑性的文案等。</span><br></pre></td></tr></table></figure>
+<h3 id="主要的埋点事件分类："><a href="#主要的埋点事件分类：" class="headerlink" title="主要的埋点事件分类："></a>主要的埋点事件分类：</h3><pre><code>点击事件：点击事件，用户点击按钮即算点击事件，不管点击后有无结果；如下图红框标注所示，点击一次记一次。
+
+曝光事件：成功打开一次页面记一次，刷新页面一次记一次，加载下一页新页，加载一次记一次。home键切换到后台再
+         进入页面，曝光事件不记；如下图页面所示，打开一次记一次。
+
+页面停留时间事件： 表示一个用户在X页面的停留时长记为停留时长。例如：小明9:00访问了X网站首页，此时分析工具则开始
+                  为小明这个访问者记录1个Session（会话）。接着9:01小明又浏览了另外一个页面列表页，然后离开了
+                  网站（离开网站可以是通过关闭浏览器，或在地址栏键入一个不同的网址，或是点击了你网站
+                  上链接到其他网站的链接……）为了简单，我们把这个过程当做一个Session。
+
+                  则最终小明在首页的页面停留时间：
+
+                 （Time on Page，简称Tp）Tp(首页) = 9:01 – 9:00 = 1 分钟
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/10/ES6-Set和Map/" rel="next" title="ES6-Set和Map">
+                <i class="fa fa-chevron-left"></i> ES6-Set和Map
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/25/vue项目前端埋点/" rel="prev" title="vue项目前端埋点">
+                vue项目前端埋点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/chen-Devin/img-folder/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180623203512.png" alt="Devin_Chen">
+            
+              <p class="site-author-name" itemprop="name">Devin_Chen</p>
+              <p class="site-description motion-element" itemprop="description">码农的精彩，是你我同在</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chen-Devin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3796341310/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/li-li-an-68-23/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chen-devin.github.io/iloveyou/" title="时间的朋友" target="_blank">时间的朋友</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lishulihh.github.io" title="一朵的链接" target="_blank">一朵的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yangxinjian.github.io/" title="小猪的链接" target="_blank">小猪的链接</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ssguizhou.cn:10088/myblogs/" title="小净的链接" target="_blank">小净的链接</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考地址"><span class="nav-number">1.</span> <span class="nav-text">参考地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是数据埋点"><span class="nav-number">2.</span> <span class="nav-text">什么是数据埋点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据埋点原理"><span class="nav-number">3.</span> <span class="nav-text">数据埋点原理:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的埋点事件分类："><span class="nav-number">4.</span> <span class="nav-text">主要的埋点事件分类：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+        <div id="days"></div>
+
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("03/07/2017 08:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+         
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Devin_Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/12/17/前端埋点功能介绍/';
+          this.page.identifier = '2018/12/17/前端埋点功能介绍/';
+          this.page.title = '前端埋点功能介绍';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
