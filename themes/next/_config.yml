@@ -140,6 +140,8 @@ social:
   #Skype: skype:yourname?call|chat || skype
   微博: https://weibo.com/3796341310/profile?topnav=1&wvr=6 || weibo
   知乎: https://www.zhihu.com/people/li-li-an-68-23/activities || zhihu
+  CSDN: https://blog.csdn.net/lily__an || CSND
+  toutiao: https://www.toutiao.com/c/user/110426867561/#mid=1622989715912708 || toutiao
 
 social_icons:
   enable: true
@@ -148,6 +150,8 @@ social_icons:
   GitHub: github
   知乎: zhihu
   微博: weibo
+  CSDN: CSDN
+  头条: toutiao
 
 # Blog rolls
 links_icon: link
